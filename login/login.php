@@ -1,6 +1,6 @@
 <?php
 
-include "./config.php";
+include "../config.php";
 @session_start();
 
 
@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
         $_SESSION['admin_name']=$row['name'];
         $_SESSION['admin_email']=$row['email'];
         $_SESSION['admin_id']=$row['id'];
-       header('location:admin_page.php');
+       header('location:../admin/admin_page.php');
       }
     elseif($row['user_type']  === 'user'){
       $_SESSION['user_name']=$row['name'];
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
     <title>Login</title>
     <!--font awesome cdn inks-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
