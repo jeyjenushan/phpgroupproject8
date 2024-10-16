@@ -111,7 +111,7 @@ if(isset($_POST['updated_product'])){
         <input type="number"min=0  name="quantity" class="box" placeholder="Enter your Quantity" required>
         <div class="Box">
             <span>Category :</span>
-            <select name="method">
+            <select name="method" required>
             <option value="">Enter your Category name</option>
 <?php
 $result=mysqli_query($conn,"Select * from `category`");
@@ -184,7 +184,7 @@ if(mysqli_num_rows($update_query)>0){
 <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image'] ?>">
 
 
-    <img src="uploaded_img/<?php echo $fetch_update['image'] ?>">
+    <img src="../uploaded_img/<?php echo $fetch_update['image'] ?>">
     <input type="text" name="update_name" class="box" placeholder="Enter Product Name"  value="<?php echo $fetch_update['name']?>">
     <input type="number" name="update_price" min='0' class="box" placeholder="Enter Product Price"   value="<?php echo $fetch_update['price']?>">
     <input type="number" name="update_quantity" min='0' class="box" placeholder="Enter Product Quantity"   value="<?php echo $fetch_update['quantity']?>">
