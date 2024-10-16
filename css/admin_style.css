@@ -144,6 +144,7 @@ section{
    }
 }
 
+
 .header{
    position: sticky;
    top:0; left:0; right:0;
@@ -239,6 +240,7 @@ section{
    text-decoration: underline;
 }
 
+
 #menu-btn{
    display: none;
 }
@@ -308,9 +310,10 @@ section{
 }
 /*end*/
 /* show products*/
+
 .show-products .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 30rem);
+   grid-template-columns: repeat(auto-fit, 50rem);
    justify-content: center;
    gap:1.5rem;
    max-width: 1200px;
@@ -332,7 +335,8 @@ section{
 }
 
 .show-products .box-container .box img{
-   height: 30rem;
+   height: 20rem;
+   
 }
 
 .show-products .box-container .box .name{
@@ -342,6 +346,11 @@ section{
 }
 
 .show-products .box-container .box .price{
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:var(--red);
+}
+.show-products .box-container .box .location{
    padding:1rem 0;
    font-size: 2.5rem;
    color:var(--red);
@@ -466,6 +475,7 @@ section{
 }
 /* user ends*/
 /* message start*/
+
 .messages .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 35rem);
@@ -501,6 +511,51 @@ section{
 
 /* message ends*/
 
+body {
+   font-family: Arial, sans-serif;
+   margin: 50px;
+   background-color: #f4f4f4;
+}
+
+.styled-table {
+   width: 100%;
+   border-collapse: collapse;
+   margin: 25px 0;
+   margin-top: 50px;
+   font-size: 18px;
+   text-align: left;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+   background-color: #009879;
+   color: #ffffff;
+   text-align: left;
+   font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+   padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+   border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+   background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+   border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+   font-weight: bold;
+   color: #009879;
+}
+
 
 
 
@@ -533,6 +588,7 @@ section{
    #menu-btn{
       display: inline-block;
    }
+
 
    .header .flex .navbar{
       position: absolute;

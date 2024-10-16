@@ -1,5 +1,6 @@
 <?php
-include 'config.php';
+include '../config.php';
+session_start();
 if(isset($_POST['add_location'])){
     $locationname=$_POST['location'];
     $shopname=$_POST['sname'];
@@ -12,9 +13,9 @@ if(isset($_POST['add_location'])){
     $product_image3=$_FILES['productimage3']['name'];
     $product_image_size3=$_FILES['productimage3']['size'];
     $product_image_tmp3=$_FILES['productimage3']['tmp_name'];
-    $image_folder1="./uploaded_img/".$product_image1;
-    $image_folder2="./uploaded_img/".$product_image2;
-    $image_folder3="./uploaded_img/".$product_image3;
+    $image_folder1="../uploaded_img/".$product_image1;
+    $image_folder2="../uploaded_img/".$product_image2;
+    $image_folder3="../uploaded_img/".$product_image3;
     $selected_shop_name=mysqli_query($conn,"Select * from `shopdetail` where name='$shopname'") or die("Query failed");
     if(mysqli_num_rows($selected_shop_name)>0){
         $message[]="shop name already exissts";
@@ -43,9 +44,9 @@ if(isset($_GET['delete'])){
     $deleted_id=$_GET['delete'];
     $deleted_img_query=mysqli_query($conn,"SELECT * FROM `shopdetail` where id=$deleted_id");
     $fetch_delete_image=mysqli_fetch_assoc($deleted_img_query);
-    unlink('uploaded_img/'.$fetch_delete_image['shop_image1']);
-    unlink('uploaded_img/'.$fetch_delete_image['shop_image2']);
-    unlink('uploaded_img/'.$fetch_delete_image['shop_image3']);
+    unlink('../uploaded_img/'.$fetch_delete_image['shop_image1']);
+    unlink('../uploaded_img/'.$fetch_delete_image['shop_image2']);
+    unlink('../uploaded_img/'.$fetch_delete_image['shop_image3']);
     mysqli_query($conn,"DELETE FROM `shopdetail` where id='$deleted_id'") or die('query failed');
     header("location:admin_location.php");
 }
@@ -74,7 +75,7 @@ if(isset($_POST['updated_product'])){
         $image_name = $_FILES[$image['input_name']]['name'];
         $image_tmp_name = $_FILES[$image['input_name']]['tmp_name'];
         $image_size = $_FILES[$image['input_name']]['size'];
-        $image_folder = 'uploaded_img/' . $image_name;
+        $image_folder = '../uploaded_img/'.$image_name;
 
         if(!empty($image_name)){
             // Validate image size
@@ -91,7 +92,7 @@ if(isset($_POST['updated_product'])){
                 move_uploaded_file($image_tmp_name, $image_folder);
 
                 // Delete the old image file from the server
-                unlink('uploaded_img/' . $image['old_image']);
+                unlink('../uploaded_img/'.$image['old_image']);
 
                 $image_updated = true;
             } else {
@@ -119,21 +120,12 @@ if(isset($_POST['updated_product'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locations</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/admin_style.css">
+    <link rel="stylesheet" href="../css/admin_style.css">
 </head>
 <body>
 <?php
     
-    if(isset($message)){
-        foreach($message as $message){
-            echo '
-            <div class="message">
-            <span>'.$message.'</span>
-            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-                    </div>
-            ';
-        }
-    }
+
     include 'admin_header.php';
     
 
@@ -162,7 +154,7 @@ if(isset($_POST['updated_product'])){
         while($fetch_products=mysqli_fetch_assoc($select_products)){
      ?>
      <div class="box">
-        <img src="uploaded_img/<?php echo $fetch_products['shop_image1'] ?>">
+        <img src="../uploaded_img/<?php echo $fetch_products['shop_image1'] ?>">
        <div class="name"><?php echo $fetch_products['name'] ?></div> 
         <div class="location"><?php echo  $fetch_products['location'] ?></div>
         <a href="admin_location.php?update=<?php echo $fetch_products['id']?>" class="option-btn">Update</a>
@@ -194,7 +186,7 @@ if(mysqli_num_rows($update_query)>0){
 <input type="hidden" name="update_old_image3" value="<?php echo $fetch_update['shop_image3'] ?>">
 
 
-    <img src="uploaded_img/<?php echo $fetch_update['shop_image1'] ?>">
+    <img src="../uploaded_img/<?php echo $fetch_update['shop_image1'] ?>">
   
     <input type="text" name="update_name" class="box" placeholder="Enter shop Name"  value="<?php echo $fetch_update['name']?>">
     <input type="text" name="update_location"  class="box" placeholder="Enter location name"   value="<?php echo $fetch_update['location']?>">
@@ -221,7 +213,7 @@ else{
 
 
     <!--customer add js file-->
-    <script src="./js/admin_script.js"></script>
+    <script src="../js/admin_script.js"></script>
 
 </body>
 </html>
