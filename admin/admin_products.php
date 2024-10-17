@@ -1,5 +1,6 @@
 <?php
 require_once '../config.php';
+session_start();
 
 if(isset($_POST['add_product'])){
     $name=$_POST['name'];
@@ -83,7 +84,7 @@ if(isset($_POST['updated_product'])){
 </head>
 <body>
 <?php
-    
+
 
     include 'admin_header.php';
     
@@ -100,6 +101,7 @@ if(isset($_POST['updated_product'])){
         <input type="number"min=0  name="price" class="box" placeholder="Enter your price" required>
         <input type="file" name="productimage" class="box" placeholder="Enter your product image" required>
         <input type="number"min=0  name="quantity" class="box" placeholder="Enter your Quantity" required>
+ 
         <div class="box">
             <span>Category :</span>
             <select name="method" required>
@@ -148,11 +150,13 @@ $name=$row['name'];
           <div class="name">Category : <?php echo  $name ?></div>
         <div class="price">Price : <?php echo "$". $fetch_products['price'] ."/-" ?></div>
         <div class="price">Quantity : <?php echo  $fetch_products['quantity'];?></div>
-        <?php if($fetch_products['quantity'] < 5){ ?>
-         
-         <div style="color: red; font-weight: bold;font-size:50px;">Low stock! Only <?php echo $fetch_products['quantity']; ?> left.</div>
-         
-        <?php } ?>
+        <?php if($fetch_products['quantity'] < 5){ 
+         echo "<script>window.prompt($name"."is low stock level product" ."the level is ".$fetch_products['quantity'].")</script>";
+         } 
+
+         ?>
+
+
         <a href="admin_products.php?update=<?php echo $fetch_products['id']?>" class="option-btn">Update</a>
         <a href="admin_products.php?delete=<?php echo $fetch_products['id']?>" class="delete-btn" onclick="return confirm('Delete this product?')">Delete</a> 
     </div>
@@ -186,7 +190,16 @@ if(mysqli_num_rows($update_query)>0){
     <input type="text" name="update_name" class="box" placeholder="Enter Product Name"  value="<?php echo $fetch_update['name']?>">
     <input type="number" name="update_price" min='0' class="box" placeholder="Enter Product Price"   value="<?php echo $fetch_update['price']?>">
     <input type="number" name="update_quantity" min='0' class="box" placeholder="Enter Product Quantity"   value="<?php echo $fetch_update['quantity']?>">
- <select name="update_category" id="">
+    <?php if($fetch_products['quantity'] < 5){ ?>
+         
+         <div style="color: red; font-weight: bold;font-size:50px;">Low stock! Only <?php echo $fetch_products['quantity']; ?> left.</div>
+         
+        <?php } ?>
+ 
+ 
+ 
+ 
+    <select name="update_category" id="">
     <?php
     echo "<option value=$id>$name</option>";
     $result=mysqli_query($conn,"Select * from `category`");

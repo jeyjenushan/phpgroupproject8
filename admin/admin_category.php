@@ -18,7 +18,7 @@ if(isset($_GET['delete'])){
     $deleted_id=$_GET['delete'];
     
     mysqli_query($conn,"DELETE FROM `category` where id='$deleted_id'") or die('query failed');
-    header("location:admin_category.php");
+   header("location:admin_category.php");
 }
 if(isset($_POST["reset_category"])){
     header('location:admin_category.php');
