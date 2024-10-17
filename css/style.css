@@ -325,8 +325,9 @@ section{
 }
 
 .header .header-2 .flex .user-box{
+   top: 75%;
    position: absolute;
-   top:120%; right:2rem;
+   left: 6rem;
    background-color: var(--white);
    border-radius: .5rem;
    box-shadow: var(--box-shadow);

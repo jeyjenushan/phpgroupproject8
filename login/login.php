@@ -6,13 +6,17 @@ include "../config.php";
 
 //INSERT THE DATA
 if(isset($_POST['submit'])){
-  $username=$_POST['name'];
+  $useremail=$_POST['email'];
   $userpassword=md5($_POST['password']);
+  
   //CHECK THE USER AVAILABE OR NOT
-  $select_users=mysqli_query($conn,"Select * from `users` where name='$username' and password='$userpassword'");
+  $select_users=mysqli_query($conn,"Select * from `users` where email='$useremail' and password='$userpassword'");
+  echo mysqli_num_rows($select_users);
   if(mysqli_num_rows($select_users)>0){
+  
     $row=mysqli_fetch_assoc($select_users);
     if($row['user_type'] === 'admin'){
+      
       $_SESSION['admin_name']=$row['name'];
       $_SESSION['admin_email']=$row['email'];
       $_SESSION['admin_id']=$row['id'];
@@ -73,8 +77,8 @@ if(isset($message)){
         <form action="" method="post">
             <h3>Login Now</h3>
        
-        <input type="name" name="name" placeholder="Ener username" class="box" required>
-        <input type="password" name="password" placeholder="Enter password" class="box" required> 
+        <input type="email" name="email" placeholder="Enter Email" class="box" autocomplete="off" required>
+        <input type="password" name="password" placeholder="Enter password" class="box" autocomplete="off" required> 
 
     <input type="submit" name="submit" value="Login Now" class="btn">
     <p>Don't you have an account? <a href="register.php">Register now</a> </p>
