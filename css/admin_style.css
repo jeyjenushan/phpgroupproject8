@@ -307,6 +307,7 @@ section{
    color:var(--black);
    font-size: 1.8rem;
    border:var(--border);
+   text-align: left;
 }
 /*end*/
 /* show products*/
@@ -357,13 +358,13 @@ section{
 }
 
 .edit-product-form{
-   min-height: 100vh;
+   height: 100vh;
    background-color: rgba(0,0,0,.7);
    display: flex;
    align-items: center;
    justify-content: center;
    padding:2rem;
-   overflow-y: scroll;
+   overflow-y: hidden;
    position: fixed;
    top:0; left:0; 
    z-index: 1200;
@@ -376,10 +377,12 @@ section{
    text-align: center;
    border-radius: .5rem;
    background-color: var(--white);
+   overflow-y: auto;
+   max-height: 90vh;
 }
 
 .edit-product-form form img{
-   height: 25rem;
+   height: 20vh;
    margin-bottom: 1rem;
 }
 

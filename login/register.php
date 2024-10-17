@@ -64,6 +64,7 @@ if(isset($message)){
     <select name="user_type" class="box">
         <option value="user">user</option>
         <option value="admin">admin</option>
+        <option value="operator">operator</option>
     </select>
     <input type="submit" name="submit" value="Register Now" class="btn">
     <p>Already have an account? <a href="login.php">login now</a> </p>
