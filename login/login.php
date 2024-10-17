@@ -22,18 +22,13 @@ if(isset($_POST['submit'])){
       $_SESSION['user_name']=$row['name'];
       $_SESSION['user_email']=$row['email'];
       $_SESSION['user_id']=$row['id'];
-<<<<<<< HEAD
       header('location:../users/home.php');
-
-=======
-      header('location:home.php');
     }
     elseif($row['user_type']  === 'operator'){
       $_SESSION['operator_name']=$row['name'];
       $_SESSION['operator_email']=$row['email'];
       $_SESSION['operator_id']=$row['id'];
       header('location:../operator/operator_page.php');
->>>>>>> 4708e6279c725f579bf9cc7f045ba02871c81a35
     }
 
   }

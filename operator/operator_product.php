@@ -1,6 +1,13 @@
 <?php
 require_once '../config.php';
+
 session_start();
+
+$operator_id = $_SESSION['operator_id'];
+
+if(!isset($operator_id)){
+    header('location:../login/login.php');
+ }
 
 if(isset($_POST['add_product'])){
     $name=$_POST['name'];
@@ -40,7 +47,7 @@ if(isset($_GET['delete'])){
     $fetch_delete_image=mysqli_fetch_assoc($deleted_img_query);
     unlink('../uploaded_img/'.$fetch_delete_image['image']);
     mysqli_query($conn,"DELETE FROM `products` where id='$deleted_id'") or die('query failed');
-    header("location:admin_products.php");
+    header('location:operator_product.php');
 }
 //update products
 
@@ -68,9 +75,14 @@ if(isset($_POST['updated_product'])){
             unlink('../uploaded_img/'.$update_old_image);
         }
     }
-    header('location:admin_products.php');
+    header('location:operator_product.php');
 
 }
+
+if(isset($_POST["reset_product"])){
+    header('location:operator_product.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -81,12 +93,13 @@ if(isset($_POST['updated_product'])){
     <title>Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/admin_style.css">
+
 </head>
 <body>
 <?php
+    
 
-
-    include 'admin_header.php';
+    include 'operator_header.php';
     
 
 
@@ -97,28 +110,28 @@ if(isset($_POST['updated_product'])){
     <h1 class="title">Shop Products</h1>
     <form action="" method="post" enctype="multipart/form-data">
         <h3>Add Products</h3>
-        <input type="text" name="name" class="box" placeholder="Enter your product name" required>
-        <input type="number"min=0  name="price" class="box" placeholder="Enter your price" required>
-        <input type="file" name="productimage" class="box" placeholder="Enter your product image" required>
-        <input type="number"min=0  name="quantity" class="box" placeholder="Enter your Quantity" required>
+        <input type="text" name="name" class="box" placeholder="Enter product name" required>
+        <input type="number"min=0  name="price" class="box" placeholder="Enter product price" required>
+        <input type="file" name="productimage" class="box" placeholder="Enter product image" required>
+        <input type="number"min=0  name="quantity" class="box" placeholder="Enter product quantity" required>
         <div class="box">
             <span>Category :</span>
             <select name="method" required>
-            <option value="">Enter your Category name</option>
-<?php
-$result=mysqli_query($conn,"Select * from `category`");
-while($row=mysqli_fetch_array($result)){
-    $id=$row['id'];
-    
-    $name=$row['name'];
-    ?>
-    <option value=<?php echo $id?>><?php echo $name?></option>
+            <option value="">Select category name</option>
+            <?php
+                $result=mysqli_query($conn,"Select * from `category`");
+                while($row=mysqli_fetch_array($result)){
+                    $id=$row['id'];
+                    
+                    $name=$row['name'];
+            ?>
+                <option value=<?php echo $id?>><?php echo $name?></option>
 
-    <?php
-     
-}
+            <?php
+                
+                }
 
-?>
+            ?>
             </select>
          </div>
 
@@ -149,15 +162,13 @@ $name=$row['name'];
           <div class="name">Category : <?php echo  $name ?></div>
         <div class="price">Price : <?php echo "$". $fetch_products['price'] ."/-" ?></div>
         <div class="price">Quantity : <?php echo  $fetch_products['quantity'];?></div>
-        <?php if($fetch_products['quantity'] < 5){ 
-         echo "<script>window.prompt($name"."is low stock level product" ."the level is ".$fetch_products['quantity'].")</script>";
-         } 
-
-         ?>
-
-
-        <a href="admin_products.php?update=<?php echo $fetch_products['id']?>" class="option-btn">Update</a>
-        <a href="admin_products.php?delete=<?php echo $fetch_products['id']?>" class="delete-btn" onclick="return confirm('Delete this product?')">Delete</a> 
+        <?php if($fetch_products['quantity'] < 5){ ?>
+         
+         <div style="color: red; font-weight: bold;font-size:50px;">Low stock! Only <?php echo $fetch_products['quantity']; ?> left.</div>
+         
+        <?php } ?>
+        <a href="operator_product.php?update=<?php echo $fetch_products['id']?>" class="option-btn">Update</a>
+        <a href="operator_product.php?delete=<?php echo $fetch_products['id']?>" class="delete-btn" onclick="return confirm('Delete this product?')">Delete</a> 
     </div>
             <?php
           
@@ -180,7 +191,7 @@ if(isset($_GET['update'])){
 if(mysqli_num_rows($update_query)>0){
     while($fetch_update=mysqli_fetch_assoc($update_query)){
 ?>
-<form action="" method="POST" enctype='multipart/form-data'>
+<form action="" method="POST" enctype='multipart/form-data' id="form">
 <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id'] ?>">
 <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image'] ?>">
 
@@ -208,11 +219,12 @@ if(mysqli_num_rows($update_query)>0){
    
     <input type="file" class="box" name="update_img" >
    <input type="submit" value="UPDATE" name="updated_product" class="btn">
-   <input type="reset" value="CANCEL" id="close-update" class="option-btn">
+   <input type="submit" value="CANCEL" id="close-update" class="option-btn" name="reset_product">
 </form>
 <?php
 
 }
+
 }}
 else{
     echo '<script>document.querySelector(".edit-product-form").style.display="none";</script>';
