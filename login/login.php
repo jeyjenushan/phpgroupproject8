@@ -6,31 +6,35 @@ include "../config.php";
 
 //INSERT THE DATA
 if(isset($_POST['submit'])){
-    $useremail=$_POST['email'];
-    $userpassword=md5($_POST['password']);
-    //CHECK THE USER AVAILABE OR NOT
-    $select_users=mysqli_query($conn,"Select * from `users` where email='$useremail' and password='$userpassword'");
-    if(mysqli_num_rows($select_users)>0){
-      $row=mysqli_fetch_assoc($select_users);
-      if($row['user_type'] === 'admin'){
-        echo $row['name'];
-        $_SESSION['admin_name']=$row['name'];
-        $_SESSION['admin_email']=$row['email'];
-        $_SESSION['admin_id']=$row['id'];
-       header('location:../admin/admin_page.php');
-      }
+  $username=$_POST['name'];
+  $userpassword=md5($_POST['password']);
+  //CHECK THE USER AVAILABE OR NOT
+  $select_users=mysqli_query($conn,"Select * from `users` where name='$username' and password='$userpassword'");
+  if(mysqli_num_rows($select_users)>0){
+    $row=mysqli_fetch_assoc($select_users);
+    if($row['user_type'] === 'admin'){
+      $_SESSION['admin_name']=$row['name'];
+      $_SESSION['admin_email']=$row['email'];
+      $_SESSION['admin_id']=$row['id'];
+      header('location:../admin/admin_page.php');
+    }
     elseif($row['user_type']  === 'user'){
       $_SESSION['user_name']=$row['name'];
       $_SESSION['user_email']=$row['email'];
       $_SESSION['user_id']=$row['id'];
       header('location:home.php');
-
+    }
+    elseif($row['user_type']  === 'operator'){
+      $_SESSION['operator_name']=$row['name'];
+      $_SESSION['operator_email']=$row['email'];
+      $_SESSION['operator_id']=$row['id'];
+      header('location:../operator/operator_page.php');
     }
   }
-
-    else{
-        $message[]='incorrect email or password!';
-}}
+  else{
+      $message[]='incorrect email or password!';
+  }
+}
 
 ?>
 
@@ -68,8 +72,8 @@ if(isset($message)){
         <form action="" method="post">
             <h3>Login Now</h3>
        
-        <input type="email" name="email" placeholder="Ener your email" class="box" required>
-        <input type="password" name="password" placeholder="Enter your password" class="box" required> 
+        <input type="name" name="name" placeholder="Ener username" class="box" required>
+        <input type="password" name="password" placeholder="Enter password" class="box" required> 
 
     <input type="submit" name="submit" value="Login Now" class="btn">
     <p>Don't you have an account? <a href="register.php">Register now</a> </p>
