@@ -63,7 +63,11 @@ if(isset($message)){
     <select name="user_type" class="box">
         <option value="user">user</option>
         <option value="admin">admin</option>
+<<<<<<< HEAD
 
+=======
+        <option value="operator">operator</option>
+>>>>>>> 4708e6279c725f579bf9cc7f045ba02871c81a35
     </select>
     <input type="submit" name="submit" value="Register Now" class="btn">
     <p>Already have an account? <a href="login.php">login now</a> </p>
