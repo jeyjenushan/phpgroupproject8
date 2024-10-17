@@ -325,8 +325,9 @@ section{
 }
 
 .header .header-2 .flex .user-box{
+   top: 75%;
    position: absolute;
-   top:120%; right:2rem;
+   left: 6rem;
    background-color: var(--white);
    border-radius: .5rem;
    box-shadow: var(--box-shadow);
@@ -443,10 +444,15 @@ section{
 
 .about .flex .image{
    flex:1 1 40rem;
+ 
 }
+
+
 
 .about .flex .image img{
    width: 100%;
+   object-fit: contain;
+   overflow: hidden;
 }
 
 .about .flex .content{
