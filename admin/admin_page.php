@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include '../config.php';
 
 session_start();
 
@@ -24,7 +24,7 @@ if(!isset($admin_id)){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- custom admin css file link  -->
-   <link rel="stylesheet" href="css/admin_style.css">
+   <link rel="stylesheet" href="../css/admin_style.css">
 
 </head>
    
@@ -121,6 +121,14 @@ if(!isset($admin_id)){
          <h3><?php echo $number_of_messages; ?></h3>
          <p>new messages</p>
       </div>
+      <div class="box">
+                <?php
+       $selected_admin=mysqli_query($conn,'Select * from `users` where user_type="operator"') or die('query failed');
+       $number_of_admins=mysqli_num_rows($selected_admin);
+                ?>
+                <h3><?php echo $number_of_admins ?></h3>
+                <p>Operator</p>
+            </div>
 
    </div>
 
@@ -137,7 +145,7 @@ if(!isset($admin_id)){
 
 
 <!-- custom admin js file link  -->
-<script src="js/admin_script.js"></script>
+<script src="../js/admin_script.js"></script>
 
 </body>
 </html>
