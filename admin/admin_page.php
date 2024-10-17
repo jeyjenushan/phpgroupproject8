@@ -28,7 +28,10 @@ if(!isset($admin_id)){
 
 </head>
    
-<?php include 'admin_header.php'; ?>
+<?php
+
+include 'admin_header.php'; ?>
+
 
 <!-- admin dashboard section starts  -->
 

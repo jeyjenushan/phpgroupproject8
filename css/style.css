@@ -443,10 +443,15 @@ section{
 
 .about .flex .image{
    flex:1 1 40rem;
+ 
 }
+
+
 
 .about .flex .image img{
    width: 100%;
+   object-fit: contain;
+   overflow: hidden;
 }
 
 .about .flex .content{

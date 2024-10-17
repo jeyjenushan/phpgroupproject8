@@ -1,7 +1,6 @@
 <?php
 include "../config.php";
 
-//INSERT THE DATA
 if(isset($_POST['submit'])){
     $username=$_POST['name'];
     $useremail=$_POST['email'];
@@ -64,6 +63,7 @@ if(isset($message)){
     <select name="user_type" class="box">
         <option value="user">user</option>
         <option value="admin">admin</option>
+
     </select>
     <input type="submit" name="submit" value="Register Now" class="btn">
     <p>Already have an account? <a href="login.php">login now</a> </p>
