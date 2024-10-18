@@ -1,7 +1,6 @@
 <?php
 include "../config.php";
 
-//INSERT THE DATA
 if(isset($_POST['submit'])){
     $username=$_POST['name'];
     $useremail=$_POST['email'];
@@ -59,13 +58,14 @@ if(isset($message)){
     <img src="../images/logo.png" width="30%" align:center>
          <form action="" method="post">
             <h3>Register Now</h3>
-        <input type="text" name="name" placeholder="Enter your name" class="box" required> 
-        <input type="email" name="email" placeholder="Ener your email" class="box" required>
-        <input type="password" name="password" placeholder="Enter your password" class="box" required> 
-        <input type="password" name="cpassword" placeholder="confirm your password" class="box" required>
+        <input type="text" name="name" placeholder="Enter your name" class="box" autocomplete="off" required> 
+        <input type="email" name="email" placeholder="Enter your email" class="box" autocomplete="off" required>
+        <input type="password" name="password" placeholder="Enter your password" autocomplete="off" class="box" required> 
+        <input type="password" name="cpassword" placeholder="confirm your password" class="box" autocomplete="off" required>
     <select name="user_type" class="box">
         <option value="user">user</option>
         <option value="admin">admin</option>
+        <option value="operator">operator</option>
     </select>
     <input type="submit" name="submit" value="Register Now" class="btn">
     <p>Already have an account? <a href="login.php">login now</a> </p>
