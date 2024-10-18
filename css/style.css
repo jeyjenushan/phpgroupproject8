@@ -177,11 +177,26 @@ section{
 
 .form-container{
    min-height: 100vh;
-   background-color: var(--light-bg);
-   display: flex;
+   background-color:var(--light-bg);
+   /*background-image:url(../images/logo.png);*/
+   background-size:auto;
+   display:flex;
    align-items: center;
    justify-content: center;
    padding:2rem;
+}
+.logo{
+   background-color:var(--light-bg);
+   /* padding:60px 60px;  */
+   display:flex;
+   align-items: center;   /*align*/
+   flex-direction: column;
+   text-align: center;  
+}
+
+.logo img{
+   width: 15%;
+  
 }
 
 .form-container form{
@@ -190,7 +205,7 @@ section{
    border-radius: .5rem;
    box-shadow: var(--box-shadow);
    border:var(--border);
-   background-color: var(--white);
+   background-color: #fdf0df;
    text-align: center;
 }
 
@@ -201,27 +216,31 @@ section{
    color:var(--black);
 }
 
-.form-container form .box{
-   width: 100%;
-   border-radius: .5rem;
-   background-color: var(--light-bg);
-   padding:1.2rem 1.4rem;
-   font-size: 1.8rem;
-   color:var(--black);
-   border:var(--border);
-   margin:1rem 0;
-}
-.form-container form .box{
-   width: 100%;
-   border-radius: .5rem;
-   background-color: var(--light-bg);
-   padding:1.2rem 1.4rem;
-   font-size: 1.8rem;
-   color:var(--black);
-   border:var(--border);
-   margin:1rem 0;
-}
 
+.form-container form .box{
+   width: 100%;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding:1.2rem 1.4rem;
+   font-size: 1.8rem;
+   color:var(--black);
+   border:var(--border);
+   margin:1rem 0;
+}
+.form-container form .box{
+   width: 100%;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding:1.2rem 1.4rem;
+   font-size: 1.8rem;
+   color:var(--black);
+   border:var(--border);
+   margin:1rem 0;
+}
+.form-container input
+{
+background-color: #886a4d;
+}
 .form-container form p{
    padding-top: 1.5rem;
    font-size: 2rem;
@@ -229,7 +248,7 @@ section{
 }
 
 .form-container form p a{
-   color:var(--purple);
+   color:#de9c63;
 }
 
 .form-container form p a:hover{

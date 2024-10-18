@@ -63,8 +63,10 @@ if(isset($message)){
 
 
 
-
+  
     <div class="form-container">
+   <div class="logo">
+   <img src="../images/logo.png" width="30%" align:center>
         <form action="" method="post">
             <h3>Login Now</h3>
        
@@ -75,6 +77,7 @@ if(isset($message)){
     <p>Don't you have an account? <a href="register.php">Register now</a> </p>
     </form>
     </div>
-    
+    </div>
+   
 </body>
 </html>
