@@ -44,7 +44,7 @@ while($fetch_users=mysqli_fetch_assoc($select_users)){
 ?>
 <div class="box">
     <p>username : <span><?php echo $fetch_users['name']?></span></p>
-    <p>email : <span><?php echo $fetch_users['email']?></span></p>
+    <p>email : <br><span><?php echo $fetch_users['email']?></span></p>
     <p>user type : 
         <span style="color:<?php if($fetch_users['user_type'] == 'admin'){echo 'var(--orange)';} ?>">
             <?php echo $fetch_users['user_type'];?>
