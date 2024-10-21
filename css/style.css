@@ -452,11 +452,17 @@ cursor: pointer;
 text-decoration: none;
 }
 
+.products .main-content {
+background-color: #140202b2;
+padding: 0%;padding-bottom: 2%;
+
+}
 .products .main-content h1{
    font-size:7rem;
    margin-bottom: 15px;
    margin-top: 15px;
-   background-color: #ffe5e541;
+   color: white;
+   background-color: #0000003b;
 
 }
 .products .box-container{

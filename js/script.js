@@ -20,11 +20,9 @@ window.onscroll=()=>{
     }
 }
 const aboutImages = [
-    
     "../images/about-img1.jpg",
     "../images/about-img2.jpg",
     "../images/logo.png",
-    "../images/about-img3.jpg"
 ]; // Add your image paths
 let aboutCurrentIndex = 0;
 
