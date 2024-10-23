@@ -44,7 +44,7 @@ if (isset($_POST['add_to_cart'])) {
         <p> <a href="home.php">home</a> / shop </p>
     </div>
 
-    <section class="products">
+    <section class="shop_products">
         <div class="product_headers">
         <a href="shop.php"><h3 style="color: brown;">Books</h3></a>
         <a href="stamps.php"><h3>Stamps</h3></a>

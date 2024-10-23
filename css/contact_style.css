@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center; 
     gap: 1rem; 
-    background-image:url(../images/contactus.jpg);
+    background-image:url(../images/contactus3.jpg);
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -13,19 +13,19 @@
  
  .contact_heading h3{
     font-size: 5rem;
-    color:var(--black);
+    color:var(--light-bg);
     text-transform: uppercase;
  }
  
  .contact_heading p{
     font-size: 2.5rem;
-    color:var(--light-color);
+    color: #ffff;
  }
  
  .contact_heading p a{
-    color:var(--purple);
+    color: #ecd0a5;
  }
- 
+
  .contact_heading p a:hover{
     text-decoration: underline;
  }

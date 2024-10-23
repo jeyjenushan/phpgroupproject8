@@ -13,11 +13,12 @@ if(!isset($user_id)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about_style.css">
     <title>About</title>
 </head>
 <body>
     <?php include './user_header.php' ?>
-<div class="heading">
+<div class="about_heading">
     <h3>About US</h3>
     <P><a href="home.php">HOME</a>/ ABOUT</P>
 </div>
