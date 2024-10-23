@@ -453,8 +453,9 @@ text-decoration: none;
 }
 
 .products .main-content {
-background-color: #140202b2;
+ background-image: url(../images/homewall2.jpg);
 padding: 0%;padding-bottom: 2%;
+
 
 }
 .products .main-content h1{
@@ -473,26 +474,44 @@ padding: 0%;padding-bottom: 2%;
    align-items: flex-start;
    gap:1.5rem;
    justify-content: center;
+   
 }
 
 .products .box-container .box{
    border-radius: .5rem;
-   background-color: var(--white);
+   background: rgba(255, 255,255, 0.7) ;/* Green background with 30% opacity */
    box-shadow: var(--box-shadow);
    padding:2rem;
    text-align: center;
    border:var(--border);
    position: relative;
+   max-width: 300px;       /* Set the image width to 100% of its container */
+   height: auto;      /* Maintain aspect ratio */
+  /* Limit the height to avoid overly large images */
+   object-fit: contain;
+   
 }
 
-.products .box-container .box .image{
-   height: 30rem;
+.products .box-container .box .image {
+   width: 100%;       /* Set the image width to 100% of its container */
+   height: auto;      /* Maintain aspect ratio */
+   max-height: 300px; /* Limit the height to avoid overly large images */
+   object-fit: contain;
+   border: black solid 2px;
 }
 
 .products .box-container .box .name{
    padding:1rem 0;
-   font-size: 2rem;
+   font-size: 3rem;
    color:var(--black);
+   font-weight: 400;
+}
+.products .box-container .box .hidden{
+   padding:1rem 0;
+   font-size: 3rem;
+   color:var(--black);
+   font-weight: 400;
+   
 }
 
 .products .box-container .box .qty{
@@ -501,7 +520,7 @@ padding: 0%;padding-bottom: 2%;
    border-radius: .5rem;
    border:var(--border);
    margin:1rem 0;
-   font-size: 2rem;
+   font-size: 3rem;
 }
 
 .products .box-container .box .price{
@@ -531,6 +550,7 @@ padding: 0%;padding-bottom: 2%;
 
 .about .flex .image img{
    width: 100%;
+   height:100%;
    object-fit: contain;
    overflow: hidden;
 }
@@ -708,6 +728,7 @@ padding: 0%;padding-bottom: 2%;
    text-transform: uppercase;
    margin-bottom: 1rem;
    color:var(--black);
+   width:auto;
 }
 
 .contact form .box{
@@ -1349,7 +1370,7 @@ padding: 0%;padding-bottom: 2%;
 
    html{
       font-size: 55%;
-   }
+   } 
 
 }
 

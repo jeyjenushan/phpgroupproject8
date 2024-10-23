@@ -25,14 +25,15 @@ if(!isset($user_id)){
 <section class="about">
     <div class="flex">
         <div class="image">
-            <img src="images/about-img.jpg" alt="">
+            <img src="images/about-img1.jpg" alt="">
         </div>
         <div class="content">
         <h3>why choose us?</h3>
          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatibus aut hic molestias, reiciendis natus fuga, cumque excepturi veniam ratione iure. Excepturi fugiat placeat iusto facere id officia assumenda temporibus?</p>
          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia corporis ratione saepe sed adipisci?</p>
          <a href="contact.php" class="btn">contact us</a>
-        </div>
+        </div> 
+
     </div>
 </section>
 
