@@ -45,13 +45,7 @@
    background-color: rgb(223, 211, 161);
    
 }
-.shop_products .product_headers a{
-   color: white;
-   border: 2px;
-margin: 5px;
-cursor: pointer;
-text-decoration: none;
-}
+
 
 .shop_products .main-content {
  background-image: url(../images/homewall2.jpg);
