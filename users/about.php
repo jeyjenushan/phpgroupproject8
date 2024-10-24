@@ -25,7 +25,7 @@ if(!isset($user_id)){
 <section class="about">
     <div class="flex">
         <div class="image">
-            <img src="images/about-img.jpg" alt="">
+            <img src="../images/about-img1.jpg" alt="">
         </div>
         <div class="content">
         <h3>why choose us?</h3>
@@ -40,7 +40,7 @@ if(!isset($user_id)){
     <h1 class="title">client's reviews</h1>
 <div class="box-container">
     <div class="box">
-    <img src="images/pic-5.png" alt="">
+    <img src="../images/pic-5.png" alt="">
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
          <div class="stars">
             <i class="fas fa-star"></i>
@@ -52,7 +52,7 @@ if(!isset($user_id)){
          <h3>john deo</h3>
     </div>
     <div class="box">
-    <img src="images/pic-6.png" alt="">
+    <img src="../images/pic-6.png" alt="">
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
          <div class="stars">
             <i class="fas fa-star"></i>
@@ -64,7 +64,7 @@ if(!isset($user_id)){
          <h3>john deo</h3>
     </div>
     <div class="box">
-    <img src="images/pic-1.png" alt="">
+    <img src="../images/pic-1.png" alt="">
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
          <div class="stars">
             <i class="fas fa-star"></i>
@@ -76,7 +76,7 @@ if(!isset($user_id)){
          <h3>john deo</h3>
     </div>
     <div class="box">
-    <img src="images/pic-2.png" alt="">
+    <img src="../images/pic-2.png" alt="">
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
          <div class="stars">
             <i class="fas fa-star"></i>
@@ -88,7 +88,7 @@ if(!isset($user_id)){
          <h3>john deo</h3>
     </div>
     <div class="box">
-    <img src="images/pic-3.png" alt="">
+    <img src="../images/pic-3.png" alt="">
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
          <div class="stars">
             <i class="fas fa-star"></i>
@@ -100,7 +100,7 @@ if(!isset($user_id)){
          <h3>john deo</h3>
     </div>
     <div class="box">
-    <img src="images/pic-4.png" alt="">
+    <img src="../images/pic-4.png" alt="">
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
          <div class="stars">
             <i class="fas fa-star"></i>
@@ -118,7 +118,7 @@ if(!isset($user_id)){
 <div class="box-container">
 
 <div class="box">
-   <img src="images/author-1.jpg" alt="">
+   <img src="../images/author-1.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
@@ -129,7 +129,7 @@ if(!isset($user_id)){
 </div>
 
 <div class="box">
-   <img src="images/author-2.jpg" alt="">
+   <img src="../images/author-2.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
@@ -140,7 +140,7 @@ if(!isset($user_id)){
 </div>
 
 <div class="box">
-   <img src="images/author-3.jpg" alt="">
+   <img src="../images/author-3.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
@@ -151,7 +151,7 @@ if(!isset($user_id)){
 </div>
 
 <div class="box">
-   <img src="images/author-4.jpg" alt="">
+   <img src="../images/author-4.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
@@ -162,7 +162,7 @@ if(!isset($user_id)){
 </div>
 
 <div class="box">
-   <img src="images/author-5.jpg" alt="">
+   <img src="../images/author-5.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
@@ -173,7 +173,7 @@ if(!isset($user_id)){
 </div>
 
 <div class="box">
-   <img src="images/author-6.jpg" alt="">
+   <img src="../images/author-6.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
