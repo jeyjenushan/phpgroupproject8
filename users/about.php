@@ -26,7 +26,7 @@ if(!isset($user_id)){
 <section class="about">
     <div class="flex">
         <div class="image">
-       
+        <img src="../images/about-img1.jpg" alt="">
         </div>
         <div class="content">
         <h3>why choose us?</h3>
