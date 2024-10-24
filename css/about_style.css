@@ -1,0 +1,158 @@
+
+.about .flex{
+    max-width: 1200px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+ }
+ 
+ .about .flex .image{
+    flex:1 1 40rem;
+  
+ }
+ 
+ 
+ 
+ .about .flex .image img{
+    /* background-image: url(../images/home-bg.jpg); */
+    display: flex;
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+    overflow: hidden;
+ }
+ 
+ .about .flex .content{
+    flex:1 1 40rem;
+    padding:2rem;
+    background-color: var(--light-bg);
+ }
+ 
+ .about .flex .content h3{
+    font-size: 3rem;
+    color:var(--black);
+    text-transform: uppercase;
+ }
+ 
+ .about .flex .content p{
+    padding:1rem 0;
+    line-height: 2;
+    font-size: 1.7rem;
+    color:var(--light-color);
+ }
+ .about_heading{
+    min-height: 30vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 1rem; 
+    background-image:url(../images/team2.png);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+ }
+ 
+ .about_heading h3{
+    font-size: 5rem;
+    color:var(--black);
+    text-transform: uppercase;
+ }
+ 
+ .about_heading p{
+    font-size: 2.5rem;
+    color:var(--light-color);
+ }
+ 
+ .about_heading p a{
+    color:var(--purple);
+ }
+ 
+ .about_heading p a:hover{
+    text-decoration: underline;
+ }
+ 
+ 
+
+
+ 
+.review {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+ }
+ .review h4 {
+    margin: 0;
+ }
+ .review .rating {
+    color: #f39c12;
+ }
+ /*review-form*/
+ .review-form {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .review-form h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 15px;
+ }
+ 
+ .review-form label {
+    font-weight: bold;
+ }
+ 
+ .review-form input[type="text"],
+ .review-form textarea,
+ .review-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+ }
+ 
+ .review-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ 
+ .review-form input[type="submit"]:hover {
+    background-color: #0056b3;
+ }
+ .review-form input[type="file"]:hover {
+    background-color: #0056b3;
+ }
+ 
+ .review-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+ }
+ 
+ .review-form textarea {
+    resize: vertical;
+ }
+ 
+ .review-form .rating {
+    display: inline-block;
+    font-size: 24px;
+    color: #f39c12;
+    margin-top: 10px;
+ }
