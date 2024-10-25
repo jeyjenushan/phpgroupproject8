@@ -57,9 +57,10 @@ if(isset($_POST["reset_location"])){
 
 if(isset($_POST['updated_product'])){
     $update_p_id = $_POST['update_p_id'];
-
     $updated_name = $_POST["update_name"];
     $location_name = $_POST["update_location"];
+    
+    // Update name and location
     mysqli_query($conn, "UPDATE `shopdetail` SET name='$updated_name', location='$location_name' WHERE id='$update_p_id'") or die("Query failed: " . mysqli_error($conn));
 
     // Handle image uploads
@@ -78,7 +79,15 @@ if(isset($_POST['updated_product'])){
         $image_folder = '../uploaded_img/'.$image_name;
 
         if(!empty($image_name)){
-            // Validate image size
+            // Check if the file is actually an image
+            $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+            $file_type = mime_content_type($image_tmp_name);
+            if(!in_array($file_type, $allowed_types)){
+                $message[] = "Invalid file type for " . $image['input_name'] . ". Only JPEG, PNG, and GIF allowed.";
+                continue;
+            }
+
+            // Ensure the image size is within the limit
             if($image_size > 2000000){
                 $message[] = "Image file size for " . $image['input_name'] . " is too large.";
                 continue;
@@ -89,12 +98,15 @@ if(isset($_POST['updated_product'])){
             $update_query = "UPDATE `shopdetail` SET $image_field='$image_name' WHERE id='$update_p_id'";
             if(mysqli_query($conn, $update_query)){
                 // Move the new image file to the server
-                move_uploaded_file($image_tmp_name, $image_folder);
-
-                // Delete the old image file from the server
-                unlink('../uploaded_img/'.$image['old_image']);
-
-                $image_updated = true;
+                if(move_uploaded_file($image_tmp_name, $image_folder)){
+                    // Delete the old image file from the server
+                    if(file_exists('../uploaded_img/'.$image['old_image'])){
+                        unlink('../uploaded_img/'.$image['old_image']);
+                    }
+                    $image_updated = true;
+                } else {
+                    $message[] = "Failed to upload new image for " . $image['input_name'] . ".";
+                }
             } else {
                 die("Query failed: " . mysqli_error($conn));
             }

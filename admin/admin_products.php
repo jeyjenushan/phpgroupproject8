@@ -19,7 +19,7 @@ else{
     global $conn;
     $add_product_query=mysqli_query($conn,"Insert into `products` (name,price,image,quantity,category_id) values('$name','$price','$product_image','$quantity',' $category_id') ") or die("Query failed");
     if($add_product_query){
-        if( $product_image_size>2000000){
+        if( $product_image_size>20000000){
             $message[]="Image size is too large";
         }
         else{

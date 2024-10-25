@@ -123,14 +123,14 @@ if(!isset($user_id)){
 <div class="box-container">
 
 <div class="box">
-   <img src="../images/author-1.jpg" alt="">
+   <img src="../images/jenu.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
       <a href="#" class="fab fa-instagram"></a>
       <a href="#" class="fab fa-linkedin"></a>
    </div>
-   <h3>john deo</h3>
+   <h3>Jenushan</h3>
 </div>
 
 <div class="box">
