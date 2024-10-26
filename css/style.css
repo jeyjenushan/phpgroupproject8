@@ -311,7 +311,7 @@ background-color: #886a4d;
 }
 
 .header .header-1 .flex p a{
-   color:var(--purple);
+   color:var(--orange);
 }
 
 .header .header-1 .flex p a:hover{
@@ -336,7 +336,7 @@ background-color: #886a4d;
 }
 
 .header .header-2 .flex .navbar a:hover{
-   color:var(--purple);
+   color:var(--black);
    text-decoration: underline;
 }
 .header .header-2 .flex .icons{
@@ -575,48 +575,7 @@ padding: 0%;padding-bottom: 2%;
    background-color: var(--red);
 }
 
-.about .flex{
-   max-width: 1200px;
-   margin:0 auto;
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
-}
 
-.about .flex .image{
-   flex:1 1 40rem;
- 
-}
-
-
-
-.about .flex .image img{
-   background-image: url(../images/home-bg.jpg);
-   display: flex;
-   width: 100%;
-   height:100%;
-   object-fit: contain;
-   overflow: hidden;
-}
-
-.about .flex .content{
-   flex:1 1 40rem;
-   padding:2rem;
-   background-color: var(--light-bg);
-}
-
-.about .flex .content h3{
-   font-size: 3rem;
-   color:var(--black);
-   text-transform: uppercase;
-}
-
-.about .flex .content p{
-   padding:1rem 0;
-   line-height: 2;
-   font-size: 1.7rem;
-   color:var(--light-color);
-}
 
 .home-contact{
    background-color: var(--black);
