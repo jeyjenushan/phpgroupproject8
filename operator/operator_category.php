@@ -1,6 +1,14 @@
 <?php
 include '../config.php';
-@session_start();
+
+session_start();
+
+$operator_id = $_SESSION['operator_id'];
+
+if(!isset($operator_id)){
+    header('location:../login/login.php');
+ }
+
 if(isset($_POST['add_category'])){
     $categoryname=$_POST['name'];
     
@@ -18,10 +26,10 @@ if(isset($_GET['delete'])){
     $deleted_id=$_GET['delete'];
     
     mysqli_query($conn,"DELETE FROM `category` where id='$deleted_id'") or die('query failed');
-   header("location:admin_category.php");
+    header("location:operator_category.php");
 }
 if(isset($_POST["reset_category"])){
-    header('location:admin_category.php');
+    header('location:operator_category.php');
 }
 if(isset($_POST['updated_category'])){
     $update_p_id = $_POST['update_p_id'];
@@ -30,7 +38,7 @@ if(isset($_POST['updated_category'])){
 
     mysqli_query($conn, "UPDATE `category` SET name='$updated_name' WHERE id='$update_p_id'") or die("Query failed: " . mysqli_error($conn));
 
-    header('Location: admin_category.php');
+    header('Location: operator_category.php');
 }
 
 
@@ -58,7 +66,7 @@ if(isset($_POST['updated_category'])){
             ';
         }
     }
-    include 'admin_header.php';
+    include 'operator_header.php';
     
 
 
@@ -84,8 +92,8 @@ if(isset($_POST['updated_category'])){
      <div class="box">
        <div class="name"><?php echo $fetch_products['name'] ?></div> 
         
-        <a href="admin_category.php?update=<?php echo $fetch_products['id']?>" class="option-btn">Update</a>
-        <a href="admin_category.php?delete=<?php echo $fetch_products['id']?>" class="delete-btn" onclick="return confirm('Delete this Category?')">Delete</a> 
+        <a href="operator_category.php?update=<?php echo $fetch_products['id']?>" class="option-btn">Update</a>
+        <a href="operator_category.php?delete=<?php echo $fetch_products['id']?>" class="delete-btn" onclick="return confirm('Delete this Category?')">Delete</a> 
     </div>
             <?php
         }
