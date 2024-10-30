@@ -19,7 +19,7 @@ else{
     global $conn;
     $add_product_query=mysqli_query($conn,"Insert into `products` (name,price,image,quantity,category_id) values('$name','$price','$product_image','$quantity',' $category_id') ") or die("Query failed");
     if($add_product_query){
-        if( $product_image_size>2000000){
+        if( $product_image_size>20000000){
             $message[]="Image size is too large";
         }
         else{
@@ -141,7 +141,7 @@ while($row=mysqli_fetch_array($result)){
        <?php
 $id=$fetch_products['category_id'];
 
-$select_query="Select * from `category` where id=$id";
+$select_query="Select * from `category` where id='$id'";
 $result=mysqli_query($conn,$select_query);
 $row=mysqli_fetch_array($result);
 $name=$row['name'];
@@ -190,9 +190,9 @@ if(mysqli_num_rows($update_query)>0){
     <input type="text" name="update_name" class="box" placeholder="Enter Product Name"  value="<?php echo $fetch_update['name']?>">
     <input type="number" name="update_price" min='0' class="box" placeholder="Enter Product Price"   value="<?php echo $fetch_update['price']?>">
     <input type="number" name="update_quantity" min='0' class="box" placeholder="Enter Product Quantity"   value="<?php echo $fetch_update['quantity']?>">
-    <?php if($fetch_products['quantity'] < 5){ ?>
+    <?php if($fetch_update['quantity'] < 5){ ?>
          
-         <div style="color: red; font-weight: bold;font-size:50px;">Low stock! Only <?php echo $fetch_products['quantity']; ?> left.</div>
+         <div style="color: red; font-weight: bold;font-size:50px;">Low stock! Only <?php echo $fetch_update['quantity']; ?> left.</div>
          
         <?php } ?>
  
