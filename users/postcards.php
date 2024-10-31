@@ -33,22 +33,23 @@ if (isset($_POST['add_to_cart'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/shop_style.css">
     <title>Shop</title>
 </head>
 
 <body>
     <?php include './user_header.php' ?>
-    <div class="heading">
+    <div class="shop_heading">
         <h3>our shop</h3>
         <p> <a href="home.php">home</a> / shop </p>
     </div>
 
-    <section class="products">
+    <section class="shop_products">
         <div class="product_headers">
-        <a href="shop.php"><h3>Books</h3></a>
-        <a href="stamps.php"><h3>Stamps</h3></a>
-        <a href="postcards.php"><h3 style="color:brown;">Post Cards</h3></a>
-            
+        <a href="shop.php"><h3 style="color:#805a0e">Books</h3></a>
+        <a href="stamps.php"><h3 style="color:#805a0e">Stamps</h3></a>
+        <a href="postcards.php"><h3 style="color:#8B0000;">Post Cards</h3></a>
+             
             
         </div>
         <div class="container">
@@ -64,7 +65,7 @@ if (isset($_POST['add_to_cart'])) {
                         while ($fetch_products = mysqli_fetch_assoc($select_products)) {
                     ?>
                             <form action="" method="post" class="box">
-                                <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
+                                <img class="image" src="../uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
                                 <div class="name"><?php echo $fetch_products['name']; ?></div>
                                 <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
                                 <div class="hidden" name="quantity"><?php echo $fetch_products['quantity'] ?></div>

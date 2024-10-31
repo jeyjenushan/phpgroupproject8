@@ -46,9 +46,9 @@ if (isset($_POST['add_to_cart'])) {
 
     <section class="shop_products">
         <div class="product_headers">
-        <a href="shop.php"><h3 style="color: brown;">Books</h3></a>
-        <a href="stamps.php"><h3>Stamps</h3></a>
-        <a href="postcards.php"><h3>Post Cards</h3></a>
+        <a href="shop.php"><h3 style="color:#8B0000">Books</h3></a>
+        <a href="stamps.php"><h3 style="color:#805a0e">Stamps</h3></a>
+        <a href="postcards.php"><h3 style="color:#805a0e">Post Cards</h3></a>
              
             
         </div>
