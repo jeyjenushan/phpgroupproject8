@@ -137,7 +137,7 @@ background-color: var(--black);
 /*register form end*/
 
 .heading{
-   min-height: 20vh;
+   min-height: 30vh;
    display: flex;
    flex-flow: column;
    align-items: center;

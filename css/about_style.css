@@ -42,14 +42,14 @@
     color:var(--light-color);
  }
  .about_heading{
-    min-height: 30vh;
+    min-height: 35vh;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center; 
     gap: 1rem; 
     background-image:url(../images/team2.png);
-    background-size: cover;
+    background-size:cover;
     background-position: center;
     text-align: center;
  }
