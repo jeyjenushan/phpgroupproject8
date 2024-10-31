@@ -54,7 +54,9 @@ if(isset($message)){
 
 
     <div class="form-container">
-        <form action="" method="post">
+    <div class="logo">
+    <img src="../images/logo.png" width="30%" align:center>
+         <form action="" method="post">
             <h3>Register Now</h3>
         <input type="text" name="name" placeholder="Enter your name" class="box" autocomplete="off" required> 
         <input type="email" name="email" placeholder="Enter your email" class="box" autocomplete="off" required>
@@ -68,6 +70,7 @@ if(isset($message)){
     <input type="submit" name="submit" value="Register Now" class="btn">
     <p>Already have an account? <a href="login.php">login now</a> </p>
     </form>
+    </div>
     </div>
     
 </body>
