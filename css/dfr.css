@@ -179,7 +179,7 @@ section{
 }
 
 .header .flex .navbar a:hover{
-   color:#a47a3c;
+   color:var(--purple);
 }
 
 .header .flex .icons div{
@@ -190,7 +190,7 @@ section{
 }
 
 .header .flex .icons div:hover{
-   color:#a47a3c;
+   color:var(--purple);
 }
 
 .header .flex .account-box{
@@ -272,17 +272,7 @@ section{
    margin-top: 1.5rem;
    padding:1.5rem;
    background-color: var(--light-bg);
-   color:#a47a3c;
-   font-size: 2rem;
-   border-radius: .5rem;
-   border:var(--border);
-}
-.dashboard .box-container .box p :hover{
-   cursor: pointer;
-   margin-top: 1.5rem;
-   padding:1.5rem;
-   background-color: var(--light-bg);
-   color:#a47a3c;
+   color:var(--purple);
    font-size: 2rem;
    border-radius: .5rem;
    border:var(--border);
@@ -588,7 +578,7 @@ body {
 
 /* media queries  */
 
-@media (max-width:910px){
+@media (max-width:991px){
 
    html{
       font-size: 55%;
@@ -596,7 +586,7 @@ body {
 
 }
 
-@media (max-width:990px){
+@media (max-width:810px){
 
    #menu-btn{
       display: inline-block;

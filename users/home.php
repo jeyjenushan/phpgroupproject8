@@ -119,7 +119,8 @@ object-fit: contain" ;>
     <section class="about">
     <div class="flex">
         <div class="image">
-            <img id="about-photo" src="../images/logo.png" alt="">
+            <img id="about-photo"src="../images/logo.png" alt="">
+                
         </div>
         <div class="content">
             <h3>about us</h3>
