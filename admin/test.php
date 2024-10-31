@@ -1,4 +1,18 @@
 <?php
+
+include '../config.php';
+
+session_start();
+
+$admin_id = $_SESSION['admin_id'];
+
+if(!isset($admin_id)){
+   header('location:../login/login.php');
+}
+
+?>
+
+<?php
 include "../config.php";
 
 if(isset($_POST['submit'])){
@@ -17,9 +31,9 @@ if(isset($_POST['submit'])){
            $message[]='confirm password not matched';
         }
         else{
-  mysqli_query($conn,"Insert into `users` (name,email,password,user_type) values('$username','$useremail','$cpassword','user')") or die("query failed");
+  mysqli_query($conn,"Insert into `users` (name,email,password,user_type) values('$username','$useremail','$cpassword','$usertype')") or die("query failed");
 $message[]="registered successfuly!";
-header('location:login.php') ;   
+header('location:register_admin.php') ;   
 }}
 }
 ?>
@@ -34,32 +48,43 @@ header('location:login.php') ;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
 <?php
-if(isset($message)){
-    foreach($message as $message){
-        echo '
-        <div class="message">
-        <span>'.$message.'</span>
-        <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-                </div>
-        ';
+    
+    if(isset($message)){
+        foreach($message as $message){
+            echo '
+            <div class="message">
+            <span>'.$message.'</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                    </div>
+            ';
+        }
     }
-}
+    include 'admin_header.php';
+    
 
-?>
+
+    ?>
+
+
+
     <div class="form-container">
     <div class="logo">
     <img src="../images/logo.png" width="30%" align:center>
          <form action="" method="post">
-            <h3>Register Now</h3>
-        <input type="text" name="name" placeholder="Enter your name" class="box" autocomplete="off" required> 
-        <input type="email" name="email" placeholder="Enter your email" class="box" autocomplete="off" required>
-        <input type="password" name="password" placeholder="Enter your password" autocomplete="off" class="box" required> 
-        <input type="password" name="cpassword" placeholder="confirm your password" class="box" autocomplete="off" required>
+            <h3>Register Users</h3>
+        <input type="text" name="name" placeholder="Enter usee name" class="box" autocomplete="off" required> 
+        <input type="email" name="email" placeholder="Enter user email" class="box" autocomplete="off" required>
+        <input type="password" name="password" placeholder="Enter user password" autocomplete="off" class="box" required> 
+        <input type="password" name="cpassword" placeholder="confirm user password" class="box" autocomplete="off" required>
+    <select name="user_type" class="box">
+        <option value="admin">admin</option>
+        <option value="operator">operator</option>
+    </select>
     <input type="submit" name="submit" value="Register Now" class="btn">
-    <p>Already have an account? <a href="login.php">login now</a> </p>
     </form>
     </div>
     </div>
