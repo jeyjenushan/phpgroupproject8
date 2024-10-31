@@ -86,7 +86,7 @@ object-fit: contain" ;>
 
                 </form>
                 <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
-                    <input type="submit" value="view more" name="viewmore" class="option-btn">
+                    <input type="submit" value="Info" name="viewmore" class="option-btn">
                 </a>
             </div>
 
