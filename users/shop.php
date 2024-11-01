@@ -77,7 +77,7 @@ if (isset($_POST['add_to_cart'])) {
                                 <input type="hidden" value="<?php echo $fetch_products['quantity'] ?>" name="quantitys">
                                 <div class="flex">
                                     <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-                                    <a href="viewmore.php?viewmore=$fetched_products['name']"> <input type="submit" value="view more" name="view more" class="option-btn"></a>
+                                    <!-- <a href="viewmore.php?viewmore=$fetched_products['name']"> <input type="submit" value="view more" name="view more" class="option-btn"></a> -->
                                 </div>
                             </form>
                     <?php
