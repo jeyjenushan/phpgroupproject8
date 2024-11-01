@@ -2,10 +2,14 @@
     background-image: url(../images/);
 }
 .search_page_content{
-   
-   
-    align-items: center;
-}
+    margin:0 ;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    align-items: flex-start;
+    gap:1.5rem;
+    justify-content: center;
+    
+ }
 .searchbox{
     max-width:300px;
     min-height: 300px;
