@@ -102,7 +102,7 @@ object-fit: contain" ;>
                     <input type="hidden" value="<?php echo $fetched_products['image'] ?>" name="product_image">
                     <input type="hidden" name="quantitys" value="<?php echo $fetched_products['quantity'] ?>" name="product_image">
 
-                    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                    <a href="../login/login.php"><input type="button"value="Add to cart" name="add_to_cart" class="btn"></input></a>
 
                 </form>
    

@@ -88,7 +88,8 @@ padding: 0%;
  
  .products .box-container .box{
     border-radius: .5rem;
-    background: rgba(255, 255,255, 0.7);/* Green background with 30% opacity */
+    background: rgba(255, 228, 196, 0.829);/* Green background with 30% opacity */
+    /*background: rgba(255, 255,255, 0.7) ;   */
     box-shadow: var(--box-shadow);
     padding:2rem;
     text-align: center;
