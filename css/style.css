@@ -346,6 +346,9 @@ background-color: #886a4d;
    cursor: pointer;
    margin-left:0;
 }
+#searchinput{
+   padding-left: 15px;
+}
 .header .header-2 .flex .icon1{
    align-items: start;
    margin-left:0;
