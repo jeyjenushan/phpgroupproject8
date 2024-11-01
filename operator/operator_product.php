@@ -98,7 +98,7 @@ if(isset($_POST['updated_product'])){
          
 
  
-    header('location:admin_products.php');
+    header('location:operator_product.php');
 
 }
 ?>
@@ -119,7 +119,7 @@ if(isset($_POST['updated_product'])){
 <?php
 
 
-    include 'admin_header.php';
+    include 'operator_header.php';
     
 
 
