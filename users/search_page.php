@@ -20,7 +20,7 @@ if(!isset($user_id)){
 <body>
     <?php include './user_header.php' ?>
     <div class="heading">
-   <h3>search page</h3>
+   <h3>search Results</h3>
    <p> <a href="home.php">home</a> / search </p>
 </div>
 <section class="search_page_content">
