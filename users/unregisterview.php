@@ -41,6 +41,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/unregisterview.css">
     <title>Home</title>
 </head>
 
@@ -95,7 +96,7 @@ object-fit: contain" ;>
                     <div class="name"><?php echo $fetched_products['name'] ?></div>
                     <div class="price"><?php echo $fetched_products['price'] ?></div>
                     <div class="hidden" name="quantitys"><?php echo $fetched_products['quantity'] ?></div>
-                    <input type="number" name="product_quantity" value=1 min=1 class="qty">
+                    <!-- <input type="number" name="product_quantity" value=1 min=1 class="qty"> -->
                     <input type="hidden" value="<?php echo $fetched_products['name'] ?>" name="product_name">
                     <input type="hidden" value="<?php echo $fetched_products['price'] ?>" name="product_price">
                     <input type="hidden" value="<?php echo $fetched_products['image'] ?>" name="product_image">
@@ -106,7 +107,7 @@ object-fit: contain" ;>
                 </form>
    
                 <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
-                    <input type="submit" value="view more" name="viewmore" class="option-btn">
+                    <!-- <input type="submit" value="view more" name="viewmore" class="option-btn"> -->
                 </a>
         
             </div>

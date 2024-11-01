@@ -37,7 +37,7 @@
 }
 
 *::-webkit-scrollbar-thumb{
-   background-color: var(--purple);
+   background-color: #725132;
 }
 /*register form*/
 
@@ -409,7 +409,7 @@ background-color: #886a4d;
 
 
 
-.home{
+/* .home{
    min-height: 70vh;
   
    background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/../images/home1.jpg) no-repeat;
@@ -437,7 +437,7 @@ background-color: #886a4d;
    color:var(--light-white);
    padding:1rem 0;
    line-height: 1.5;
-}
+} */
 
 .shop_heading{
    min-height: 30vh;
@@ -476,7 +476,7 @@ background-color: #886a4d;
 
 
 
-
+/* 
 .products{
    margin:0;
    padding: 0;
@@ -512,7 +512,6 @@ padding: 0%;padding-bottom: 2%;
 
 }
 .products .box-container{
-   /* max-width: 1200px; */
    margin:0 ;
    display: grid;
    grid-template-columns: repeat(auto-fit, 30rem);
@@ -524,23 +523,23 @@ padding: 0%;padding-bottom: 2%;
 
 .products .box-container .box{
    border-radius: .5rem;
-   background: rgba(255, 255,255, 0.7) ;/* Green background with 30% opacity */
+   background: rgba(255, 255,255, 0.7) ;
    box-shadow: var(--box-shadow);
    padding:2rem;
    text-align: center;
    border:var(--border);
    position: relative;
-   max-width: 300px;       /* Set the image width to 100% of its container */
-   height: auto;      /* Maintain aspect ratio */
-  /* Limit the height to avoid overly large images */
+   max-width: 300px;     
+   height: auto;     
+  
    object-fit: contain;
    
 }
 
 .products .box-container .box .image {
-   width: 100%;       /* Set the image width to 100% of its container */
-   height: auto;      /* Maintain aspect ratio */
-   max-height: 300px; /* Limit the height to avoid overly large images */
+   width: 100%;      
+   height: auto;      
+   max-height: 300px; 
    object-fit: contain;
    border: black solid 2px;
 }
@@ -577,7 +576,7 @@ padding: 0%;padding-bottom: 2%;
    color:var(--white);
    background-color: var(--red);
 }
-
+ */
 
 
 .home-contact{
@@ -1233,7 +1232,7 @@ padding: 0%;padding-bottom: 2%;
 }
 
 /*reviews*/
-.product-details {
+/* .product-details {
    display: flex;
    flex-direction: row;
    background: #fff;
@@ -1253,7 +1252,7 @@ padding: 0%;padding-bottom: 2%;
 }
 .product-reviews {
    margin-top: 40px;
-}
+} */
 /* 
 .review {
    background: #fff;
