@@ -1,0 +1,47 @@
+.heading{
+    background-image: url(../images/);
+}
+.search_page_content{
+   
+   
+    align-items: center;
+}
+.searchbox{
+    max-width:300px;
+    min-height: 300px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    justify-items: center;
+    background-color: bisque;
+}
+.searchbox img{
+    display: flex;
+    align-items: flex-end;
+    border: 5px;
+    width: 80%;
+    height: 80%;
+    
+}
+.searchbox .name{
+    font-size: large;
+    padding: 3px;
+}
+.searchbox .price{
+    font-size:large;
+    padding: 3px;
+
+}
+.searchbox .qty{
+    font-size:large;
+    display:list-item;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding:5px;
+   width: 15%;
+    justify-items:right;
+    
+}
+.searchbox .btn{
+    display:list-item;
+}

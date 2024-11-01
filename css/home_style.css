@@ -69,7 +69,7 @@
    font-size:7rem;
    margin-bottom: 15px;
    margin-top: 15px;
-   color: rgba(0, 0, 0, 0.692);
+   
 }
  .products .box-container{
     /* max-width: 1200px; */
@@ -84,7 +84,7 @@
  
  .products .box-container .box{
     border-radius: .5rem;
-    background: rgba(255, 255,255, 0.7) ;/* Green background with 30% opacity */
+    background: rgba(255, 255,255, 0.7);/* Green background with 30% opacity */
     box-shadow: var(--box-shadow);
     padding:2rem;
     text-align: center;

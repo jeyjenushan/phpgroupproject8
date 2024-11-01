@@ -46,22 +46,10 @@ if (isset($_POST['add_to_cart'])) {
 
     <section class="shop_products">
         <div class="product_headers">
-<<<<<<< HEAD
-        <a href="shop.php"><h3 style="color:#8B0000">Books</h3></a>
-        <a href="stamps.php"><h3 style="color:#805a0e">Stamps</h3></a>
+        <a href="shop.php"><h3 style="color:#805a0e">Books</h3></a>
+        <a href="stamps.php"><h3 style="color:#8B0000">Stamps</h3></a>
         <a href="postcards.php"><h3 style="color:#805a0e">Post Cards</h3></a>
              
-=======
-            <?php
-        $select_category=mysqli_query($conn,"select * from `category` ");
-        while($row=mysqli_fetch_assoc($select_category)){
-             ?>
-<a href="shop.php?id=<?php echo $row['id']?>"><?php echo $row['name']?></a>
-
-<?php
-        }
-        ?>
->>>>>>> main
             
         </div>
         <div class="container">
@@ -72,35 +60,7 @@ if (isset($_POST['add_to_cart'])) {
                 <div class="box-container">
 
                     <?php
-                    if(isset($_GET['id'])){
-                        $id=$_GET['id'];
-                    $select_products = mysqli_query($conn, "SELECT * FROM `products` where category_id='$id'") or die('query failed');
-                    if (mysqli_num_rows($select_products) > 0) {
-                        while ($fetch_products = mysqli_fetch_assoc($select_products)) {
-                    ?>
-                            <form action="" method="post" class="box">
-                                <img class="image" src="../uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
-                                <div class="name"><?php echo $fetch_products['name']; ?></div>
-                                <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
-                                <div class="hidden" name="quantity"><?php echo $fetch_products['quantity'] ?></div>
-                                <input type="number" min="1" name="product_quantity" value="1" class="qty">
-                                <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
-                                <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
-                                <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-
-                                <input type="hidden" value="<?php echo $fetch_products['quantity'] ?>" name="quantitys">
-                                <div class="flex">
-                                    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-                                    <!-- <a href="viewmore.php?viewmore=$fetched_products['name']"> <input type="submit" value="view more" name="view more" class="option-btn"></a> -->
-                                </div>
-                            </form>
-                    <?php
-                        }
-                    } else {
-                        echo '<p class="empty">no products added yet!</p>';
-                    }}else{
-                        
-                         $select_products = mysqli_query($conn, "SELECT * FROM `products` ") or die('query failed');
+                    $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
                     if (mysqli_num_rows($select_products) > 0) {
                         while ($fetch_products = mysqli_fetch_assoc($select_products)) {
                     ?>
@@ -120,15 +80,31 @@ if (isset($_POST['add_to_cart'])) {
                                     <a href="viewmore.php?viewmore=$fetched_products['name']"> <input type="submit" value="view more" name="view more" class="option-btn"></a>
                                 </div>
                             </form>
-
-                        <?php
-
-                    }}}
+                    <?php
+                        }
+                    } else {
+                        echo '<p class="empty">no products added yet!</p>';
+                    }
                     ?>
-                    
                 </div>
             </div>
+            <!-- <div class="navbarl">
+                <li style="list-style-type: none;">Delivery Categories</li>
+                <ul>
+                    <?php
+                    $result = mysqli_query($conn, "Select * from `category`");
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $categoryname = $row['name'];
+                    ?>
+                        <a href="category.php?category=<?php echo $categoryname ?>">
+                            <li><?php echo $row['name'] ?></li>
+                        </a>
+                    <?php
+                    }
+                    ?>
 
+                </ul>
+            </div> -->
         </div>
 
     </section>
