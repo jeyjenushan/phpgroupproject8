@@ -1,11 +1,43 @@
 .heading{
-    background-image: url(../images/);
+    background-image: url(../images/search2.jpg);
 }
+
+
+.heading h3{
+    font-size: 5rem;
+    color:var(--white);
+    text-transform: uppercase;
+    text-shadow: 0 0 3px #000000, 0 0 5px #0000FF;
+ }
+ 
+ .heading p{
+    font-size: 2.5rem;
+    color:var(--white);
+ }
+ 
+ .heading p a{
+    color:#311e00;
+ }
+ 
+ .heading p a:hover{
+    text-decoration: underline;
+ }
+ 
+
+
+
+
+
+
 .search_page_content{
-   
-   
-    align-items: center;
-}
+    margin:0 ;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    align-items: flex-start;
+    gap:1.5rem;
+    justify-content: center;
+    
+ }
 .searchbox{
     max-width:300px;
     min-height: 300px;

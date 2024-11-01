@@ -73,7 +73,7 @@ if (isset($_GET['delete_all'])) {
                     <a href="cart.php?delete=<?php echo $row['id']; ?>" class="fas fa-times" onclick="return confirm('Delete this from cart?');"></a>
                     <img src="../uploaded_img/<?php echo $row['image']; ?>" alt="">
                     <div class="name"><?php echo $row['name']; ?></div>
-                    <div class="price">$<?php echo $row['price']; ?>/-</div>
+                    <div class="price">Rs <?php echo $row['price']; ?>/-</div>
                     <form action="" method="post">
                         <input type="hidden" name="cart_id" value="<?php echo $row['id']; ?>">
                         <?php echo $row['name']; ?>;
@@ -81,7 +81,7 @@ if (isset($_GET['delete_all'])) {
                         <input type="number" min="1" name="cart_quantity" value="<?php echo $row['quantity']; ?>">
                         <input type="submit" name="update_cart" value="Update" class="option-btn">
                     </form>
-                    <div class="sub-total">Subtotal: <span>$<?php echo $sub_total; ?>/-</span></div>
+                    <div class="sub-total">Subtotal: <span>Rs <?php echo $sub_total; ?>/-</span></div>
                 </div>
                 <?php
             }
@@ -98,7 +98,7 @@ if (isset($_GET['delete_all'])) {
         </div>
 
         <div class="cart-total">
-            <p>Grand Total: <span>$<?php echo $grand_total; ?>/-</span></p>
+            <p>Grand Total: <span>Rs <?php echo $grand_total; ?>/-</span></p>
             <div class="flex">
                 <a href="shop.php" class="option-btn">Continue Shopping</a>
                 <a href="checkout.php" class="btn <?php echo ($grand_total > 0) ? "" : 'disabled'; ?>">Proceed to Checkout</a>
