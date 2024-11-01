@@ -169,7 +169,7 @@ section{
 }
 
 .header .flex .logo span{
-   color:var(--purple);
+   color:#cc742c;
 }
 
 .header .flex .navbar a{
