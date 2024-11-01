@@ -1,6 +1,11 @@
 <?php
 include '../config.php';
 session_start();
+$admin_id = $_SESSION['admin_id'];
+
+if(!isset($admin_id)){
+   header('location:../login/login.php');
+}
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
     mysqli_query($conn, "DELETE FROM `users` WHERE id = '$delete_id'") or die('query failed');
@@ -13,7 +18,7 @@ if(isset($_GET['delete'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
+    <title>View Users</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/admin_style.css">
 </head>

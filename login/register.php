@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
            $message[]='confirm password not matched';
         }
         else{
-  mysqli_query($conn,"Insert into `users` (name,email,password,user_type) values('$username','$useremail','$cpassword','$usertype')") or die("query failed");
+  mysqli_query($conn,"Insert into `users` (name,email,password,user_type) values('$username','$useremail','$cpassword','user')") or die("query failed");
 $message[]="registered successfuly!";
 header('location:login.php') ;   
 }}
@@ -49,10 +49,6 @@ if(isset($message)){
 }
 
 ?>
-
-
-
-
     <div class="form-container">
     <div class="logo">
     <img src="../images/logo.png" width="30%" align:center>
@@ -62,11 +58,6 @@ if(isset($message)){
         <input type="email" name="email" placeholder="Enter your email" class="box" autocomplete="off" required>
         <input type="password" name="password" placeholder="Enter your password" autocomplete="off" class="box" required> 
         <input type="password" name="cpassword" placeholder="confirm your password" class="box" autocomplete="off" required>
-    <select name="user_type" class="box">
-        <option value="user">user</option>
-        <option value="admin">admin</option>
-        <option value="operator">operator</option>
-    </select>
     <input type="submit" name="submit" value="Register Now" class="btn">
     <p>Already have an account? <a href="login.php">login now</a> </p>
     </form>
