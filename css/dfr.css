@@ -163,12 +163,12 @@ section{
    margin:0 auto;
 }
  
-.header .flex .logo1{
+.header .flex .logo{
    font-size: 2.5rem;
    color:var(--black);
 }
 
-.header .flex .logo1 span{
+.header .flex .logo span{
    color:var(--purple);
 }
 
@@ -179,7 +179,7 @@ section{
 }
 
 .header .flex .navbar a:hover{
-   color:#a47a3c;
+   color:var(--purple);
 }
 
 .header .flex .icons div{
@@ -190,7 +190,7 @@ section{
 }
 
 .header .flex .icons div:hover{
-   color:#a47a3c;
+   color:var(--purple);
 }
 
 .header .flex .account-box{
@@ -272,17 +272,7 @@ section{
    margin-top: 1.5rem;
    padding:1.5rem;
    background-color: var(--light-bg);
-   color:#a47a3c;
-   font-size: 2rem;
-   border-radius: .5rem;
-   border:var(--border);
-}
-.dashboard .box-container .box p :hover{
-   cursor: pointer;
-   margin-top: 1.5rem;
-   padding:1.5rem;
-   background-color: var(--light-bg);
-   color:#a47a3c;
+   color:var(--purple);
    font-size: 2rem;
    border-radius: .5rem;
    border:var(--border);
@@ -588,7 +578,7 @@ body {
 
 /* media queries  */
 
-@media (max-width:910px){
+@media (max-width:991px){
 
    html{
       font-size: 55%;
@@ -596,7 +586,7 @@ body {
 
 }
 
-@media (max-width:990px){
+@media (max-width:810px){
 
    #menu-btn{
       display: inline-block;
@@ -621,11 +611,6 @@ body {
       display: block;
    }
 
-   .header .flex .navbar p{
-      margin:2rem;
-      display: block;
-   }
-
 }
 
 @media (max-width:450px){
@@ -639,46 +624,3 @@ body {
    }
 
 }
-
-.dropdown {
-   position: relative;
-   display: inline-block;
- }
-
- .dropdown-content {
-   display: none;
-   position: absolute;
-   top: 100%;
-   left: 0;
-   background-color: #f9f9f9;
-   min-width: 200px;
-   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-   z-index: 1;
- }
-
- .dropdown-content a {
-   color: black;
-   padding: 10px 16px;
-   text-decoration: none;
-   display: block;
- }
-
- .dropdown-content a:hover {
-   background-color: #ddd;
- }
-
- /* Show dropdown on hover */
- .dropdown:hover .dropdown-content {
-   display: block;
- }
-
- .header .flex .navbar p{
-   margin:0 1rem;
-   font-size: 2rem;
-   color:var(--black);
-}
-
-.header .flex .navbar p:hover{
-   color:var(--purple);
-}
-
