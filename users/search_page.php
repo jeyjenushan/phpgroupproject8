@@ -34,7 +34,7 @@ while($fetch_product=mysqli_fetch_assoc($result)){
 <form action="" method="post" class="searchbox" >
 <img src="../uploaded_img/<?php echo $fetch_product['image']; ?>" alt="" class="image">
       <div class="name"><?php echo $fetch_product['name']; ?></div>
-      <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
+      <div class="price">Rs <?php echo $fetch_product['price']; ?>/-</div>
       <input type="number"  class="qty" name="product_quantity" min="1" value="1">
       <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
