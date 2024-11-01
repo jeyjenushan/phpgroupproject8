@@ -1,7 +1,7 @@
 document.querySelector('.select-btn').addEventListener('click', function (e) {
    
     e.stopPropagation(); // Prevent the click event from bubbling up
-    console.log("jenushan");
+
     const dropdown = document.querySelector('.select-dropdown');
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
 });
@@ -17,7 +17,7 @@ document.addEventListener('click', function (e) {
 document.querySelector('#select-btn').addEventListener('click', function (e) {
    
     e.stopPropagation(); // Prevent the click event from bubbling up
-    console.log("jenushan");
+
     const dropdown = document.querySelector('#select-dropdown');
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
 });
