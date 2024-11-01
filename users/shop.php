@@ -46,12 +46,7 @@ if (isset($_POST['add_to_cart'])) {
 
     <section class="shop_products">
         <div class="product_headers">
-<<<<<<< HEAD
-        <a href="shop.php"><h3 style="color:#8B0000">Books</h3></a>
-        <a href="stamps.php"><h3 style="color:#805a0e">Stamps</h3></a>
-        <a href="postcards.php"><h3 style="color:#805a0e">Post Cards</h3></a>
-             
-=======
+
             <?php
         $select_category=mysqli_query($conn,"select * from `category` ");
         while($row=mysqli_fetch_assoc($select_category)){
@@ -61,7 +56,7 @@ if (isset($_POST['add_to_cart'])) {
 <?php
         }
         ?>
->>>>>>> main
+
             
         </div>
         <div class="container">
