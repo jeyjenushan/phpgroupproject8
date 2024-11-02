@@ -168,8 +168,13 @@ section{
    color:var(--black);
 }
 
+<<<<<<< HEAD
+.header .flex .logo span{
+   color:#cc742c;
+=======
 .header .flex .logo1 span{
    color:var(--purple);
+>>>>>>> main
 }
 
 .header .flex .navbar a{
@@ -179,7 +184,7 @@ section{
 }
 
 .header .flex .navbar a:hover{
-   color:var(--purple);
+   color:#a47a3c;
 }
 
 .header .flex .icons div{
@@ -190,7 +195,7 @@ section{
 }
 
 .header .flex .icons div:hover{
-   color:var(--purple);
+   color:#a47a3c;
 }
 
 .header .flex .account-box{
@@ -272,7 +277,17 @@ section{
    margin-top: 1.5rem;
    padding:1.5rem;
    background-color: var(--light-bg);
-   color:var(--purple);
+   color:#a47a3c;
+   font-size: 2rem;
+   border-radius: .5rem;
+   border:var(--border);
+}
+.dashboard .box-container .box p :hover{
+   cursor: pointer;
+   margin-top: 1.5rem;
+   padding:1.5rem;
+   background-color: var(--light-bg);
+   color:#a47a3c;
    font-size: 2rem;
    border-radius: .5rem;
    border:var(--border);
@@ -578,7 +593,7 @@ body {
 
 /* media queries  */
 
-@media (max-width:991px){
+@media (max-width:910px){
 
    html{
       font-size: 55%;
@@ -586,7 +601,7 @@ body {
 
 }
 
-@media (max-width:810px){
+@media (max-width:990px){
 
    #menu-btn{
       display: inline-block;

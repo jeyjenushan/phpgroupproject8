@@ -69,7 +69,7 @@
  }
  
  .shopping-cart .box-container .box img{
-    height: 30rem;
+    width: 100%;
  }
  
  .shopping-cart .box-container .box .name{

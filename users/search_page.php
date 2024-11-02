@@ -13,15 +13,17 @@ if(!isset($user_id)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/search_page.css">
+
     <title>Search page</title>
 </head>
 <body>
     <?php include './user_header.php' ?>
     <div class="heading">
-   <h3>search page</h3>
+   <h3>search Results</h3>
    <p> <a href="home.php">home</a> / search </p>
 </div>
-
+<section class="search_page_content">
 <?php
 if(isset($_GET['submit'])){
     $search_item = $_GET['search_data'];
@@ -29,11 +31,10 @@ if(isset($_GET['submit'])){
     if(mysqli_num_rows($result)>0){
 while($fetch_product=mysqli_fetch_assoc($result)){
 ?>
-
-<form action="" method="post" class="box" >
+<form action="" method="post" class="searchbox" >
 <img src="../uploaded_img/<?php echo $fetch_product['image']; ?>" alt="" class="image">
       <div class="name"><?php echo $fetch_product['name']; ?></div>
-      <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
+      <div class="price">Rs <?php echo $fetch_product['price']; ?>/-</div>
       <input type="number"  class="qty" name="product_quantity" min="1" value="1">
       <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
@@ -41,8 +42,6 @@ while($fetch_product=mysqli_fetch_assoc($result)){
       <input type="submit" class="btn" value="add to cart" name="add_to_cart">
 
 </form>
-
-
 
 <?php
             }
@@ -53,7 +52,7 @@ while($fetch_product=mysqli_fetch_assoc($result)){
          echo '<p class="empty">search something!</p>';
       }
    ?>
-
+</section>
 <?php include './user_footer.php'?>
     <script src="../js/script.js"></script>
 </body>
