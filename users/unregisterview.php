@@ -64,8 +64,8 @@ else{
     <section class="home">
         <div class="content">
             <h3>Archeological designs in your hands.</h3>
-            <p>your Creative Archeology Items are now real. all beautiful Books Post Cards, and Stamps in your hands.</p>
-            <a href="about.php" class="white-btn">discover more</a>
+            <p>So.Hurry up..<br>You are New to this..<br>Register Now</p>
+            <a href="../login/login.php" class="white-btn">Register Now</a>
         </div>
     </section>
 
@@ -121,7 +121,7 @@ object-fit: contain" ;>
     ?>
 </div>
 <div class="load-more" style="margin-top: 2rem; text-align:center">
-    <a href="shop.php" class="option-btn">load more</a>
+    <a href="../login/login.php" class="option-btn">load more</a>
 </div>
 </div>
         </div>

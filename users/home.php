@@ -48,7 +48,7 @@ if (isset($_POST['add_to_cart'])) {
             <a href="about.php" class="white-btn">discover more</a>
         </div>
     </section>
-
+    <script src="home.js"></script>
 
     <section class="products">
         <div class="container">
@@ -70,24 +70,25 @@ $id=$row['id'];
     ?>
             <div class="box">
                 <form action="" method="POST">
+                <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
                     <img class="image" src="../uploaded_img/<?php echo $fetched_products['image'] ?>" alt="" style="width: 100%;height:80%;
-object-fit: contain" ;>
+object-fit: contain" ;> </a>
                     <div class="name"><?php echo $fetched_products['name'] ?></div>
-                    <div class="price"><?php echo $fetched_products['price'] ?></div>
-                    <div class="hidden" name="quantitys"><?php echo $fetched_products['quantity'] ?></div>
-                    <input type="number" name="product_quantity" value=1 min=1 class="qty">
+                    <div class="price">Rs <?php echo $fetched_products['price'] ?></div>
+                   <div class="hidden" name="quantitys"> <label id=stocks_label>Stoks : </label><?php echo $fetched_products['quantity'] ?></div>
+                    <label id=Qty_label>Qty : </label><input type="number" name="product_quantity" value=1 min=1 class="qty">
                     <input type="hidden" value="<?php echo $fetched_products['name'] ?>" name="product_name">
                     <input type="hidden" value="<?php echo $fetched_products['price'] ?>" name="product_price">
                     <input type="hidden" value="<?php echo $fetched_products['image'] ?>" name="product_image">
                     <input type="hidden" name="quantitys" value="<?php echo $fetched_products['quantity'] ?>" name="product_image">
 
-
+<br>
                     <input type="submit" value="add to cart" name="add_to_cart" class="btn">
 
                 </form>
-                <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
-                    <input type="submit" value="Info" name="viewmore" class="option-btn">
-                </a>
+                <!-- <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>"> -->
+                    <!-- <input type="submit" value="Info" name="viewmore" class="option-btn"> -->
+               
             </div>
 
     <?php
