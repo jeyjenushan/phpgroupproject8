@@ -1,0 +1,22 @@
+.product-details{
+   display: grid;
+   border: 1px solid black;
+   border-radius: 10px;
+   max-width: 500px;
+   align-items: center; 
+   justify-items: center;
+   justify-self: center;
+   align-self:center;
+
+}
+.product-details img{
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+}
+.product-info h1{
+    font-size: 4rem;
+}
+.product-info p{
+    font-size: 2rem;
+}

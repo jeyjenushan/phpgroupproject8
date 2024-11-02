@@ -48,3 +48,9 @@ function changeAboutPhoto() {
 
 // Change the image every 30 seconds
 setInterval(changeAboutPhoto, 10000);
+
+
+
+
+
+
