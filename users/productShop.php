@@ -85,6 +85,7 @@ $city = $_GET['city'] ?? '';
                 <thead>
                     <tr>
                         <th>Shop Image</th>
+                        <th>Shop Location</th>
                         <?php
                         // Fetch categories for header
                         $category_query = mysqli_query($conn, "SELECT * FROM `category`") or die('Query failed');
@@ -102,7 +103,7 @@ $city = $_GET['city'] ?? '';
                             echo "<tr>";
                             // Display shop image
                             echo "<td><img class='shop-image' src='../uploaded_img/" . htmlspecialchars($shop['shop_image1']) . "' alt='Shop Front'></td>";
-
+                             echo "<td>". htmlspecialchars($shop['location'])."</td>";
                             // Display products for each category
                             $category_query = mysqli_query($conn, "SELECT * FROM `category`") or die('Query failed');
                             while ($category = mysqli_fetch_assoc($category_query)) {
