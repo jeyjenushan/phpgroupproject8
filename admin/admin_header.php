@@ -27,7 +27,7 @@ if(isset($message)){
             <p>users</p>
             <div class="dropdown-content">
                <a href="admin_users.php">View Users</a>
-               <a href="register_admin.php">Add Users</a>
+               <a href="register_admin.php">Add Operator</a>
             </div>
          </div>
          <a href="admin_contacts.php">messages</a>

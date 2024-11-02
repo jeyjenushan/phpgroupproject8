@@ -168,13 +168,8 @@ section{
    color:var(--black);
 }
 
-<<<<<<< HEAD
-.header .flex .logo span{
-   color:#cc742c;
-=======
 .header .flex .logo1 span{
    color:var(--purple);
->>>>>>> main
 }
 
 .header .flex .navbar a{
