@@ -128,6 +128,7 @@ if(isset($_POST['updated_product'])){
     <title>View Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/viewmore_style.css">
 </head>
 <body>
 <?php include './user_header.php'; ?>

@@ -15,59 +15,8 @@ $city = $_GET['city'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .shop-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .shop-table th, .shop-table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        .shop-table th {
-            background-color: #333;
-            color: #fff;
-        }
-        .shop-table tr:nth-child(even) {
-            background-color: #f1f1f1;
-        }
-        .shop-table tr:hover {
-            background-color: #e9f5ff;
-        }
-        .shop-image {
-            max-width: 100px;
-            height: auto;
-        }
-        .styled-button {
-            text-align: center;
-            margin: 20px auto;
-        }
-        .styled-button button {
-            background-color: #28a745;
-            color: #fff;
-            font-size: 16px;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .styled-button button:hover {
-            background-color: #218838;
-            transform: scale(1.05);
-        }
-        .styled-button button:active {
-            transform: scale(0.98);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">       
+    <link rel="stylesheet" href="../css/productShop_style.css">       
 </head>
 <body>
     <?php include './user_header.php'; ?>
@@ -118,7 +67,7 @@ $city = $_GET['city'] ?? '';
                                         echo "<p>" . htmlspecialchars($product['name']) . "</p>";
                                     }
                                 } else {
-                                    echo "<p>No products available</p>";
+                                    echo "<p style=color:red >No products available</p>";
                                 }
                                 echo "</td>";
                             }
