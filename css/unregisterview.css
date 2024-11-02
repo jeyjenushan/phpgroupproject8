@@ -1,6 +1,9 @@
+*{
+margin: 0%;
+padding: 0%;
+}
 .home{
     min-height: 70vh;
-   
     background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/../images/home1.jpg) no-repeat;
     background-size: cover;
     background-position: center;
@@ -10,7 +13,6 @@
  }
  
  .home .content{
-    
     text-align: center;
     width: 60rem;
  }
@@ -36,6 +38,7 @@
 .products{
     margin:0;
     padding: 0;
+    
  }
  .products .product_headers{
     display: flex;
@@ -56,6 +59,7 @@
  .products .main-content {
   background-image: url(../images/homewall2.jpg);
  padding: 0%;padding-bottom: 2%;
+ margin: 0%;
  
  
  }
@@ -84,7 +88,8 @@
  
  .products .box-container .box{
     border-radius: .5rem;
-    background: rgba(255, 255,255, 0.7);/* Green background with 30% opacity */
+    background: rgba(255, 228, 196, 0.829);/* Green background with 30% opacity */
+    /*background: rgba(255, 255,255, 0.7) ;   */
     box-shadow: var(--box-shadow);
     padding:2rem;
     text-align: center;

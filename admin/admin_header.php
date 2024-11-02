@@ -17,16 +17,23 @@ if(isset($message)){
 
    <div class="flex">
 
-      <a href="admin_page.php" class="logo">Admin<span>Panel</span></a>
+      <a href="admin_page.php" class="logo1">Admin<span>Panel</span></a>
 
       <nav class="navbar">
          <a href="admin_page.php">home</a>
          <a href="admin_products.php">products</a>
          <a href="admin_order.php">orders</a>
-         <a href="admin_users.php">users</a>
+         <div class="dropdown">
+            <p>users</p>
+            <div class="dropdown-content">
+               <a href="admin_users.php">View Users</a>
+               <a href="register_admin.php">Add Operator</a>
+            </div>
+         </div>
          <a href="admin_contacts.php">messages</a>
          <a href="admin_location.php">Locations</a>
          <a href="admin_category.php">Category</a>
+
       </nav>
 
       <div class="icons">

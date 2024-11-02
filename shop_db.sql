@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Oct 31, 2024 at 06:07 AM
+-- Host: 127.0.0.1
+-- Generation Time: Nov 02, 2024 at 07:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,13 +36,6 @@ CREATE TABLE `cart` (
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `user_id`, `name`, `price`, `quantity`, `image`) VALUES
-(4, 14, 'Dieter Rose', 974, 1, 'lloyd.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -59,9 +52,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(11, 'book'),
-(12, 'post'),
-(13, 'stamps');
+(8, 'flayers'),
+(9, 'books'),
+(10, 'post');
 
 -- --------------------------------------------------------
 
@@ -103,11 +96,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
-(24, 14, 'Jeyaruban jenushan ', '608', 'pillers296@gmail.com', 'credit card', 'flat no. 28, Optio consectetur , Vel possimus qui co, Esse delectus iust - 87', ', four pillers296(1', 674, '16-Oct-2024', 'completed'),
-(25, 25, 'Urielle Noble', '572', 'rokit@gmail.com', 'direct', 'flat no. 94, Alias accusamus volu, Fugiat expedita cons, Modi in sunt et aut - 11', ', tamilbook1(2', 460, '25-Oct-2024', 'completed'),
-(26, 31, 'Quentin Acosta', '864', 'jjjjjjj@gmail.com', 'paypal', 'flat no. 60, Quaerat corrupti au, Modi quos qui non du, Et nemo modi eos qui - 74', ', Kiona Parks(1, Kiona Parks(1', 1300, '30-Oct-2024', 'pending'),
-(27, 31, 'Quentin Acosta', '673', 'jjjjjjj@gmail.com', 'cash on delivery', 'flat no. 20, Qui accusamus quis l, Placeat error fugit, Ut nemo repellendus - 63', ', Kiona Parks(1, Kiona Parks(1', 1300, '30-Oct-2024', 'pending'),
-(28, 23, 'a', '730', 'jjjjjjj@gmail.com', 'direct', 'flat no. 52, Et eum vitae eum aut, Ut deserunt adipisic, Et molestias volupta - 9', ', Kiona Parks(1', 650, '30-Oct-2024', 'pending');
+(23, 21, 'tharindu', '5566', 'tharindu@gmail.com', 'cash on delivery', 'flat no. 23224, ki, hhj, hhu - 44', ', sfd(1', 125, '31-Oct-2024', 'pending');
 
 -- --------------------------------------------------------
 
@@ -144,29 +133,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `quantity`, `category_id`) VALUES
-(52, 'Kiona Parks', 650, 'about-img old.jpg', 363, 11),
-(53, 'Ruth Golden', 578, '2.jpg', 190, 12);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `productshop`
---
-
-CREATE TABLE `productshop` (
-  `product_id` int(11) NOT NULL,
-  `shop_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `productshop`
---
-
-INSERT INTO `productshop` (`product_id`, `shop_id`) VALUES
-(52, 20),
-(53, 19),
-(53, 20),
-(53, 22);
+(10, 'sfd', 125, 'IMG-20240712-WA0066.jpg', 8, 9);
 
 -- --------------------------------------------------------
 
@@ -183,14 +150,6 @@ CREATE TABLE `reviews` (
   `comment` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `reviews`
---
-
-INSERT INTO `reviews` (`id`, `product_id`, `user_name`, `reviewr_image`, `rating`, `comment`, `created_at`) VALUES
-(10, 31, 'jenushan', '../uploaded_img/author-6.jpg', 2, 'good', '2024-10-25 03:36:19'),
-(11, 52, 'jenushan', '../uploaded_img/4.jpg', 4, 'ssss', '2024-10-30 15:51:33');
 
 -- --------------------------------------------------------
 
@@ -212,12 +171,7 @@ CREATE TABLE `shopdetail` (
 --
 
 INSERT INTO `shopdetail` (`id`, `location`, `name`, `shop_image1`, `shop_image2`, `shop_image3`) VALUES
-(19, 'jaffna', 'modern', 'about-img old.jpg', '2.jpg', '1.jpg'),
-(20, 'colombo', 'Jaquelyn Yang', 'bash_and_lucy-2.jpg', 'istockphoto-655761512-2048x2048.jpg', '2.jpg'),
-(21, 'irathinapuri', 'Quamar Curry', 'home-bg.jpg', 'shattered.jpg', 'the_world.jpg'),
-(22, 'mathara', 'Colt Downs', 'lloyd.jpg', 'Untitled design (5).png', 'the_world.jpg'),
-(23, 'vavuniya', 'Amos Pate', 'author-2.jpg', 'the_girl_of_ink_and_stars.jpg', 'the_happy_lemon.jpg'),
-(24, 'trincomalee', 'Ray Booker', 'images.jpeg', 'the_happy_lemon.jpg', 'postcards.jpg');
+(19, 'dfghj', 'wdsfdes', 'IMG-20240712-WA0066.jpg', 'IMG-20240717-WA0072.jpg', 'IMG-20240718-WA0108.jpg');
 
 -- --------------------------------------------------------
 
@@ -230,25 +184,29 @@ CREATE TABLE `users` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `user_type` varchar(200) NOT NULL DEFAULT 'user'
+  `user_type` varchar(200) NOT NULL DEFAULT 'user',
+  `session_id` varchar(64) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
-(21, 'Odette Ferguson', 'jk@gmail.com', 'f970e2767d0cfe75876ea857f92e319b', 'operator'),
-(22, 'ssss', 'rokit@gmail.com', '7815696ecbf1c96e6894b779456d330e', 'operator'),
-(23, 'a', 'jjjjjjj@gmail.com', '0cc175b9c0f1b6a831c399e269772661', 'user'),
-(24, 'Yetta Hull', 'jeyajeya@gmail.com', '8fa14cdd754f91cc6554c9e71929cce7', 'user'),
-(25, 'Urielle Noble', 'rokit@gmail.com', '0cc175b9c0f1b6a831c399e269772661', 'user'),
-(26, 'Finn Monroe', 'jj@gmail.com', '0cc175b9c0f1b6a831c399e269772661', 'user'),
-(27, 'jenushan', 'jenu@gmail.com', '363b122c528f54df4a0446b6bab05515', 'admin'),
-(28, 'MacKensie Irwin', 'pillers296@gmail.com', '7694f4a66316e53c8cdd9d9954bd611d', 'admin'),
-(29, 'Nyssa Weber', 'asdf@gmail.com', '0cc175b9c0f1b6a831c399e269772661', 'user'),
-(30, 'Ulysses Deleon', 'jk@gmail.com', '03c7c0ace395d80182db07ae2c30f034', 'user'),
-(31, 'Quentin Acosta', 'jjjjjjj@gmail.com', '7694f4a66316e53c8cdd9d9954bd611d', 'user');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`, `session_id`, `created_at`, `updated_at`) VALUES
+(14, 'Jeyaruban jenushan ', 'pillers296@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(16, 'ran', 'ran@gmail.com', '0420d605d97eb746182ce4101970b03a', 'admin', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(17, 'dara', 'dara@gmail.com', 'afa2f30a26a5401b4ee1121f374b81d4', 'admin', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(18, 'dara2', 'dara2@gmail.com', '400410434b899fc6c6644c479bab2c46', 'operator', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(19, 'danindu_ransika', 'daninduransika@gmail.com', 'e1ec310eceb09a9115059ee09b640077', 'operator', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(20, 'danindu', 'danindu@gmail.com', 'afa2f30a26a5401b4ee1121f374b81d4', 'admin', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(21, 'tharindu', 'tharindu@gmail.com', '22dcf0b5cd454a39a2a7552abe14ead6', 'user', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(22, 'thejan', 'thejan@gmail.com', 'e28fa0f3d9ab9ca4ca6ca436b54bff0b', 'user', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(23, 'kenu', 'kenu@gmail.com', '3d5d048c106fa03d92540e869d695c20', 'admin', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(24, 'gam', 'gam@gmail.com', '174006d087bb4c0f7274ad9209612fe2', 'user', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(25, 'kavi', 'kavi@gmail.com', '18ed16e695692e468115225f163464b0', 'admin', NULL, '2024-11-02 05:11:53', '2024-11-02 05:11:53'),
+(26, 'rami', 'rami@gmail.com', '7b93bc9e19f7023489bb784cc364d67b', 'user', '87e41159a2fb0ff933552cdfe83bce6831e069c4d705b43d08fb700df5f25b9a', '2024-11-02 05:11:53', '2024-11-02 05:29:53');
 
 --
 -- Indexes for dumped tables
@@ -316,13 +274,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `message`
@@ -334,7 +292,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `payments_user`
@@ -346,25 +304,25 @@ ALTER TABLE `payments_user`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `shopdetail`
 --
 ALTER TABLE `shopdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

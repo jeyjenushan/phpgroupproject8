@@ -14,6 +14,7 @@ if(!isset($user_id)){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/about_style.css">
+    <link rel="stylesheet" href="../css/orders_style.css">
     <title>About</title>
 </head>
 <body>
@@ -145,7 +146,7 @@ if(!isset($user_id)){
 </div>
 
 <div class="box">
-   <img src="../images/author-3.jpg" alt="">
+   <img src="../authors/thejan2.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
@@ -156,7 +157,7 @@ if(!isset($user_id)){
 </div>
 
 <div class="box">
-   <img src="../images/author-4.jpg" alt="">
+   <img src="../authors/danindu.png" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>

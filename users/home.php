@@ -86,7 +86,7 @@ object-fit: contain" ;>
 
                 </form>
                 <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
-                    <input type="submit" value="view more" name="viewmore" class="option-btn">
+                    <input type="submit" value="Info" name="viewmore" class="option-btn">
                 </a>
             </div>
 
@@ -119,7 +119,8 @@ object-fit: contain" ;>
     <section class="about">
     <div class="flex">
         <div class="image">
-            <img id="about-photo" src="../images/logo.png" alt="">
+            <img id="about-photo"src="../images/logo.png" alt="">
+                
         </div>
         <div class="content">
             <h3>about us</h3>

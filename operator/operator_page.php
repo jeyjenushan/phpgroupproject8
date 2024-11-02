@@ -24,7 +24,7 @@ if(!isset($operator_id)){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="../css/admin_style.css">
+   <link rel="stylesheet" href="../css/operator_style.css">
 
 </head>
    
@@ -49,7 +49,7 @@ if(!isset($operator_id)){
                };
             };
          ?>
-         <h3>$<?php echo $total_pendings; ?>/-</h3>
+         <h3>Rs.<?php echo $total_pendings; ?>/-</h3>
          <p>total pendings</p>
       </div>
 
@@ -64,7 +64,7 @@ if(!isset($operator_id)){
                };
             };
          ?>
-         <h3>$<?php echo $total_completed; ?>/-</h3>
+         <h3>Rs.<?php echo $total_completed; ?>/-</h3>
          <p>completed payments</p>
       </div>
 

@@ -41,6 +41,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/unregisterview.css">
     <title>Home</title>
 </head>
 
@@ -83,7 +84,7 @@ else{
 <div class="box-container">
     <?php
 $id=$row['id'];
-    $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' ") or die('query failed');
+    $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' limit 1 ") or die('query failed');
     if (mysqli_num_rows($selected_product) > 0) {
         while ($fetched_products = mysqli_fetch_assoc($selected_product)) {
             $productname = $fetched_products['name'];
@@ -94,19 +95,19 @@ $id=$row['id'];
 object-fit: contain" ;>
                     <div class="name"><?php echo $fetched_products['name'] ?></div>
                     <div class="price"><?php echo $fetched_products['price'] ?></div>
-                    <div class="hidden" name="quantitys"><?php echo $fetched_products['quantity'] ?></div>
-                    <input type="number" name="product_quantity" value=1 min=1 class="qty">
+                    <!-- <div class="hidden" name="quantitys"><?php echo $fetched_products['quantity'] ?></div> -->
+                    <!-- <input type="number" name="product_quantity" value=1 min=1 class="qty"> -->
                     <input type="hidden" value="<?php echo $fetched_products['name'] ?>" name="product_name">
                     <input type="hidden" value="<?php echo $fetched_products['price'] ?>" name="product_price">
                     <input type="hidden" value="<?php echo $fetched_products['image'] ?>" name="product_image">
                     <input type="hidden" name="quantitys" value="<?php echo $fetched_products['quantity'] ?>" name="product_image">
 
-                    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                    <a href="../login/login.php"><input type="button"value="Add to cart" name="add_to_cart" class="btn"></input></a>
 
                 </form>
    
                 <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
-                    <input type="submit" value="view more" name="viewmore" class="option-btn">
+                    <!-- <input type="submit" value="view more" name="viewmore" class="option-btn"> -->
                 </a>
         
             </div>

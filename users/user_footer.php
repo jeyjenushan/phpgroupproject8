@@ -19,7 +19,7 @@
             <h3>Contact Info</h3>
            <P><i class="fas fa-phone"></i>+123-456-7890</P>
            <P><i class="fas fa-phone"></i>+111-222-3333</P>
-           <P><i class="fas fa-envelope"></i>jenu@gmail.com</P>
+           <P><i class="fas fa-envelope"></i>archeologyStore@gmail.com</P>
            <P><i class="fas fa-map-marker-alt"></i>Colombo,SriLanka-4000</P>
         </div>
         <div class="box">
@@ -30,7 +30,7 @@
           <a href="#" ><i class="fab fa-linkedin"></i>linkdin</a>
         </div>
     </div>
-    <p class="credit">Created by <span>J.jenushan</span>@<?php echo date('Y') ?>| all rights reserved! </p>
+    <p class="credit">Created by <span>SE Web Team 8</span>@<?php echo date('Y') ?>| all rights reserved! </p>
 
 
 </section>
