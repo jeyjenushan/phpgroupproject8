@@ -162,18 +162,17 @@
 
 
 
-/* .heading{
-   min-height: 30vh;
+.heading{
+   min-height: 60vh;
    display: flex;
    flex-flow: column;
    align-items: center;
    justify-content: center; 
    gap: 1rem; 
-   background-image:url(../images/cart1.png);
    background-size: cover;
    background-position: center;
    text-align: center;
-} */
+}
 
 .heading h3{
    font-size: 5rem;

@@ -48,7 +48,7 @@ if (isset($_POST['add_to_cart'])) {
             <a href="about.php" class="white-btn">discover more</a>
         </div>
     </section>
-
+    <script src="home.js"></script>
 
     <section class="products">
         <div class="container">
