@@ -17,7 +17,7 @@ if(isset($_POST['order_btn'])){
     $method=$_POST['method'];
     $city=$_POST['city'];
     if($method == "direct"){
-      header("location:location.php?city=$city");
+      header("location:location.php?city='$city'");
     }
     $address = mysqli_real_escape_string($conn, 'flat no. '. $_POST['flat'].', '. $_POST['street'].', '. $_POST['city'].', '. $_POST['country'].' - '. $_POST['pin_code']);
    $placed_on=date('d-M-Y');
@@ -44,8 +44,18 @@ if(isset($_POST['order_btn'])){
          $message[] = 'order already placed!'; 
       }else{
          mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on')") or die('query failed');
-         $message[] = 'order placed successfully!';
+  
          mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+         $message[] ='order placed successfully';
+         echo "<script>
+    setTimeout(() => {
+       
+        window.location.href = 'home.php';
+    }, 1000);
+</script>";
+
+         
+
       }
    }
 
