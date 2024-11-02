@@ -75,7 +75,7 @@ $id=$row['id'];
 object-fit: contain" ;> </a>
                     <div class="name"><?php echo $fetched_products['name'] ?></div>
                     <div class="price">Rs <?php echo $fetched_products['price'] ?></div>
-                    <div class="hidden" name="quantitys"><?php echo $fetched_products['quantity'] ?></div>
+                   <div class="hidden" name="quantitys"> <label id=stocks_label>Stoks : </label><?php echo $fetched_products['quantity'] ?></div>
                     <label id=Qty_label>Qty : </label><input type="number" name="product_quantity" value=1 min=1 class="qty">
                     <input type="hidden" value="<?php echo $fetched_products['name'] ?>" name="product_name">
                     <input type="hidden" value="<?php echo $fetched_products['price'] ?>" name="product_price">

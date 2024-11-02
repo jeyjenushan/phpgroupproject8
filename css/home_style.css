@@ -180,6 +180,8 @@
     color:var(--black);
     font-weight: 400;
  }
+
+
  #Qty_label{
     padding:1rem 0;
     font-size: 3rem;
@@ -188,14 +190,15 @@
  }
  .products .box-container .box .hidden{
     padding:1rem 0;
-    font-size: 3rem;
+    font-size: 2rem;
     color:var(--black);
     font-weight: 400;
     
  }
  
  .products .box-container .box .qty{
-    width: 30%;
+    width: 33%;
+    justify-items: right;
     padding:1.2rem 1.4rem;
     border-radius: .5rem;
     border:var(--border);
