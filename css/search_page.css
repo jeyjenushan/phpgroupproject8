@@ -1,5 +1,6 @@
 .heading{
-    background-image: url(../images/search2.jpg);
+    background-image: linear-gradient(to bottom right, brown, bisque);
+    /* background-image: url(../images/search2.jpg); */
 }
 
 
