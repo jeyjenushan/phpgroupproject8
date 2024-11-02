@@ -96,7 +96,7 @@ $city = $_GET['city'] ?? '';
                 </thead>
                 <tbody>
                     <?php
-                    $shop_query = mysqli_query($conn, "SELECT * FROM `shopdetail` WHERE location =$city") or die('Query failed');
+                    $shop_query = mysqli_query($conn, "SELECT * FROM `shopdetail` ") or die('Query failed');
                     if (mysqli_num_rows($shop_query) > 0) {
                         while ($shop = mysqli_fetch_assoc($shop_query)) {
                             echo "<tr>";
@@ -137,5 +137,8 @@ $city = $_GET['city'] ?? '';
             <button type="button">HAPPY BUYING 😊😊😊</button>
         </a>
     </div>
+    <?php include 'user_footer.php'?>
+    <script src="../js/script.js"></script>
+</body>
 </body>
 </html>

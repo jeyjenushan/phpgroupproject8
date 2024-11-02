@@ -36,9 +36,10 @@ if (isset($message)) {
             <div class="navbar">
                 <a href="home.php">Home</a>
                 <a href="about.php">About</a>
-                <a href="shop.php">Shop</a>
+                <a href="shop.php">Products</a>
                 <a href="contact.php">Contact</a>
                 <a href="orders.php">Orders</a>
+                <a href="productShop.php">Shop</a>
             </div>
 
 
@@ -49,6 +50,7 @@ if (isset($message)) {
                 <p>username:<span><?php echo $_SESSION['user_name'] ?></span></p>
                 <p>Email:<span><?php echo $_SESSION['user_email'] ?></span></p>
                 <a href="../login/logout.php" class="delete-btn">Logout</a>
+                <div>new <a href="../login/login.php">login</a> | <a href="../login/register.php">register</a></div>
             </div>
 
 
