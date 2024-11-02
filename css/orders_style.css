@@ -75,7 +75,7 @@
  .header .header-2 .flex .navbar a{
     
     margin:1rem;
-    font-size: 3rem;
+    font-size: 2rem;
     color:var(--light-color);
  }
  
@@ -162,18 +162,17 @@
 
 
 
-/* .heading{
-   min-height: 30vh;
+.heading{
+   min-height: 60vh;
    display: flex;
    flex-flow: column;
    align-items: center;
    justify-content: center; 
    gap: 1rem; 
-   background-image:url(../images/cart1.png);
    background-size: cover;
    background-position: center;
    text-align: center;
-} */
+}
 
 .heading h3{
    font-size: 5rem;
