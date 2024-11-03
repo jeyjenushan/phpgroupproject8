@@ -1,7 +1,7 @@
 <?php
 include '../config.php';
 session_start();
-$admin_id = $_SESSION['admin_id'];
+$admin_id = $_SESSION['user_id'];
 
 if(!isset($admin_id)){
    header('location:../login/login.php');
@@ -13,8 +13,8 @@ if(!isset($admin_id)){
 if(isset($_POST['submit'])){
     $username=$_POST['name'];
     $useremail=$_POST['email'];
-    $userpassword=md5($_POST['password']);
-    $cpassword=md5($_POST['cpassword']);
+    $userpassword=$_POST['password'];
+    $cpassword=$_POST['cpassword'];
     $usertype=$_POST['user_type'];
     //CHECK THE USER AVAILABE OR NOT
     $select_users=mysqli_query($conn,"Select * from `users` where email='$useremail' and password='$userpassword'");
