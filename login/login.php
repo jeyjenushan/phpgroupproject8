@@ -56,26 +56,22 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_num_rows($select_users) > 0) {
         $row = mysqli_fetch_assoc($select_users);
-        // Generate a session ID and store it in the database
+       
         $session_id = bin2hex(random_bytes(32));
         $user_id = $row['id'];
 
-        // Store session ID in the database
         $update_session = mysqli_query($conn, "UPDATE `users` SET session_id='$session_id' WHERE id='$user_id'");
 
         
         setcookie("session_id", $session_id, time() + (7 * 24 * 60 * 60), "/");
 
-        // Store user details in session for server-side use
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['user_name'] = $row['name'];
         $_SESSION['user_email'] = $row['email'];
 
-        // Assign user type, defaulting to "admin" if not specified
         $user_type = $row['user_type'] ?? 'admin';
         $_SESSION['user_type'] = $user_type;
 
-        // Redirect based on user type
         if ($user_type === 'admin') {
             header('location:../admin/admin_page.php');
         } elseif ($user_type === 'user') {
@@ -88,17 +84,17 @@ if (isset($_POST['submit'])) {
     }
 }
 
-// Automatically log in if valid session ID cookie is found
+
 if (!isset($_SESSION['user_email']) && isset($_COOKIE['session_id'])) {
     $session_id = $_COOKIE['session_id'];
 
-    // Check session ID in the database
+
     $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE session_id='$session_id'");
 
     if (mysqli_num_rows($select_user) > 0) {
         $row = mysqli_fetch_assoc($select_user);
 
-        // Store user info in session based on session ID from the database
+
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['user_name'] = $row['name'];
         $_SESSION['user_email'] = $row['email'];
