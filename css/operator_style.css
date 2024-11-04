@@ -173,7 +173,7 @@ section{
 }
 
 .header .flex .navbar a{
-   margin:0 1rem;
+   margin:1rem;
    font-size: 2rem;
    color:var(--black);
 }

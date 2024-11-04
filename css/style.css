@@ -329,11 +329,12 @@ background-color: #886a4d;
    color:var(--purple);
 }
 .header .header-2 .flex .navbar a{
-   
-   margin:1rem;
-   font-size: 3rem;
-   color:var(--light-color);
-}
+  
+      margin:1rem;
+      font-size: 2rem;
+      color:var(--black);
+   }
+
 
 .header .header-2 .flex .navbar a:hover{
    color:var(--black);
