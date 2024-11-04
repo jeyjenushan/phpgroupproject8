@@ -329,11 +329,11 @@ background-color: #886a4d;
    color:var(--purple);
 }
 .header .header-2 .flex .navbar a{
-  
-      margin:1rem;
-      font-size: 2rem;
-      color:var(--black);
-   }
+   
+   margin:1rem;
+   font-size: 3rem;
+   color:var(--light-color);
+}
 
 
 .header .header-2 .flex .navbar a:hover{
@@ -1185,7 +1185,7 @@ background-color: #886a4d;
 
 }
 
-@media (max-width:1350px){
+@media (max-width:1400px){
 
    #menu-btn{
       display: inline-block;
