@@ -169,7 +169,7 @@ section{
 }
 
 .header .flex .logo1 span{
-   color:var(--purple);
+   color:#c28d58;
 }
 
 .header .flex .navbar a{
@@ -406,10 +406,104 @@ section{
    color:var(--black);
    width: 100%;
 }
-/* show products end*/
+/* show products end
 /* order*/
 
-.orders .box-container{
+
+
+
+/* Table Container */
+.orders {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 2rem;
+}
+
+.orders .box-container .box{
+   margin-top: 5%;
+   margin-bottom: 10%;
+}
+.orders.box-container .box {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.orders table {
+   width: 100%;
+   border-collapse: collapse;
+   box-shadow: var(--box-shadow);
+   background-color: var(--white);
+   border-radius: .5rem;
+   overflow: hidden;
+}
+
+/* Table Header with Gradient */
+.orders table th {
+   background:#725132;
+   color: white;
+   font-size: 1.8rem;
+   padding: 1.5rem;
+   text-align: left;
+}
+
+/* Table Data Cells */
+.orders table td {
+   font-size: 1.6rem;
+   padding: 1.5rem;
+   color: var(--black);
+   /* border-bottom: var(--border); */
+}
+
+/* Alternate Row Color */
+.orders table tr:nth-child(even) {
+   background-color: var(--light-bg);
+}
+
+/* Highlight Special Text with Gradient */
+.orders table td span {
+   background: linear-gradient(45deg, #d2a679, #180c00);
+  
+   -webkit-text-fill-color: transparent;
+   font-weight: bold;
+}
+
+#update_payment{
+   width:100%;
+   text-align: center;
+   margin-top: 15px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   background-color: #f0be90;
+   font-size: 2rem;
+   font-weight: bold;
+}
+#update_order{
+   margin-right:20px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .orders table, .orders table tr, .orders table th, .orders table td {
+      display: block;
+      width: 100%;
+   }
+
+   .orders table th {
+      text-align: center;
+   }
+
+   .orders table td {
+      text-align: center;
+      padding: 1rem;
+   }
+}
+
+
+
+
+
+/* .orders .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 30rem);
    justify-content: center;
@@ -450,7 +544,7 @@ section{
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    color:var(--black);
-}
+}  */
 /* orders ends*/
 /* user start*/
 
