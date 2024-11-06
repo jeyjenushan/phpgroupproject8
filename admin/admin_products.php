@@ -171,7 +171,7 @@ while($row=mysqli_fetch_array($result)){
             }
             ?>
         </div>
-    </div><br><br><br>
+    </div>
     
         <input type="submit" name="add_product" class=" btn" value="ADD PRODUCT" required>
     </form>
@@ -216,7 +216,7 @@ $name=$row['name'];
                         </ul>
                     </div>
           <div class="name">Category : <?php echo  $name ?></div>
-        <div class="price">Price : <?php echo "$". $fetch_products['price'] ."/-" ?></div>
+        <div class="price">Price : <?php echo "Rs ". $fetch_products['price'] ."/-" ?></div>
         <div class="price">Quantity : <?php echo  $fetch_products['quantity'];?></div>
         <?php if($fetch_products['quantity'] < 5){ 
          echo "<script>window.prompt($name"."is low stock level product" ."the level is ".$fetch_products['quantity'].")</script>";

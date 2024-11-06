@@ -37,7 +37,7 @@
 }
 
 *::-webkit-scrollbar-thumb{
-   background-color: var(--purple);
+   background-color:#a47a3c;
 }
 
 html{
@@ -386,6 +386,40 @@ section{
    border:var(--border);
    text-align: left;
 }
+.add-products form .custom-select{
+   width: 100%;
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   margin:1rem 0;
+   
+   color:var(--black);
+   font-size: 1.8rem;
+   border:var(--border);
+   text-align: left;
+}
+.add-products form .custom-select .select-btn{
+   width: 100%;
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   color:var(--black);
+   font-size: 1.8rem;
+   text-align:center;
+}
+.add-products form .custom-select .select-btn:hover{
+   cursor: pointer;
+   width: 100%;
+   background-color:#ece7e2;
+   border-radius: .5rem;
+   color:var(--black);
+   font-size: 1.8rem;
+   text-align:center;
+}
+.add-products form .btn{
+   background-color:#a47a3c;
+   border-radius: .5rem;
+   font-size: 1.8rem;
+   text-align:center;
+}
 /*end*/
 /* show products*/
 
@@ -417,6 +451,11 @@ section{
    
 }
 
+.show-products .box-container .box .shops{
+   padding:1rem 0;
+   font-size: 2rem;
+   color:var(--black);
+}
 .show-products .box-container .box .name{
    padding:1rem 0;
    font-size: 2rem;
@@ -506,7 +545,7 @@ section{
 
 /* Table Header with Gradient */
 .orders table th {
-   background:#725132;
+   background:#805f2e;
    color: white;
    font-size: 1.8rem;
    padding: 1.5rem;
