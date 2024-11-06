@@ -245,6 +245,14 @@ section{
    display: none;
 }
 /*DASHBOARD CSS STARTS*/
+
+/* .dashboard{
+   
+      background-image: linear-gradient( rgba(255,0,0,0), rgb(218, 151, 97));
+}
+
+
+
 .dashboard .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -264,7 +272,7 @@ section{
 }
 
 .dashboard .box-container .box h3{
-   font-size: 5rem;
+   font-size: 4rem;
    color:var(--black); 
 }
 
@@ -285,8 +293,67 @@ section{
    color:#a47a3c;
    font-size: 2rem;
    border-radius: .5rem;
-   border:var(--border);
+   border:var(--border); 
+}*/
+
+
+
+
+
+
+
+/* Dashboard Background */
+.dashboard {
+   background-image: linear-gradient(rgba(255, 0, 0, 0), rgb(218, 151, 97));
+   border-radius: 10px;
 }
+
+/* Box Container */
+.dashboard .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 1.5rem;
+   max-width: 1200px;
+   margin: 0 auto;
+   align-items: flex-start;
+   
+}
+
+/* Individual Box */
+.dashboard .box-container .box {
+   padding: 2rem;
+   border-radius: 0.5rem;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border: var(--border);
+   text-align: center;
+}
+
+/* Box Heading */
+.dashboard .box-container .box h3 {
+   font-size: 4rem;
+   color: var(--black);
+}
+
+/* Box Paragraph */
+.dashboard .box-container .box p {
+   margin-top: 1.5rem;
+   padding: 1.5rem;
+   font-size: 2rem;
+   color: #a47a3c;
+   background-color: var(--light-bg);
+   border: var(--border);
+   border-radius: 0.5rem;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Box Paragraph Hover */
+.dashboard .box-container .box p:hover {
+   cursor: pointer;
+   background-color:rgb(218, 151, 97); /* Consider defining a hover variant in CSS */
+   color: #000000; /* Optional: Change color for hover state */
+}
+
 /*DASH BOARD CSS ENDS*/
 /*PRODUCT CSS STARTS*/
 /*add product*/
@@ -738,7 +805,12 @@ body {
    position: relative;
    display: inline-block;
  }
-
+ .header .flex .navbar .dropdown p{
+   margin-left:2rem;
+   margin-top:0;
+   margin-bottom:0;
+   display: block;
+}
  .dropdown-content {
    display: none;
    position: absolute;
