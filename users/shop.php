@@ -73,7 +73,7 @@ if (isset($_POST['add_to_cart'])) {
                                 <form action="" method="post" class="box">
                                     <img class="image" src="../uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
                                     <div class="name"><?php echo $fetch_products['name']; ?></div>
-                                    <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+                                    <div class="price">Rs <?php echo $fetch_products['price']; ?>/-</div>
                                     <div class="hidden" name="quantity"><?php echo $fetch_products['quantity'] ?></div>
                                     <input type="number" min="1" name="product_quantity" value="1" class="qty">
                                     <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
@@ -99,7 +99,7 @@ if (isset($_POST['add_to_cart'])) {
                                 <form action="" method="post" class="box">
                                     <img class="image" src="../uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
                                     <div class="name"><?php echo $fetch_products['name']; ?></div>
-                                    <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+                                    <div class="price">Rs <?php echo $fetch_products['price']; ?>/-</div>
                                     <div class="hidden" name="quantity"><?php echo $fetch_products['quantity'] ?></div>
                                     <input type="number" min="1" name="product_quantity" value="1" class="qty">
                                     <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
