@@ -74,7 +74,20 @@ section{
    position: sticky;
    top:0;
    margin:0 auto;
-   max-width: 1200px;
+   width:100%;
+   background-color: var(--light-bg);
+   padding:2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   z-index: 10000;
+   gap:1.5rem;
+}
+.message .box-container{
+   position: sticky;
+   top:0;
+   margin:0 auto;
+   width:100%;
    background-color: var(--light-bg);
    padding:2rem;
    display: flex;
@@ -511,6 +524,18 @@ section{
    font-size: 1.8rem;
    color:var(--black);
    width: 100%;
+}
+#select-btn:hover{
+   background-color: #fce7d1;
+}
+#select-dropdown{
+
+   padding: 0;
+   background-color: var(--light-bg);
+   font-size: 1.8rem;
+   color:var(--black);
+   width: 100%
+
 }
 /* show products end
 /* order*/

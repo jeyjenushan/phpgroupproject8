@@ -269,7 +269,7 @@ if (isset($_GET['update'])) {
                 <input type="number" name="update_price" min='0' class="box" placeholder="Enter Product Price" value="<?php echo $fetch_update['price']; ?>">
                 <input type="number" name="update_quantity" min='0' class="box" placeholder="Enter Product Quantity" value="<?php echo $fetch_update['quantity']; ?>">
 
-                <select name="update_category" id="">
+                <select name="update_category" class="box" id="">
                     <?php
                     echo "<option value='{$fetch_update['category_id']}'>{$name}</option>";
                     $result = mysqli_query($conn, "SELECT * FROM `category`");
@@ -277,14 +277,14 @@ if (isset($_GET['update'])) {
                         $id = $row['id'];
                         $name = $row['name'];
                         ?>
-                        <option value="<?php echo $id; ?>"><?php echo $name; ?></option>
+                        <option placeholder="Category type"value="<?php echo $id; ?>"><?php echo $name; ?></option>
                         <?php
                     }
                     ?>
                 </select>
                 
                 <div class="custom-select">
-                    <button type="button" id="select-btn">Select Shops</button>
+                    <button type="button"class="box" id="select-btn">Select Shops</button>
                     <div id="select-dropdown" style="display: none;"> <!-- Initially hidden -->
                         <?php
                         // Fetch all shops from the database
@@ -298,7 +298,7 @@ if (isset($_GET['update'])) {
                                     <input type="checkbox" name="shopname[]" value="<?php echo htmlspecialchars($id); ?>" 
                                     <?php echo in_array($id, $associated_shops) ? 'checked' : ''; ?>> 
                                     <?php echo htmlspecialchars($name); ?>
-                                </label><br>
+                                </label>
                                 <?php
                             }
                         } else {
