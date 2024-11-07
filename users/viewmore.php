@@ -138,12 +138,21 @@ if(isset($_POST['updated_product'])){
    <p> <a href="home.php">Home</a> / Details </p>
 </div>
 
-<h1 class="title"><?php echo htmlspecialchars($name); ?> - Product Details</h1>
+<h1 class="title"><?php echo htmlspecialchars($name); ?></h1>
 <div class="product-details">
     <img class="product-image" src="../uploaded_img/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
     <div class="product-info">
-        <h1><?php echo htmlspecialchars($product['name']); ?></h1>
-        <p><strong>Price:</strong> $<?php echo number_format($product['price'], 2); ?></p>
+        <h1><strong>Name :</strong><?php echo htmlspecialchars($product['name']); ?></h1>
+<br>
+        <h3>Category : Book</h3>
+        <h3>Author : Mr.Perera</h3>
+        
+        <h3>Published year : 1995</h3>
+        <h3>Discription :- </h3>
+        <!-- <label id="lbdiscription">Discrioption</label> -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem ratione totam ut nemo consequatur error, consequuntur repellendus. Pariatur nesciunt, voluptas reprehenderit aliquid amet ad perferendis praesentium a incidunt fugiat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo accusantium officiis iste non praesentium alias deserunt error officia! Dolorum, laboriosam quibusdam beatae natus eaque aspernatur fugit sit aliquam voluptatibus porro!</p>
+        <br>
+        <p><strong>Price:</strong> </p><p  id="view_price"> Rs<?php echo number_format($product['price'], 2); ?></p>
     </div>
 </div>
 

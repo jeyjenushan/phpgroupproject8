@@ -1,8 +1,8 @@
 .product-details{
    display: grid;
-   border: 1px solid black;
-   border-radius: 10px;
-   max-width: 400px;
+   /* border: 1px solid black;
+   border-radius: 10px; */
+   max-width: 600px; 
    align-items: center; 
    justify-items: center;
    justify-self: center;
@@ -16,10 +16,24 @@
     border-radius: 10px;
 }
 .product-info h1{
-    font-size: 4rem;
+    font-size: 3rem;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.product-info h3{
+    font-size: 2rem;
+    margin: 10px;
 }
 .product-info p{
     font-size: 2rem;
+    margin: 8px;
+    text-align: justify;
+  text-justify: inter-word;
+}
+#view_price{
+color: rgb(201, 95, 53);
+margin-top: 3px;
+margin-left:10px;
 }
 /* Reviews */
 .reviews {
