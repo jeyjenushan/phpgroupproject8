@@ -47,18 +47,20 @@
     align-items: center;
     justify-content: center; 
     gap: 1rem; 
-    background-image:url(../images/aboutus5.jpg);
+    background-image:url(../images/aboutpage.jpeg);
     background-size:cover;
-
     background-position: center;
     text-align: center;
     
  }
  
  .about_heading h3{
-    font-size: 5rem;
-    color:var(--black);
-    text-transform: uppercase;
+   
+   font-size: 5rem;
+   color:var(--white);
+   text-transform: uppercase;
+   text-shadow: 0 0 3px #000000, 0 0 5px #0000FF;
+
  }
  
  .about_heading p{
@@ -66,15 +68,25 @@
     color:var(--light-color);
  }
  
- .about_heading p a{
-    color:var(--purple);
- }
+
  
  .about_heading p a:hover{
     text-decoration: underline;
  }
  
- 
+
+.heading p{
+   font-size: 2.5rem;
+   color:var(--white);
+}
+
+.about_heading p a{
+   color:#e08f0d;
+}
+
+.heading p a:hover{
+   text-decoration: underline;
+}
 
 
  

@@ -350,7 +350,7 @@ section{
 /* Box Paragraph Hover */
 .dashboard .box-container .box p:hover {
    cursor: pointer;
-   background-color:rgb(218, 151, 97); /* Consider defining a hover variant in CSS */
+   background-color:rgb(255, 229, 208); /* Consider defining a hover variant in CSS */
    color: #000000; /* Optional: Change color for hover state */
 }
 

@@ -20,6 +20,7 @@ if(!isset($user_id)){
 <body>
     <?php include './user_header.php' ?>
 <div class="about_heading">
+
     <h3>About US</h3>
     <P><a href="home.php">HOME</a>/ ABOUT</P>
 </div>
@@ -131,18 +132,18 @@ if(!isset($user_id)){
       <a href="#" class="fab fa-instagram"></a>
       <a href="#" class="fab fa-linkedin"></a>
    </div>
-   <h3>Jenushan</h3>
+   <h3>Mr.Jenushan</h3>
 </div>
 
 <div class="box">
-   <img src="../images/author-2.jpg" alt="">
+   <img src="../images/nadeesha.jpg" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
       <a href="#" class="fab fa-instagram"></a>
       <a href="#" class="fab fa-linkedin"></a>
    </div>
-   <h3>john deo</h3>
+   <h3>Mr.Nadeesha</h3>
 </div>
 
 <div class="box">
@@ -153,7 +154,7 @@ if(!isset($user_id)){
       <a href="#" class="fab fa-instagram"></a>
       <a href="#" class="fab fa-linkedin"></a>
    </div>
-   <h3>john deo</h3>
+   <h3>Mr.Thejan</h3>
 </div>
 
 <div class="box">
@@ -164,18 +165,18 @@ if(!isset($user_id)){
       <a href="#" class="fab fa-instagram"></a>
       <a href="#" class="fab fa-linkedin"></a>
    </div>
-   <h3>john deo</h3>
+   <h3>Mr.Danindu</h3>
 </div>
 
 <div class="box">
-   <img src="../images/author-5.jpg" alt="">
+   <img src="../images/mihiran.png" alt="">
    <div class="share">
       <a href="#" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
       <a href="#" class="fab fa-instagram"></a>
       <a href="#" class="fab fa-linkedin"></a>
    </div>
-   <h3>john deo</h3>
+   <h3>Mr.Mihiran</h3>
 </div>
 
 <div class="box">
