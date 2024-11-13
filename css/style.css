@@ -373,7 +373,7 @@ background-color: #886a4d;
 }
 
 .header .header-2 .flex .icons > *:hover{
-   color:var(--purple);
+   color:#886a4d;
 }
 
 #menu-btn{
