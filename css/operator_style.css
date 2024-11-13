@@ -263,9 +263,9 @@ section{
    text-align: center;
 }
 
-.dashboard .box-container .box h3{
-   font-size: 5rem;
-   color:var(--black); 
+.dashboard .box-container .box h3 {
+   font-size: 3rem;
+   color: var(--black);
 }
 
 .dashboard .box-container .box p{
@@ -286,6 +286,11 @@ section{
    font-size: 2rem;
    border-radius: .5rem;
    border:var(--border);
+}
+.dashboard .box-container .box p:hover {
+   cursor: pointer;
+   background-color:rgb(255, 229, 208); /* Consider defining a hover variant in CSS */
+   color: #000000; /* Optional: Change color for hover state */
 }
 /*DASH BOARD CSS ENDS*/
 /*PRODUCT CSS STARTS*/
