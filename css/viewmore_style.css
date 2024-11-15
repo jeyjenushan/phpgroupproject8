@@ -1,3 +1,6 @@
+body{
+background: url(../images/homewall2.jpg);
+}
 .product-details{
    display: grid;
    /* border: 1px solid black;
@@ -76,12 +79,15 @@ margin-left:10px;
     font-size: 18px;
 }
 
+
 .rating {
     color: #ffcc00;
     font-size: 16px;
     margin-left: 8px;
 }
-
+.review-form form label{
+    font-size: 2rem;
+}
 .review p {
     margin: 5px 0;
 }
