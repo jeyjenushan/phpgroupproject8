@@ -263,9 +263,9 @@ section{
    text-align: center;
 }
 
-.dashboard .box-container .box h3{
-   font-size: 5rem;
-   color:var(--black); 
+.dashboard .box-container .box h3 {
+   font-size: 3rem;
+   color: var(--black);
 }
 
 .dashboard .box-container .box p{
@@ -286,6 +286,11 @@ section{
    font-size: 2rem;
    border-radius: .5rem;
    border:var(--border);
+}
+.dashboard .box-container .box p:hover {
+   cursor: pointer;
+   background-color:rgb(255, 229, 208); /* Consider defining a hover variant in CSS */
+   color: #000000; /* Optional: Change color for hover state */
 }
 /*DASH BOARD CSS ENDS*/
 /*PRODUCT CSS STARTS*/
@@ -408,49 +413,76 @@ section{
 }
 /* show products end*/
 /* order*/
-
-.orders .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 30rem);
-   justify-content: center;
-   gap:1.5rem;
+/* Table Container */
+.orders {
    max-width: 1200px;
-   margin:0 auto;
-   align-items: flex-start;
+   margin: 0 auto;
+   padding: 2rem;
 }
 
 .orders .box-container .box{
-   background-color: var(--white);
-   padding:2rem;
-   border:var(--border);
-   box-shadow: var(--box-shadow);
-   border-radius: .5rem;
+   margin-top: 5%;
+   margin-bottom: 10%;
+}
+.orders.box-container .box {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
 }
 
-.orders .box-container .box p{
-   padding-bottom: 1rem;
-   font-size: 2rem;
-   color:var(--light-color);
-}
-
-.orders .box-container .box p span{
-   color:var(--purple);
-}
-
-.orders .box-container .box form{
-   text-align: center;
-}
-
-.orders .box-container .box form select{
-   border-radius: .5rem;
-   margin:.5rem 0;
+.orders table {
    width: 100%;
-   background-color: var(--light-bg);
-   border:var(--border);
-   padding:1.2rem 1.4rem;
-   font-size: 1.8rem;
-   color:var(--black);
+   border-collapse: collapse;
+   box-shadow: var(--box-shadow);
+   background-color: var(--white);
+   border-radius: .5rem;
+   overflow: hidden;
 }
+
+/* Table Header with Gradient */
+.orders table th {
+   background:#805f2e;
+   color: white;
+   font-size: 1.8rem;
+   padding: 1.5rem;
+   text-align: left;
+}
+
+/* Table Data Cells */
+.orders table td {
+   font-size: 1.6rem;
+   padding: 1.5rem;
+   color: var(--black);
+   /* border-bottom: var(--border); */
+}
+
+/* Alternate Row Color */
+.orders table tr:nth-child(even) {
+   background-color: var(--light-bg);
+}
+
+/* Highlight Special Text with Gradient */
+.orders table td span {
+   background: linear-gradient(45deg, #d2a679, #180c00);
+  
+   -webkit-text-fill-color: transparent;
+   font-weight: bold;
+}
+
+#update_payment{
+   width:100%;
+   text-align: center;
+   margin-top: 15px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   background-color: #f0be90;
+   font-size: 2rem;
+   font-weight: bold;
+}
+#update_order{
+   margin-right:20px;
+}
+
+
 /* orders ends*/
 /* user start*/
 

@@ -37,7 +37,7 @@
 }
 
 *::-webkit-scrollbar-thumb{
-   background-color: var(--purple);
+   background-color:#a47a3c;
 }
 
 html{
@@ -74,7 +74,20 @@ section{
    position: sticky;
    top:0;
    margin:0 auto;
-   max-width: 1200px;
+   width:100%;
+   background-color: var(--light-bg);
+   padding:2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   z-index: 10000;
+   gap:1.5rem;
+}
+.message .box-container{
+   position: sticky;
+   top:0;
+   margin:0 auto;
+   width:100%;
    background-color: var(--light-bg);
    padding:2rem;
    display: flex;
@@ -169,7 +182,7 @@ section{
 }
 
 .header .flex .logo1 span{
-   color:var(--purple);
+   color:#c28d58;
 }
 
 .header .flex .navbar a{
@@ -245,6 +258,14 @@ section{
    display: none;
 }
 /*DASHBOARD CSS STARTS*/
+
+/* .dashboard{
+   
+      background-image: linear-gradient( rgba(255,0,0,0), rgb(218, 151, 97));
+}
+
+
+
 .dashboard .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -264,7 +285,7 @@ section{
 }
 
 .dashboard .box-container .box h3{
-   font-size: 5rem;
+   font-size: 4rem;
    color:var(--black); 
 }
 
@@ -285,8 +306,67 @@ section{
    color:#a47a3c;
    font-size: 2rem;
    border-radius: .5rem;
-   border:var(--border);
+   border:var(--border); 
+}*/
+
+
+
+
+
+
+
+/* Dashboard Background */
+.dashboard {
+   /* background-image: linear-gradient(rgba(255, 0, 0, 0), rgb(218, 151, 97)); */
+   border-radius: 10px;
 }
+
+/* Box Container */
+.dashboard .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 1.5rem;
+   max-width: 1200px;
+   margin: 0 auto;
+   align-items: flex-start;
+   
+}
+
+/* Individual Box */
+.dashboard .box-container .box {
+   padding: 2rem;
+   border-radius: 0.5rem;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border: var(--border);
+   text-align: center;
+}
+
+/* Box Heading */
+.dashboard .box-container .box h3 {
+   font-size: 3rem;
+   color: var(--black);
+}
+
+/* Box Paragraph */
+.dashboard .box-container .box p {
+   margin-top: 1.5rem;
+   padding: 1.5rem;
+   font-size: 2rem;
+   color: #a47a3c;
+   background-color: var(--light-bg);
+   border: var(--border);
+   border-radius: 0.5rem;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Box Paragraph Hover */
+.dashboard .box-container .box p:hover {
+   cursor: pointer;
+   background-color:rgb(255, 229, 208); /* Consider defining a hover variant in CSS */
+   color: #000000; /* Optional: Change color for hover state */
+}
+
 /*DASH BOARD CSS ENDS*/
 /*PRODUCT CSS STARTS*/
 /*add product*/
@@ -319,6 +399,40 @@ section{
    border:var(--border);
    text-align: left;
 }
+.add-products form .custom-select{
+   width: 100%;
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   margin:1rem 0;
+   
+   color:var(--black);
+   font-size: 1.8rem;
+   border:var(--border);
+   text-align: left;
+}
+.add-products form .custom-select .select-btn{
+   width: 100%;
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   color:var(--black);
+   font-size: 1.8rem;
+   text-align:center;
+}
+.add-products form .custom-select .select-btn:hover{
+   cursor: pointer;
+   width: 100%;
+   background-color:#ece7e2;
+   border-radius: .5rem;
+   color:var(--black);
+   font-size: 1.8rem;
+   text-align:center;
+}
+.add-products form .btn{
+   background-color:#a47a3c;
+   border-radius: .5rem;
+   font-size: 1.8rem;
+   text-align:center;
+}
 /*end*/
 /* show products*/
 
@@ -350,6 +464,11 @@ section{
    
 }
 
+.show-products .box-container .box .shops{
+   padding:1rem 0;
+   font-size: 2rem;
+   color:var(--black);
+}
 .show-products .box-container .box .name{
    padding:1rem 0;
    font-size: 2rem;
@@ -406,10 +525,116 @@ section{
    color:var(--black);
    width: 100%;
 }
-/* show products end*/
+#select-btn:hover{
+   background-color: #fce7d1;
+}
+#select-dropdown{
+
+   padding: 0;
+   background-color: var(--light-bg);
+   font-size: 1.8rem;
+   color:var(--black);
+   width: 100%
+
+}
+/* show products end
 /* order*/
 
-.orders .box-container{
+
+
+
+/* Table Container */
+.orders {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 2rem;
+}
+
+.orders .box-container .box{
+   margin-top: 5%;
+   margin-bottom: 10%;
+}
+.orders.box-container .box {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.orders table {
+   width: 100%;
+   border-collapse: collapse;
+   box-shadow: var(--box-shadow);
+   background-color: var(--white);
+   border-radius: .5rem;
+   overflow: hidden;
+}
+
+/* Table Header with Gradient */
+.orders table th {
+   background:#805f2e;
+   color: white;
+   font-size: 1.8rem;
+   padding: 1.5rem;
+   text-align: left;
+}
+
+/* Table Data Cells */
+.orders table td {
+   font-size: 1.6rem;
+   padding: 1.5rem;
+   color: var(--black);
+   /* border-bottom: var(--border); */
+}
+
+/* Alternate Row Color */
+.orders table tr:nth-child(even) {
+   background-color: var(--light-bg);
+}
+
+/* Highlight Special Text with Gradient */
+.orders table td span {
+   background: linear-gradient(45deg, #d2a679, #180c00);
+  
+   -webkit-text-fill-color: transparent;
+   font-weight: bold;
+}
+
+#update_payment{
+   width:100%;
+   text-align: center;
+   margin-top: 15px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   background-color: #f0be90;
+   font-size: 2rem;
+   font-weight: bold;
+}
+#update_order{
+   margin-right:20px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .orders table, .orders table tr, .orders table th, .orders table td {
+      display: block;
+      width: 100%;
+   }
+
+   .orders table th {
+      text-align: center;
+   }
+
+   .orders table td {
+      text-align: center;
+      padding: 1rem;
+   }
+}
+
+
+
+
+
+/* .orders .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 30rem);
    justify-content: center;
@@ -450,7 +675,7 @@ section{
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    color:var(--black);
-}
+}  */
 /* orders ends*/
 /* user start*/
 
@@ -644,7 +869,12 @@ body {
    position: relative;
    display: inline-block;
  }
-
+ .header .flex .navbar .dropdown p{
+   margin-left:2rem;
+   margin-top:0;
+   margin-bottom:0;
+   display: block;
+}
  .dropdown-content {
    display: none;
    position: absolute;

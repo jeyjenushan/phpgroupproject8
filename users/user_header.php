@@ -21,7 +21,7 @@ if (isset($message)) {
                 <a href="#" class="fab fa-instagram"></a>
                 <a href="#" class="fab fa-linkedin"></a>
             </div>
-          
+
         </div>
     </div>
 
@@ -50,7 +50,8 @@ if (isset($message)) {
                 <p>username:<span><?php echo $_SESSION['user_name'] ?></span></p>
                 <p>Email:<span><?php echo $_SESSION['user_email'] ?></span></p>
                 <a href="../login/logout.php" class="delete-btn">Logout</a>
-                <div>new <a href="../login/login.php">login</a> | <a href="../login/register.php">register</a></div>
+                <!-- <div>new <a href="../login/login.php">login</a> | <a href="../login/register.php">register</a>
+                </div> -->
             </div>
 
 

@@ -29,7 +29,9 @@
  .heading p a:hover{
     text-decoration: underline;
  }
- 
+ .shop-details .styled-button button :hover{
+background: #f0be8f;
+ }
 
 
 
