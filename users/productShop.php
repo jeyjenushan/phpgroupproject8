@@ -33,7 +33,7 @@ $city = $_GET['city'] ?? '';
             <table class="shop-table">
                 <thead>
                     <tr>
-                        <th>Shop Image</th>
+                    <th style="width:30%;">Shop Image</th>
                         <th>Shop Location</th>
                         <?php
                         // Fetch categories for header
@@ -87,6 +87,13 @@ $city = $_GET['city'] ?? '';
             <button type="button">HAPPY BUYING 😊😊😊</button>
         </a>
     </div>
+    <!-- Add this HTML for the fullscreen overlay just before the closing </body> tag -->
+
+<div class="fullscreen-overlay" id="fullscreenOverlay">
+    <span class="close-btn" onclick="closeFullscreen()">✖</span>
+    <img id="fullscreenImage" src="" alt="Full Screen Shop Image">
+</div>
+
     <?php include 'user_footer.php'?>
     <script src="../js/script.js"></script>
 </body>
