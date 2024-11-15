@@ -433,6 +433,10 @@ section{
    font-size: 1.8rem;
    text-align:center;
 }
+#lb_add_shop_image{
+justify-self:center;
+font-size: 2rem;
+}
 /*end*/
 /* show products*/
 
@@ -820,13 +824,13 @@ body {
    }
 
 }
-@media (max-width:1400px){
+/* @media (max-width:1400px){
 
    #menu-btn{
       display: inline-block;
       align-self: center;
    }
-}
+} */
 
 @media (max-width:990px){
 
