@@ -1,6 +1,5 @@
 <?php
 include '../config.php';
-session_start();
 
 
 
@@ -55,7 +54,7 @@ else{
                 <a href="#" class="fab fa-instagram"></a>
                 <a href="#" class="fab fa-linkedin"></a>
             </div>
-            <p>new <a href="../login/login.php">Login</a>|<a href="../login/register.php">Register</a></p>
+         
         </div>
     </div>
 </header>
@@ -143,7 +142,7 @@ object-fit: contain" ;>
         <div class="content">
             <h3>have any questions?</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cumque exercitationem repellendus, amet ullam voluptatibus?</p>
-            <a href="contact.php" class="white-btn">contact us</a>
+            <a href="../login/login.php" class="white-btn">contact us</a>
         </div>
 
     </section>
