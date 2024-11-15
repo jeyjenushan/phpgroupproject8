@@ -607,7 +607,7 @@ body {
    }
 
 }
-=======
+
 .custom-select {
     position: relative;
     display: inline-block;
@@ -629,7 +629,7 @@ body {
 .select-dropdown {
     display: none; /* Hidden by default */
     position: absolute;
-    left: 0; /* Align dropdown to the left */
+
     background-color: white;
     width: 200px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -656,4 +656,4 @@ body {
     border-radius: 5px;
     margin-left: 10px; /* Optional spacing */
 }
->>>>>>> main
+

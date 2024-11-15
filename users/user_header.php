@@ -29,7 +29,7 @@ if (isset($message)) {
         <div class="flex">
             <a href="home.php" class="hlogo">
                 <img src="../images/logo.png">
-                <!-- <pre>Archeology<br>Book Store -->
+          
                 </pre>
             </a>
 
