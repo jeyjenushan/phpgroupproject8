@@ -43,15 +43,6 @@ background: #f0be8f;
 
 
 
-
-
-
-
-
-
-
-
-
 .shop-table {
     width: 100%;
     border-collapse: collapse;
@@ -70,6 +61,7 @@ background: #f0be8f;
     background-color: #333;
     color: #fff;
     font-size: 2rem;
+    
 }
 .shop-table td {
     font-size: 2rem;
@@ -107,6 +99,50 @@ background: #f0be8f;
 .styled-button button:active {
     transform: scale(0.98);
 }
+
+
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0; /* Header එක ඉහළට freeze කිරීම */
+  z-index: 1; /* යම් විටවල header එක ඉදිරියෙන් පෙන්වීමට */
+}
+
+tbody {
+  display: block;
+  max-height: 600px; /* Body scroll කිරීම සඳහා height සීමා කරයි */
+  overflow-y: auto; /* Vertical scroll සක්‍රීය කිරීම */
+}
+
+th, td {
+  min-width: 150px; /* Column width එක සකස් කිරීම */
+}
+
+tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Column width එක ස්ථිර කිරීම */
+}
+
+
+
+
+
+
 
 
 

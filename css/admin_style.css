@@ -718,7 +718,7 @@ font-size: 2rem;
 /* user ends*/
 /* message start*/
 
-.messages .box-container{
+/* .messages .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 35rem);
    justify-content: center;
@@ -749,7 +749,7 @@ font-size: 2rem;
 
 .messages .box-container .box .delete-btn{
    margin-top: 0;
-}
+} */
 
 /* message ends*/
 
