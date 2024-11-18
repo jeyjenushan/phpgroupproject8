@@ -5,7 +5,7 @@ if (isset($message)) {
         echo '
         <div class="message">
         <span>' . $message . '</span>
-        <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+        <i class="fas fa-times" onClick="this.parentElement.remove();"></i>
                 </div>
         ';
     }
@@ -50,8 +50,7 @@ if (isset($message)) {
                 <p>username:<span><?php echo $_SESSION['user_name'] ?></span></p>
                 <p>Email:<span><?php echo $_SESSION['user_email'] ?></span></p>
                 <a href="../login/logout.php" class="delete-btn">Logout</a>
-                <!-- <div>new <a href="../login/login.php">login</a> | <a href="../login/register.php">register</a>
-                </div> -->
+      
             </div>
 
 
