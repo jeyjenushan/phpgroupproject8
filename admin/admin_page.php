@@ -106,9 +106,7 @@ include 'admin_header.php'; ?>
 
    <h1 class="title">dashboard</h1>
 
-   <form method="post">
-      <button type="submit" name="export_data" class="btn">Export Data</button>
-   </form>
+  
 
    <div class="box-container">
 
@@ -206,7 +204,9 @@ include 'admin_header.php'; ?>
             </div>
 
    </div>
-
+   <form method="post">
+      <button type="submit" name="export_data" class="export_btn">Export Data</button>
+   </form>
 </section>
 
 <!-- admin dashboard section ends -->
