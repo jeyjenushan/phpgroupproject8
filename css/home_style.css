@@ -160,7 +160,7 @@
     border:var(--border);
     position: relative;
     max-width: 300px;       /* Set the image width to 100% of its container */
-    max-height: 700px;       /* Set the image width to 100% of its container */
+    max-height:700px;       /* Set the image width to 100% of its container */
     height: auto;      /* Maintain aspect ratio */
     min-height:600px;
     /* Limit the height to avoid overly large images */

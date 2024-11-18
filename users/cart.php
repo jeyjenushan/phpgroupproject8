@@ -76,7 +76,8 @@ if (isset($_GET['delete_all'])) {
                     <div class="price">Rs <?php echo $row['price']; ?>/-</div>
                     <form action="" method="post">
                         <input type="hidden" name="cart_id" value="<?php echo $row['id']; ?>">
-                        <?php echo $row['name']; ?>;
+                        <!-- <?php echo $row['name']; ?>; -->
+                        <label id=Qty_label>Qty : 
                         <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
                         <input type="number" min="1" name="cart_quantity" value="<?php echo $row['quantity']; ?>">
                         <input type="submit" name="update_cart" value="Update" class="option-btn">

@@ -83,7 +83,12 @@
     font-size: 2.5rem;
     color:var(--red);
  }
- 
+ #Qty_label{
+   padding:1rem 0;
+   font-size: 2rem;
+   color:var(--black);
+   font-weight: 400;
+}
  .shopping-cart .box-container .box input[type="number"]{
     margin:.5rem 0;
     border:var(--border);
@@ -96,7 +101,7 @@
  
  .shopping-cart .box-container .box .sub-total{
     padding-top: 1.5rem;
-    font-size: 2rem;
+    font-size: 2.3rem;
     color:var(--light-color);
  }
  
