@@ -1,13 +1,13 @@
-/* .home{
+.home{
     min-height: 70vh;
-    background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/../images/home1.jpg) no-repeat;
+    background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/../images/home2.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
  }
-  */
+/*  
   .home {
    min-height: 70vh;
    background-size: cover;
@@ -17,8 +17,8 @@
    justify-content: center;
    position: relative;
    overflow: hidden;
-}
-
+} */
+/* 
 .home::before, .home::after {
    content: "";
    position: absolute;
@@ -39,7 +39,7 @@
 
 .home::after {
    background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/home2.jpg);
-   animation-delay: 6s; /* Start after the first image */
+   animation-delay: 6s;
 }
 
 @keyframes fadeCycle {
@@ -52,7 +52,7 @@
    80%, 100% {
        opacity: 1;
    }
-}
+} */
 
 
 
@@ -160,8 +160,10 @@
     border:var(--border);
     position: relative;
     max-width: 300px;       /* Set the image width to 100% of its container */
+    max-height: 700px;       /* Set the image width to 100% of its container */
     height: auto;      /* Maintain aspect ratio */
-   /* Limit the height to avoid overly large images */
+    min-height:600px;
+    /* Limit the height to avoid overly large images */
     object-fit: contain;
     
  }

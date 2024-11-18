@@ -3,7 +3,8 @@ include '../config.php';
 
 session_start();
 
-$operator_id = $_SESSION['operator_id'];
+
+$operator_id = $_SESSION['user_id'];
 
 if(!isset($operator_id)){
     header('location:../login/login.php');

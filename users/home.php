@@ -52,12 +52,11 @@ if (isset($_POST['add_to_cart'])) {
 
     <section class="products">
         <div class="container">
-
 <?php
     $select_category=mysqli_query($conn,"select * from `category` ");
     while($row=mysqli_fetch_assoc($select_category)){
         ?>
-                    <div class="main-content">
+        <div class="main-content">
 <h1 class="title">Latest <?php echo $row['name']?></h1>
 
 <div class="box-container">
@@ -99,6 +98,8 @@ object-fit: contain" ;> </a>
     }
     ?>
 </div>
+
+
 <div class="load-more" style="margin-top: 2rem; text-align:center">
     <a href="shop.php" class="option-btn">load more</a>
 </div>
