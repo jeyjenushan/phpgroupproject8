@@ -50,14 +50,15 @@ if (isset($_POST['order_btn'])) {
 
            // Redirect based on payment method
            if ($method == "paytm" || $method=="paypal") {
-               header("location:paytm.php");
-               exit; // Make sure to exit after header redirection
+            header("location:payment.php?grand_total=$cart_total");
+                // Make sure to exit after header redirection
            } else {
                header("location:success.php"); // Redirect to success page for Paytm
                exit; // Make sure to exit after header redirection
            }
        }
    }
+   
 }
 ?>
 <!DOCTYPE html>
