@@ -101,7 +101,7 @@ object-fit: contain" ;> </a>
 
 
 <div class="load-more" style="margin-top: 2rem; text-align:center">
-    <a href="shop.php" class="option-btn">load more</a>
+    <a href="shop.php?id=<?php echo $id ?>" class="option-btn">load more</a>
 </div>
 </div>
         </div>
