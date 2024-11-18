@@ -25,7 +25,6 @@ if(isset($_POST['export_data'])) {
    $headers = array("Data Type", "Value");
    fputcsv($file, $headers);
 
-   // Fetch data for each section and write to CSV
    $total_pendings = 0;
    $select_pending = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payment_status = 'pending'") or die('query failed');
    if(mysqli_num_rows($select_pending) > 0){
