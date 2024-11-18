@@ -433,6 +433,10 @@ section{
    font-size: 1.8rem;
    text-align:center;
 }
+#lb_add_shop_image{
+justify-self:center;
+font-size: 2rem;
+}
 /*end*/
 /* show products*/
 
@@ -714,7 +718,7 @@ section{
 /* user ends*/
 /* message start*/
 
-.messages .box-container{
+/* .messages .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 35rem);
    justify-content: center;
@@ -745,7 +749,7 @@ section{
 
 .messages .box-container .box .delete-btn{
    margin-top: 0;
-}
+} */
 
 /* message ends*/
 
@@ -820,13 +824,19 @@ body {
    }
 
 }
+/* @media (max-width:1400px){
+
+   #menu-btn{
+      display: inline-block;
+      align-self: center;
+   }
+} */
 
 @media (max-width:990px){
 
    #menu-btn{
       display: inline-block;
    }
-
 
    .header .flex .navbar{
       position: absolute;

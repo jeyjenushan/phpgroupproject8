@@ -156,7 +156,7 @@ if(isset($_POST['updated_product'])){
         <h3>Add Shop Details</h3>
         <input type="text" name="location" class="box" placeholder="Enter your location name" required>
         <input type="text" name="sname" class="box" placeholder="Enter your shop name" required>
-        <div class="shop_img_add"><label id=lb_add_shop_image>Add Shop Image</label><input type="file" name="productimage1"class="box" placeholder="Enter your shop image" required>
+        <div class="shop_img_add"><label id="lb_add_shop_image">Add Shop Image</label><input type="file" name="productimage1"class="box" placeholder="Enter your shop image" required>
         <!-- <input type="file" name="productimage2" class="box" placeholder="Enter your shop image2" required>
         <input type="file" name="productimage3" class="box" placeholder="Enter your shop image3" required> -->
         </div>
