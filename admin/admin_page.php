@@ -11,7 +11,74 @@ if(!isset($admin_id)){
 }
 
 ?>
+<?php
+if(isset($_POST['export_data'])) {
+   $filename = "admin_data_" . date('Ymd') . ".csv";
+   header("Content-Description: File Transfer");
+   header("Content-Disposition: attachment; filename=$filename");
+   header("Content-Type: application/csv; ");
 
+   // Open file for writing
+   $file = fopen('php://output', 'w');
+
+   // Column headers
+   $headers = array("Data Type", "Value");
+   fputcsv($file, $headers);
+
+   $total_pendings = 0;
+   $select_pending = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payment_status = 'pending'") or die('query failed');
+   if(mysqli_num_rows($select_pending) > 0){
+      while($fetch_pendings = mysqli_fetch_assoc($select_pending)){
+         $total_price = $fetch_pendings['total_price'];
+         $total_pendings += $total_price;
+      }
+   }
+   fputcsv($file, array("Total Pendings", "$" . $total_pendings . "/-"));
+
+   $total_completed = 0;
+   $select_completed = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payment_status = 'completed'") or die('query failed');
+   if(mysqli_num_rows($select_completed) > 0){
+      while($fetch_completed = mysqli_fetch_assoc($select_completed)){
+         $total_price = $fetch_completed['total_price'];
+         $total_completed += $total_price;
+      }
+   }
+   fputcsv($file, array("Completed Payments", "$" . $total_completed . "/-"));
+
+   $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
+   $number_of_orders = mysqli_num_rows($select_orders);
+   fputcsv($file, array("Orders Placed", $number_of_orders));
+
+   $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+   $number_of_products = mysqli_num_rows($select_products);
+   fputcsv($file, array("Products Added", $number_of_products));
+
+   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
+   $number_of_users = mysqli_num_rows($select_users);
+   fputcsv($file, array("Normal Users", $number_of_users));
+
+   $select_admins = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'admin'") or die('query failed');
+   $number_of_admins = mysqli_num_rows($select_admins);
+   fputcsv($file, array("Admin Users", $number_of_admins));
+
+   $select_account = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+   $number_of_account = mysqli_num_rows($select_account);
+   fputcsv($file, array("Total Accounts", $number_of_account));
+
+   $select_messages = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
+   $number_of_messages = mysqli_num_rows($select_messages);
+   fputcsv($file, array("New Messages", $number_of_messages));
+
+   $selected_operator = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'operator'") or die('query failed');
+   $number_of_operators = mysqli_num_rows($selected_operator);
+   fputcsv($file, array("Operators", $number_of_operators));
+
+   // Close file
+   fclose($file);
+   exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +106,10 @@ include 'admin_header.php'; ?>
 
    <h1 class="title">dashboard</h1>
 
+   <form method="post">
+      <button type="submit" name="export_data" class="btn">Export Data</button>
+   </form>
+
    <div class="box-container">
 
       <div class="box">
@@ -52,7 +123,7 @@ include 'admin_header.php'; ?>
                };
             };
          ?>
-         <h3>Rs <?php echo $total_pendings; ?>/-</h3>
+         <h3>$ <?php echo $total_pendings; ?>/-</h3>
          <p>total pendings</p>
       </div>
 
@@ -67,7 +138,7 @@ include 'admin_header.php'; ?>
                };
             };
          ?>
-         <h3>Rs <?php echo $total_completed; ?>/-</h3>
+         <h3>$ <?php echo $total_completed; ?>/-</h3>
          <p>completed payments</p>
       </div>
 
