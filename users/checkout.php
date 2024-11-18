@@ -42,19 +42,20 @@ if (isset($_POST['order_btn'])) {
        if (mysqli_num_rows($order_query) > 0) {
            $message[] = 'order already placed!'; 
        } else {
-           // Insert the order into the database
-           $result = mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on')") or die('query failed');
-
-           // Clear the cart
-           mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
 
            // Redirect based on payment method
            if ($method == "paytm" || $method=="paypal") {
             header("location:payment.php?grand_total=$cart_total");
                 // Make sure to exit after header redirection
            } else {
-               header("location:success.php"); // Redirect to success page for Paytm
-               exit; // Make sure to exit after header redirection
+               // Insert the order into the database
+               $insert_order = mysqli_query($conn, "INSERT INTO `orders` (user_id, name, email, total_products, total_price, placed_on) 
+               VALUES ('$user_id', '$name', '$email', '$total_products', '$cart_total', '$placed_on')") or die('Query failed');
+
+               // Clear the cart
+               mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('Query failed');
+               header("location:success.php"); // Redirect to success page for Cash on delivery
+               exit;
            }
        }
    }

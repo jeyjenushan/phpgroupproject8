@@ -1,14 +1,64 @@
 <?php
-require "../config.php";
-session_start();
-$user_id=$_SESSION['user_id'];
-$name=$_SESSION['user_name'];
-$email=$_SESSION['user_email'];
+require __DIR__ . '/../vendor/autoload.php';
 
-if(!isset($user_id)){
-    header('location:../login/login.php');
+// Set your Stripe secret key
+$stripe_secret_key = "sk_test_51QMV3KHyRh1dkonjcY9X1NSVNZLKcurWuejZ6MQoBWBewNAh2gG9HU0p8EVB8B2VUSJID29dnYqLqPh9jV9xGGtP00ZhjNwfjk";
+\Stripe\Stripe::setApiKey($stripe_secret_key);
+
+session_start();
+include '../config.php';
+
+// Check if the session ID is present
+if (isset($_GET['session_id'])) {
+    $session_id = $_GET['session_id'];
+
+    try {
+        // Retrieve the session details from Stripe
+        $session = \Stripe\Checkout\Session::retrieve($session_id);
+
+        // Check if the payment was successful
+        if ($session->payment_status === 'paid') {
+            $user_id = $_SESSION['user_id'];
+            $name = $_SESSION['user_name'];
+            $email = $_SESSION['user_email'];
+
+            // Retrieve cart details
+            $cart_total = 0;
+            $cart_products = [];
+            $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id='$user_id'") or die('Query failed');
+            
+            while ($cart_item = mysqli_fetch_assoc($cart_query)) {
+                $cart_products[] = $cart_item['name'] . '(' . $cart_item['quantity'] . ')';
+                $sub_total = ($cart_item['price'] * $cart_item['quantity']);
+                $cart_total += $sub_total;
+            }
+
+            $total_products = implode(', ', $cart_products);
+            $placed_on = date('Y-m-d');
+
+            // Insert the order into the database
+            $insert_order = mysqli_query($conn, "INSERT INTO `orders` (user_id, name, email, total_products, total_price, placed_on) 
+                VALUES ('$user_id', '$name', '$email', '$total_products', '$cart_total', '$placed_on')") or die('Query failed');
+
+            // Clear the cart
+            mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('Query failed');
+
+            echo "<h1>Payment Successful!</h1>";
+            echo "<p>Your order has been placed successfully, and your cart has been cleared. Thank you for your purchase!</p>";
+        } else {
+            echo "<h1>Payment Not Completed</h1>";
+            echo "<p>We could not verify the payment. Please try again.</p>";
+        }
+    } catch (\Exception $e) {
+        echo "Error: " . $e->getMessage();
+    }
+} else {
+    echo "<h1>Invalid Session</h1>";
+    echo "<p>Session ID is missing.</p>";
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

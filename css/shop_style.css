@@ -143,3 +143,33 @@ padding: 0%;padding-bottom: 2%;
    color:var(--white);
    background-color: var(--red);
 }
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    background: #f9f9f9;
+    transition: background 0.3s;
+}
+
+.pagination a:hover {
+    background: #333;
+    color: #fff;
+}
+
+.pagination a.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
