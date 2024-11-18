@@ -334,6 +334,12 @@ background-color: #886a4d;
    font-size: 3rem;
    color:var(--light-color);
 }
+.header .header-2 .flex .navbar a{
+   
+   margin:1rem;
+   font-size: 2rem;
+   color:var(--light-color);
+}
 
 
 .header .header-2 .flex .navbar a:hover{
@@ -368,7 +374,7 @@ background-color: #886a4d;
 }
 
 .header .header-2 .flex .icons > *:hover{
-   color:var(--purple);
+   color:#886a4d;
 }
 
 #menu-btn{
@@ -629,14 +635,14 @@ background-color: #886a4d;
 
 
 /*location detail*/
-
+/* 
 .shop-details-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
     margin: 20px;
-}
+} */
 
 .shop-box {
     background: #fff;
@@ -953,12 +959,12 @@ background-color: #886a4d;
 
 .footer .box-container .box p i,
 .footer .box-container .box a i{
-   color:var(--purple);
+   color:#886a4d;
    padding-right: .5rem;
 }
 
 .footer .box-container .box a:hover{
-   color:var(--purple);
+   color:#886a4d;
    text-decoration: underline;
 }
 
@@ -972,7 +978,7 @@ background-color: #886a4d;
 }
 
 .footer .credit span{
-   color:var(--purple);
+   color:#db9553;
 }
 
 

@@ -52,5 +52,21 @@ setInterval(changeAboutPhoto, 10000);
 
 
 
+// Function to open image in full screen
+document.querySelectorAll('.shop-image').forEach(img => {
+    img.addEventListener('click', function() {
+        const fullscreenOverlay = document.getElementById('fullscreenOverlay');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        fullscreenImage.src = this.src;
+        fullscreenOverlay.style.display = 'flex';
+    });
+});
+
+// Function to close full screen
+function closeFullscreen() {
+    document.getElementById('fullscreenOverlay').style.display = 'none';
+}
+
+
 
 
