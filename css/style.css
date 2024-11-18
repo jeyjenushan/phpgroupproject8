@@ -331,7 +331,7 @@ background-color: #886a4d;
 .header .header-2 .flex .navbar a{
    
    margin:1rem;
-   font-size: 2rem;
+   font-size: 3rem;
    color:var(--light-color);
 }
 .header .header-2 .flex .navbar a{
@@ -340,6 +340,7 @@ background-color: #886a4d;
    font-size: 2rem;
    color:var(--light-color);
 }
+
 
 .header .header-2 .flex .navbar a:hover{
    color:var(--black);
