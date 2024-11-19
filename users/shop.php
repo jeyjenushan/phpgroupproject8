@@ -47,7 +47,7 @@ $offset = ($page - 1) * $limit; // Calculate offset for SQL query
     <?php include './user_header.php'; ?>
 
     <div class="shop_heading">
-        <h3>Our Shop</h3>
+        <h3>Our Product</h3>
         <p><a href="home.php">Home</a> / Shop</p>
     </div>
 
