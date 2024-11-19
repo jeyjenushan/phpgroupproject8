@@ -3,16 +3,11 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 // Set your Stripe secret key
-$stripe_secret_key = "sk_test_51QGbGsIYO3gEi4mRyF7LyrGcBd918Bgbkrq1wUmRlTu3oUiIsm2xhOzVQUnTyb5SJLMFnXWl0E020t1wc8JikFDM00MYDH7Abn";
+$stripe_secret_key = "sk_test_51QMV3KHyRh1dkonjcY9X1NSVNZLKcurWuejZ6MQoBWBewNAh2gG9HU0p8EVB8B2VUSJID29dnYqLqPh9jV9xGGtP00ZhjNwfjk";
 \Stripe\Stripe::setApiKey($stripe_secret_key);
 
 // Get the grand total from the query parameter
 $grand_total = isset($_GET['grand_total']) ? intval($_GET['grand_total']) : 0;
-
-// Ensure a valid amount is provided
-if ($grand_total <= 0) {
-    die("Invalid total amount. Unable to proceed with payment.");
-}
 
 try {
     // Create a Checkout Session
@@ -31,8 +26,8 @@ try {
                 "quantity" => 1,
             ],
         ],
-        "success_url" => "http://localhost/groupproject/phpgroupproject8/users/success.php",
-        "cancel_url" => "http://localhost/checkout.php",
+        "success_url" => "http://localhost/GitHub/phpgroupproject8/users/success.php?session_id={CHECKOUT_SESSION_ID}",
+        "cancel_url" => "http://localhost/GitHub/phpgroupproject8/users/fail_payment.php",
     ]);
 
     // Redirect to Stripe Checkout

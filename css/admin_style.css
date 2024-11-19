@@ -134,7 +134,7 @@ section{
 
 .white-btn,
 .btn{
-   background-color: var(--purple);
+   background-color: #805f2e;
 }
 
 .option-btn{
@@ -366,6 +366,25 @@ section{
    background-color:rgb(255, 229, 208); /* Consider defining a hover variant in CSS */
    color: #000000; /* Optional: Change color for hover state */
 }
+.dashboard form .export_btn{
+    display: inline-block;
+    justify-self: center;   
+   margin-top: 3.5rem;
+   margin-left: 9.3%;
+   margin-right: 9%;
+   padding:3rem 3rem;
+   cursor: pointer;
+   color:var(--white);
+   font-size: 1.8rem;
+   border-radius: .5rem;
+   text-transform: capitalize;
+   background-color:#c28d58;
+   width: 82%;
+   max-width: 1200px;
+}
+.dashboard form .export_btn:hover{
+   background-color:#805f2e;
+}
 
 /*DASH BOARD CSS ENDS*/
 /*PRODUCT CSS STARTS*/
@@ -532,13 +551,17 @@ font-size: 2rem;
 #select-btn:hover{
    background-color: #fce7d1;
 }
+.add-products .custom-select{
+   justify-items: center;
+}
 #select-dropdown{
 
    padding: 0;
    background-color: var(--light-bg);
-   font-size: 1.8rem;
+   font-size: 2rem;
    color:var(--black);
-   width: 100%
+   width:500px;
+   justify-self: center;
 
 }
 /* show products end

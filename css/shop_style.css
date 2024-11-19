@@ -74,9 +74,14 @@ padding: 0%;padding-bottom: 2%;
    margin-bottom: 15px;
    margin-top: 15px;
    color: rgb(53, 53, 53);
-  
 
 }
+
+
+
+
+
+
 .shop_products .box-container{
    /* max-width: 1200px; */
    margin:0 ;
@@ -88,22 +93,69 @@ padding: 0%;padding-bottom: 2%;
    
 }
 
-.shop_products .box-container .box{
+.shop_products .box-container  form{
    border-radius: .5rem;
-   background: rgba(255, 255,255, 0.7) ;/* Green background with 30% opacity */
+   background: rgba(255, 255,255, 0.7);/* Green background with 30% opacity */
    box-shadow: var(--box-shadow);
    padding:2rem;
    text-align: center;
    border:var(--border);
    position: relative;
    max-width: 300px;       /* Set the image width to 100% of its container */
+   max-height:700px;       /* Set the image width to 100% of its container */
    height: auto;      /* Maintain aspect ratio */
-  /* Limit the height to avoid overly large images */
+   min-height:600px;
+   /* Limit the height to avoid overly large images */
    object-fit: contain;
    
 }
 
+.shop_products .box-container  form .flex{
+align-items: end;
+}
+
+.shop_products .box-container  form .btn{
+height: 50px;
+}
+
+
+
+
+
+
+
+/* }
+.shop_products .box-container{
+   
+   margin:0 ;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 30rem);
+   align-items: flex-start;
+   gap:1.5rem;
+   justify-content: center;
+   
+}
+
+.shop_products .box-container .box{
+   border-radius: .5rem;
+   background: rgba(255, 255,255, 0.7) ;
+   box-shadow: var(--box-shadow);
+   padding:2rem;
+   text-align: center;
+   border:var(--border);
+   position: relative;
+   max-width: 300px;       
+   min-height: 30px;      
+ 
+   object-fit: contain;
+   
+}
+.shop_products .box-container form{
+   min-height: 30px;
+} */
+
 .shop_products .box-container .box .image {
+   cursor: pointer;
    width: 100%;       /* Set the image width to 100% of its container */
    height: auto;      /* Maintain aspect ratio */
    max-height: 300px; /* Limit the height to avoid overly large images */
@@ -124,9 +176,15 @@ padding: 0%;padding-bottom: 2%;
    font-weight: 400;
    
 }
-
+#Qty_label{
+   padding:1rem 0;
+   font-size: 3rem;
+   color:var(--black);
+   font-weight: 400;
+}
 .shop_products .box-container .box .qty{
-   width: 100%;
+   width: 33%;
+   justify-items: right;
    padding:1.2rem 1.4rem;
    border-radius: .5rem;
    border:var(--border);
@@ -142,4 +200,34 @@ padding: 0%;padding-bottom: 2%;
    font-size: 2.5rem;
    color:var(--white);
    background-color: var(--red);
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+   font-size: 1.8rem;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    background: #f9f9f9;
+}
+
+.pagination a:hover {
+    background: #333;
+    color: #fff;
+}
+
+.pagination a.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
 }

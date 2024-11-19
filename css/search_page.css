@@ -23,58 +23,73 @@
  .heading p a:hover{
     text-decoration: underline;
  }
- 
-
-
-
-
-
-
-.search_page_content{
-    margin:0 ;
+ .search_page_content {
+    /* Adapted from .products .box-container */
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, 30rem);
     align-items: flex-start;
-    gap:1.5rem;
+    gap: 1.5rem;
     justify-content: center;
-    
- }
-.searchbox{
-    max-width:300px;
-    min-height: 300px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    justify-items: center;
-    background-color: bisque;
 }
-.searchbox img{
-    display: flex;
-    align-items: flex-end;
-    border: 5px;
-    width: 80%;
-    height: 80%;
-    
-}
-.searchbox .name{
-    font-size: large;
-    padding: 3px;
-}
-.searchbox .price{
-    font-size:large;
-    padding: 3px;
 
+.search_page_content .searchbox {
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.7); /* Green background with 30% opacity */
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    border: var(--border);
+    position: relative;
+    max-width: 300px;
+    max-height: 700px;
+    height: auto;
+    min-height: 600px;
+    object-fit: contain;
 }
-.searchbox .qty{
-    font-size:large;
+
+.search_page_content .searchbox img {
+    width: 100%;       /* Set the image width to 100% of its container */
+    height: auto;      /* Maintain aspect ratio */
+    max-height: 300px; /* Limit the height to avoid overly large images */
+    object-fit: contain;
+    border: black solid 2px;
+}
+
+.search_page_content .searchbox .name,
+.search_page_content .searchbox .price {
+    padding: 1rem 0;
+    font-size: 3rem;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.search_page_content .searchbox .price {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 2.5rem;
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.search_page_content .searchbox .qty {
+    width: 33%;
+    justify-items: right;
+    padding: 1.2rem 1.4rem;
+    border-radius: 0.5rem;
+    border: var(--border);
+    margin: 1rem 0;
+    font-size: 3rem;
+}
+.search_page_content .searchbox .btn{
     display:list-item;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding:5px;
-   width: 15%;
-    justify-items:right;
-    
 }
-.searchbox .btn{
-    display:list-item;
-}
+#Qty_label{
+    padding:1rem 0;
+    font-size: 3rem;
+    color:var(--black);
+    font-weight: 400;
+ }

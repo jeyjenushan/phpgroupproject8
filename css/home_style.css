@@ -159,19 +159,19 @@
     text-align: center;
     border:var(--border);
     position: relative;
-    max-width: 300px;       /* Set the image width to 100% of its container */
-    max-height: 700px;       /* Set the image width to 100% of its container */
-    height: auto;      /* Maintain aspect ratio */
+    max-width: 300px;       
+    max-height:700px;       
+    height: auto;   
     min-height:600px;
-    /* Limit the height to avoid overly large images */
+  
     object-fit: contain;
     
  }
  
  .products .box-container .box .image {
-    width: 100%;       /* Set the image width to 100% of its container */
-    height: auto;      /* Maintain aspect ratio */
-    max-height: 300px; /* Limit the height to avoid overly large images */
+    width: 100%;      
+    height: auto;      
+    max-height: 300px; 
     object-fit: contain;
     border: black solid 2px;
  }
@@ -194,8 +194,7 @@
     padding:1rem 0;
     font-size: 2rem;
     color:var(--black);
-    font-weight: 400;
-    
+    font-weight: 400; 
  }
  
  .products .box-container .box .qty{

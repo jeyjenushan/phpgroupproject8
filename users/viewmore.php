@@ -117,6 +117,26 @@ if (isset($_POST['updated_product'])) {
     }
     header("Location: viewmore.php?productId=$product_id");
 }
+if (isset($_POST['add_to_cart'])) {
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_quantity = $_POST["product_quantity"];
+    $product_image = $_POST["product_image"];
+    $quantity = $_POST["quantitys"];
+    if ($quantity < $product_quantity) {
+        $message[] = 'Not enough stock available!';
+    } else {
+        $quantity -= $product_quantity;
+        $updateproduct = mysqli_query($conn, "Update `products` set quantity='$quantity'");
+        $check_cart_numbers = mysqli_num_rows(mysqli_query($conn, "Select * from `cart` where name='$product_name' and user_id='$user_id' "));
+        if ($check_cart_numbers > 0) {
+            $message[] = 'already added to cart!';
+        } else {
+            $insert_cart = mysqli_query($conn, "Insert into `cart` (user_id,name,price,quantity,image) values('$user_id','$product_name','$product_price',' $product_quantity','$product_image')");
+            $message[] = 'product added to cart!';
+        }
+    }
+}
 
 
 ?>
@@ -157,6 +177,8 @@ if (isset($_POST['updated_product'])) {
             <br>
             <p><strong>Price:</strong> </p>
             <p id="view_price"> Rs<?php echo number_format($product['price'], 2); ?></p>
+            <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+
         </div>
     </div>
 
