@@ -43,25 +43,23 @@ if (isset($_POST['add_to_cart'])) {
     <?php include 'user_header.php' ?>
     <section class="home">
         <div class="content">
-            <h3>Archeological designs in your hands.</h3>
-            <p>your Creative Archeology Items are now real. all beautiful Books Post Cards, and Stamps in your hands.</p>
+            <h3>Bringing Archaeology to Life!</h3>
+            <p>Discover the beauty of history with our exclusive collection of Books, Postcards, and Stamps—where timeless designs meet creative expression.</p>
             <a href="about.php" class="white-btn">discover more</a>
         </div>
     </section>
-    <script src="home.js"></script>
 
     <section class="products">
         <div class="container">
 <?php
     $select_category=mysqli_query($conn,"select * from `category` ");
     while($row=mysqli_fetch_assoc($select_category)){
-        ?>
-        <div class="main-content">
-<h1 class="title">Latest <?php echo $row['name']?></h1>
-
-<div class="box-container">
+?>
+    <div class="main-content">
+    <h1 class="title">Latest <?php echo $row['name']?></h1>
+    <div class="box-container">
     <?php
-$id=$row['id'];
+    $id=$row['id'];
     $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' ") or die('query failed');
     if (mysqli_num_rows($selected_product) > 0) {
         while ($fetched_products = mysqli_fetch_assoc($selected_product)) {
@@ -73,19 +71,17 @@ $id=$row['id'];
                     <img class="image" src="../uploaded_img/<?php echo $fetched_products['image'] ?>" alt="" style="width: 100%;height:80%; object-fit: contain" ;> </a>
                     <div class="name"><?php echo $fetched_products['name'] ?></div>
                     <div class="price">Rs <?php echo $fetched_products['price'] ?></div>
-                   <div class="hidden" name="quantitys"> <label id=stocks_label>Stoks : </label><?php echo $fetched_products['quantity'] ?></div>
+                    <div class="hidden" name="quantitys"> <label id=stocks_label>Stocks : </label><?php echo $fetched_products['quantity'] ?></div>
                     <label id=Qty_label>Qty : </label><input type="number" name="product_quantity" value=1 min=1 class="qty">
                     <input type="hidden" value="<?php echo $fetched_products['name'] ?>" name="product_name">
                     <input type="hidden" value="<?php echo $fetched_products['price'] ?>" name="product_price">
                     <input type="hidden" value="<?php echo $fetched_products['image'] ?>" name="product_image">
-                    <input type="hidden" name="quantitys" value="<?php echo $fetched_products['quantity'] ?>" name="product_image">
+                    <input type="hidden" name="quantitys" value="<?php echo $fetched_products['quantity'] ?>">
 
-<br>
+                    <br>
                     <input type="submit" value="add to cart" name="add_to_cart" class="btn">
 
                 </form>
-                <!-- <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>"> -->
-                    <!-- <input type="submit" value="Info" name="viewmore" class="option-btn"> -->
                
             </div>
 
@@ -109,14 +105,8 @@ $id=$row['id'];
     }
 ?>
 
-                
-       
       
     </section>
-
-
-
-
     <section class="about">
     <div class="flex">
         <div class="image">
@@ -125,7 +115,7 @@ $id=$row['id'];
         </div>
         <div class="content">
             <h3>about us</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia corporis ratione saepe sed adipisci?</p>
+            <p>We are passionate about preserving history and sharing its beauty. Our platform offers a curated collection of archaeological books, postcards, and stamps, bringing the wonders of the past to enthusiasts and collectors alike. Explore, learn, and connect with history like never before!</p>
             <a href="about.php" class="btn">read more</a>
         </div>
     </div>
@@ -133,14 +123,11 @@ $id=$row['id'];
 
 <script src="script.js"></script>
 
-
-
-
     <section class="home-contact">
 
         <div class="content">
             <h3>have any questions?</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cumque exercitationem repellendus, amet ullam voluptatibus?</p>
+            <p>We're here to help—reach out and connect with us as we journey through the wonders of the past together!</p>
             <a href="contact.php" class="white-btn">contact us</a>
         </div>
 
