@@ -1,3 +1,10 @@
+.body{
+
+   background-image: url(../images/homewall2.jpg);
+
+}
+
+
 .home{
     min-height: 70vh;
     background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/../images/home2.jpg) no-repeat;
@@ -6,53 +13,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
  }
-/*  
-  .home {
-   min-height: 70vh;
-   background-size: cover;
-   background-position: center;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   position: relative;
-   overflow: hidden;
-} */
-/* 
-.home::before, .home::after {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   background-size: cover;
-   background-position: center;
-   transition: opacity 3s ease;
-   animation: fadeCycle 12s infinite;
-   z-index: 0;
-}
-
-.home::before {
-   background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/home3.jpg);
-}
-
-.home::after {
-   background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/home2.jpg);
-   animation-delay: 6s;
-}
-
-@keyframes fadeCycle {
-   0%, 20% {
-       opacity: 1;
-   }
-   40%, 60% {
-       opacity: 0;
-   }
-   80%, 100% {
-       opacity: 1;
-   }
-} */
 
 
 
@@ -141,7 +103,6 @@
    
 }
  .products .box-container{
-    /* max-width: 1200px; */
     margin:0 ;
     display: grid;
     grid-template-columns: repeat(auto-fit, 30rem);
@@ -153,7 +114,7 @@
  
  .products .box-container .box{
     border-radius: .5rem;
-    background: rgba(255, 255,255, 0.7);/* Green background with 30% opacity */
+    background: rgba(255, 255,255, 0.7);
     box-shadow: var(--box-shadow);
     padding:2rem;
     text-align: center;
@@ -163,7 +124,6 @@
     max-height:700px;       
     height: auto;   
     min-height:600px;
-  
     object-fit: contain;
     
  }

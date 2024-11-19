@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
     $useremail=$_POST['email'];
     $userpassword=$_POST['password'];
     $cpassword=$_POST['cpassword'];
-    $usertype=$_POST['user_type'];
+  
     //CHECK THE USER AVAILABE OR NOT
     $select_users=mysqli_query($conn,"Select * from `users` where email='$useremail' and password='$userpassword'");
     if(mysqli_num_rows($select_users)>0){
@@ -39,10 +39,10 @@ header('location:login.php') ;
 
 <?php
 if(isset($message)){
-    foreach($message as $message){
+    foreach($message as $msg){
         echo '
         <div class="message">
-        <span>'.$message.'</span>
+        <span>'.$msg.'</span>
         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
                 </div>
         ';

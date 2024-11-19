@@ -33,23 +33,27 @@
  
  
 .shopping-cart .box-container{
-    max-width: 1200px;
-    margin:0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 30rem);
-    align-items: center;
-    gap:1.5rem;
-    justify-content: center;
+   margin:0 ;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 30rem);
+   align-items: flex-start;
+   gap:1.5rem;
+   justify-content: center;
  }
  
  .shopping-cart .box-container .box{
-    text-align: center;
-    padding:2rem;
-    border-radius: .5rem;
-    background-color: var(--white);
-    box-shadow: var(--box-shadow);
-    position: relative;
-    border:var(--border);
+   border-radius: .5rem;
+   background: rgba(255, 255,255, 0.7);
+   box-shadow: var(--box-shadow);
+   padding:2rem;
+   text-align: center;
+   border:var(--border);
+   position: relative;
+   max-width: 300px;       
+   max-height:700px;       
+   height: auto;   
+   min-height:400px;
+   object-fit: contain;
  }
  
  .shopping-cart .box-container .box .fa-times{
@@ -69,7 +73,11 @@
  }
  
  .shopping-cart .box-container .box img{
-    width: 100%;
+    width: 100%;      
+    height: auto;      
+    max-height: 300px; 
+    object-fit: contain;
+    border: black solid 2px;
  }
  
  .shopping-cart .box-container .box .name{

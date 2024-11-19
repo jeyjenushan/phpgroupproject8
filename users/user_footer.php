@@ -17,7 +17,7 @@
         </div>
         <div class="box">
             <h3>Contact Info</h3>
-           <P><i class="fas fa-phone"></i>+123-456-7890</P>
+           <P><i class="fas fa-phone"></i>+94-784-452-322</P>
            <P><i class="fas fa-phone"></i>+111-222-3333</P>
            <P><i class="fas fa-envelope"></i>archeologyStore@gmail.com</P>
            <P><i class="fas fa-map-marker-alt"></i>Colombo,SriLanka-4000</P>

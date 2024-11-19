@@ -6,6 +6,7 @@ if (!isset($user_id)) {
     header('location:../login/login.php');
 }
 if (isset($_POST['add_to_cart'])) {
+    $id=$_POST['id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_quantity = $_POST["product_quantity"];
@@ -15,7 +16,7 @@ if (isset($_POST['add_to_cart'])) {
         $message[] = 'Not enough stock available!';
     } else {
         $quantity -= $product_quantity;
-        $updateproduct = mysqli_query($conn, "Update `products` set quantity='$quantity'");
+        $updateproduct = mysqli_query($conn, "Update `products` set quantity='$quantity' where id=$id");
         $check_cart_numbers = mysqli_num_rows(mysqli_query($conn, "Select * from `cart` where name='$product_name' and user_id='$user_id' "));
         if ($check_cart_numbers > 0) {
             $message[] = 'already added to cart!';
@@ -62,7 +63,7 @@ if (isset($_POST['add_to_cart'])) {
 <div class="box-container">
     <?php
 $id=$row['id'];
-    $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' ") or die('query failed');
+    $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' LIMIT 3") or die('query failed');
     if (mysqli_num_rows($selected_product) > 0) {
         while ($fetched_products = mysqli_fetch_assoc($selected_product)) {
             $productname = $fetched_products['name'];
@@ -70,8 +71,7 @@ $id=$row['id'];
             <div class="box">
                 <form action="" method="POST">
                 <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
-                    <img class="image" src="../uploaded_img/<?php echo $fetched_products['image'] ?>" alt="" style="width: 100%;height:80%;
-object-fit: contain" ;> </a>
+                    <img class="image" src="../uploaded_img/<?php echo $fetched_products['image'] ?>" alt="" style="width: 100%;height:80%; object-fit: contain" ;> </a>
                     <div class="name"><?php echo $fetched_products['name'] ?></div>
                     <div class="price">Rs <?php echo $fetched_products['price'] ?></div>
                    <div class="hidden" name="quantitys"> <label id=stocks_label>Stoks : </label><?php echo $fetched_products['quantity'] ?></div>
@@ -79,14 +79,13 @@ object-fit: contain" ;> </a>
                     <input type="hidden" value="<?php echo $fetched_products['name'] ?>" name="product_name">
                     <input type="hidden" value="<?php echo $fetched_products['price'] ?>" name="product_price">
                     <input type="hidden" value="<?php echo $fetched_products['image'] ?>" name="product_image">
-                    <input type="hidden" name="quantitys" value="<?php echo $fetched_products['quantity'] ?>" name="product_image">
-
+                    <input type="hidden" name="quantitys" value="<?php echo $fetched_products['quantity'] ?>">
+                    <input type="hidden" name="id" value="<?php echo $fetched_products['id'] ?>">
 <br>
                     <input type="submit" value="add to cart" name="add_to_cart" class="btn">
 
                 </form>
-                <!-- <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>"> -->
-                    <!-- <input type="submit" value="Info" name="viewmore" class="option-btn"> -->
+           
                
             </div>
 

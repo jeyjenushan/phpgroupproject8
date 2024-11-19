@@ -86,6 +86,7 @@
 }
 .search_page_content .searchbox .btn{
     display:list-item;
+    justify-self:center;
 }
 #Qty_label{
     padding:1rem 0;
