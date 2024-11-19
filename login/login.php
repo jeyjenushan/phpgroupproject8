@@ -98,7 +98,7 @@ if (!isset($_SESSION['user_email']) && isset($_COOKIE['session_id'])) {
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['user_name'] = $row['name'];
         $_SESSION['user_email'] = $row['email'];
-        $_SESSION['user_type'] = $user_type;
+        $_SESSION['user_type'] = $row['user_type'];
      
         // Redirect based on user type
         if ($user_type == 'admin') {

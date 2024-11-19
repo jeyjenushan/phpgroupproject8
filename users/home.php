@@ -70,8 +70,7 @@ $id=$row['id'];
             <div class="box">
                 <form action="" method="POST">
                 <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
-                    <img class="image" src="../uploaded_img/<?php echo $fetched_products['image'] ?>" alt="" style="width: 100%;height:80%;
-object-fit: contain" ;> </a>
+                    <img class="image" src="../uploaded_img/<?php echo $fetched_products['image'] ?>" alt="" style="width: 100%;height:80%; object-fit: contain" ;> </a>
                     <div class="name"><?php echo $fetched_products['name'] ?></div>
                     <div class="price">Rs <?php echo $fetched_products['price'] ?></div>
                    <div class="hidden" name="quantitys"> <label id=stocks_label>Stoks : </label><?php echo $fetched_products['quantity'] ?></div>
