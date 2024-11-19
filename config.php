@@ -1,3 +1,3 @@
 <?php
-$conn=mysqli_connect('localhost:3306','root','','shop_db') or die ('Mysql is not connected ');
+$conn=mysqli_connect('localhost','root','','shop_db(4)') or die ('Mysql is not connected ');
 ?>
