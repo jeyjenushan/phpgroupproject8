@@ -1,5 +1,5 @@
 body{
-background: url(../images/homewall2.jpg);
+background: url(../images/viewmorewall.png);
 }
 .product-details{
    display: grid;
@@ -17,6 +17,11 @@ background: url(../images/homewall2.jpg);
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
+}
+.product-info{
+    margin-top: 15px;
+    background-color: antiquewhite;
+    border-radius: 8px;
 }
 .product-info h1{
     font-size: 3rem;
@@ -125,7 +130,7 @@ margin-left:10px;
 
 .review-form h2 {
     text-align: center;
-    font-size: 24px;
+    font-size:3rem;
 }
 
 .review-form label {

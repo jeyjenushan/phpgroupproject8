@@ -83,7 +83,7 @@ else{
 <div class="box-container">
     <?php
 $id=$row['id'];
-    $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' limit 1 ") or die('query failed');
+    $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' limit 1,3 ") or die('query failed');
     if (mysqli_num_rows($selected_product) > 0) {
         while ($fetched_products = mysqli_fetch_assoc($selected_product)) {
             $productname = $fetched_products['name'];

@@ -5,10 +5,9 @@ include "../config.php";
 if(isset($_POST['submit'])){
     $username=$_POST['name'];
     $useremail=$_POST['email'];
-    $userpassword=md5($_POST['password']);
-    $cpassword=md5($_POST['cpassword']);
-    $usertype=$_POST['user_type'];
-
+    $userpassword=$_POST['password'];
+    $cpassword=$_POST['cpassword'];
+  
     //CHECK THE USER AVAILABE OR NOT
     $select_users=mysqli_query($conn,"Select * from `users` where name='$username' and password='$userpassword'");
     if(mysqli_num_rows($select_users)>0){

@@ -23,7 +23,6 @@ if(isset($message)){
          <a href="operator_page.php">home</a>
          <a href="operator_product.php">products</a>
          <a href="operator_order.php">orders</a>
-         <a href="operator_location.php">Locations</a>
          <a href="operator_category.php">Category</a>
       </nav>
 

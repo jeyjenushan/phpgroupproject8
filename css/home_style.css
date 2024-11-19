@@ -1,3 +1,10 @@
+.body{
+
+   background-image: url(../images/homewall2.jpg);
+
+}
+
+
 .home{
     min-height: 70vh;
     background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.2)), url(../images/../images/home2.jpg) no-repeat;
@@ -6,7 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
  }
+
 
 
 
@@ -94,7 +103,6 @@
    
 }
  .products .box-container{
-    /* max-width: 1200px; */
     margin:0 ;
     display: grid;
     grid-template-columns: repeat(auto-fit, 30rem);
@@ -106,7 +114,7 @@
  
  .products .box-container .box{
     border-radius: .5rem;
-    background: rgba(255, 255,255, 0.7);/* Green background with 30% opacity */
+    background: rgba(255, 255,255, 0.7);
     box-shadow: var(--box-shadow);
     padding:2rem;
     text-align: center;
@@ -116,7 +124,6 @@
     max-height:700px;       
     height: auto;   
     min-height:600px;
-  
     object-fit: contain;
     
  }

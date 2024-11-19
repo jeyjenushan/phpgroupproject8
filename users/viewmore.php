@@ -19,7 +19,7 @@ if (isset($_GET['productId']) && is_numeric($_GET['productId'])) {
 // Delete review
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
-    $delete_sql = "DELETE FROM `reviews` WHERE id = $id";
+    $delete_sql = "DELETE FROM reviews WHERE id = $id";
     $result = mysqli_query($conn, $delete_sql);
     if ($result) {
         header("Location: ./viewmore.php?productId=$product_id");
@@ -85,7 +85,7 @@ if (isset($_POST['updated_product'])) {
 
     $update_rating = $_POST["update_rating"];
 
-    mysqli_query($conn, "UPDATE `reviews` SET user_name='$updated_name',comment='$updated_comment', rating=$update_rating  where id=$update_p_id") or die("query failed");
+    mysqli_query($conn, "UPDATE reviews SET user_name='$updated_name',comment='$updated_comment', rating=$update_rating  where id=$update_p_id") or die("query failed");
     $update_image = $_FILES['update_img']['name'];
     $update_image_tmp_name = $_FILES['update_img']['tmp_name'];
     $update_image_size = $_FILES['update_img']['size'];
@@ -101,7 +101,7 @@ if (isset($_POST['updated_product'])) {
 
             if (move_uploaded_file($update_image_tmp_name, $update_folder)) {
 
-                $update_sql = "UPDATE `reviews` SET reviewr_image='$update_folder' WHERE id=$update_p_id";
+                $update_sql = "UPDATE reviews SET reviewr_image='$update_folder' WHERE id=$update_p_id";
                 if (mysqli_query($conn, $update_sql)) {
 
                     if (file_exists('../uploaded_img/' . $update_old_image)) {
@@ -127,12 +127,12 @@ if (isset($_POST['add_to_cart'])) {
         $message[] = 'Not enough stock available!';
     } else {
         $quantity -= $product_quantity;
-        $updateproduct = mysqli_query($conn, "Update `products` set quantity='$quantity'");
-        $check_cart_numbers = mysqli_num_rows(mysqli_query($conn, "Select * from `cart` where name='$product_name' and user_id='$user_id' "));
+        $updateproduct = mysqli_query($conn, "Update products set quantity='$quantity'");
+        $check_cart_numbers = mysqli_num_rows(mysqli_query($conn, "Select * from cart where name='$product_name' and user_id='$user_id' "));
         if ($check_cart_numbers > 0) {
             $message[] = 'already added to cart!';
         } else {
-            $insert_cart = mysqli_query($conn, "Insert into `cart` (user_id,name,price,quantity,image) values('$user_id','$product_name','$product_price',' $product_quantity','$product_image')");
+            $insert_cart = mysqli_query($conn, "Insert into cart (user_id,name,price,quantity,image) values('$user_id','$product_name','$product_price',' $product_quantity','$product_image')");
             $message[] = 'product added to cart!';
         }
     }
@@ -162,13 +162,23 @@ if (isset($_POST['add_to_cart'])) {
 
     <h1 class="title"><?php echo htmlspecialchars($name); ?></h1>
     <div class="product-details">
-        <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
+        
             <img class="product-image" src="../uploaded_img/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
-        </a>
+        
         <div class="product-info">
             <h1><strong>Name :</strong><?php echo htmlspecialchars($product['name']); ?></h1>
             <br>
-            <h3>Category : Book</h3>
+            <?php
+            $productId=$_GET['productId'];
+             $result=mysqli_query($conn,"Select category_id from products where id='$productId' ");
+             $row=mysqli_fetch_assoc($result);
+             $catId=$row['category_id'];
+             $result1=mysqli_query($conn,"Select name from category where id='$catId' ");
+             $rowdata=mysqli_fetch_assoc($result1);
+
+
+            ?>
+            <h3>Category : <?php echo $rowdata['name']?></h3>
             <h3>Author : Mr.Perera</h3>
 
             <h3>Published year : 1995</h3>
@@ -177,8 +187,7 @@ if (isset($_POST['add_to_cart'])) {
             <br>
             <p><strong>Price:</strong> </p>
             <p id="view_price"> Rs<?php echo number_format($product['price'], 2); ?></p>
-            <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-
+           
         </div>
     </div>
 
@@ -240,7 +249,7 @@ if (isset($_POST['add_to_cart'])) {
         <?php
         if (isset($_GET['update'])) {
             $updated_id = $_GET['update'];
-            $update_query = mysqli_query($conn, "SELECT * FROM `reviews` WHERE id ='$updated_id'") or die("Query failed");
+            $update_query = mysqli_query($conn, "SELECT * FROM reviews WHERE id ='$updated_id'") or die("Query failed");
 
             if (mysqli_num_rows($update_query) > 0) {
                 while ($fetch_update = mysqli_fetch_assoc($update_query)) {

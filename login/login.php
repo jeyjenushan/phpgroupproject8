@@ -12,15 +12,16 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_num_rows($select_users) > 0) {
         $row = mysqli_fetch_assoc($select_users);
-       
+
+        // Generate a secure session ID
         $session_id = bin2hex(random_bytes(32));
         $user_id = $row['id'];
 
-        $update_session = mysqli_query($conn, "UPDATE `users` SET session_id='$session_id' WHERE id='$user_id'");
+        // Update session ID in the database
+        $update_session = mysqli_query($conn, "UPDATE users SET session_id='$session_id' WHERE id='$user_id'");
 
-        
+        // Set session and cookies
         setcookie("session_id", $session_id, time() + (7 * 24 * 60 * 60), "/");
-
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['user_name'] = $row['name'];
         $_SESSION['user_email'] = $row['email'];
@@ -30,10 +31,13 @@ if (isset($_POST['submit'])) {
 
         if ($user_type === 'admin') {
             header('location:../admin/admin_page.php');
+            exit();
         } elseif ($user_type === 'user') {
             header('location:../users/home.php');
+            exit();
         } elseif ($user_type === 'operator') {
             header('location:../operator/operator_page.php');
+            exit();
         }
     } else {
         $message[] = 'Incorrect email or password!';

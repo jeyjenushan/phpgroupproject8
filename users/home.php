@@ -6,6 +6,7 @@ if (!isset($user_id)) {
     header('location:../login/login.php');
 }
 if (isset($_POST['add_to_cart'])) {
+    $id=$_POST['id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_quantity = $_POST["product_quantity"];
@@ -15,7 +16,7 @@ if (isset($_POST['add_to_cart'])) {
         $message[] = 'Not enough stock available!';
     } else {
         $quantity -= $product_quantity;
-        $updateproduct = mysqli_query($conn, "Update `products` set quantity='$quantity'");
+        $updateproduct = mysqli_query($conn, "Update `products` set quantity='$quantity' where id=$id");
         $check_cart_numbers = mysqli_num_rows(mysqli_query($conn, "Select * from `cart` where name='$product_name' and user_id='$user_id' "));
         if ($check_cart_numbers > 0) {
             $message[] = 'already added to cart!';
@@ -59,8 +60,8 @@ if (isset($_POST['add_to_cart'])) {
     <h1 class="title">Latest <?php echo $row['name']?></h1>
     <div class="box-container">
     <?php
-    $id=$row['id'];
-    $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' ") or die('query failed');
+$id=$row['id'];
+    $selected_product = mysqli_query($conn, "Select * from `products` where category_id='$id' LIMIT 3") or die('query failed');
     if (mysqli_num_rows($selected_product) > 0) {
         while ($fetched_products = mysqli_fetch_assoc($selected_product)) {
             $productname = $fetched_products['name'];
@@ -77,11 +78,12 @@ if (isset($_POST['add_to_cart'])) {
                     <input type="hidden" value="<?php echo $fetched_products['price'] ?>" name="product_price">
                     <input type="hidden" value="<?php echo $fetched_products['image'] ?>" name="product_image">
                     <input type="hidden" name="quantitys" value="<?php echo $fetched_products['quantity'] ?>">
-
-                    <br>
+                    <input type="hidden" name="id" value="<?php echo $fetched_products['id'] ?>">
+<br>
                     <input type="submit" value="add to cart" name="add_to_cart" class="btn">
 
                 </form>
+           
                
             </div>
 

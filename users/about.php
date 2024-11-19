@@ -35,8 +35,7 @@ if(!isset($user_id)){
         <div class="content">
         <h3>why choose us?</h3>
         
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatibus aut hic molestias, reiciendis natus fuga, cumque excepturi veniam ratione iure. Excepturi fugiat placeat iusto facere id officia assumenda temporibus?</p>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia corporis ratione saepe sed adipisci?</p>
+         <p>We are committed to delivering exceptional value and an unforgettable experience for all history enthusiasts. From our curated selection of rare and authentic archaeological items to our seamless customer service, we ensure quality and reliability at every step. Whether you're a passionate collector or simply looking for a unique gift, our platform bridges the past with the present to meet your needs. Choose us for trust, authenticity, and a journey into history that you’ll cherish forever.</p>
          <a href="contact.php" class="btn">contact us</a>
         </div> 
 
@@ -48,43 +47,43 @@ if(!isset($user_id)){
 <div class="box-container">
     <div class="box">
     <img src="../images/pic-5.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+    <p>I was amazed at the variety of items available here. The books and stamps are authentic and beautifully preserved. It's like holding a piece of history in your hands!</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-star"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Mr.Ramitha</h3>
     </div>
     <div class="box">
     <img src="../images/pic-6.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
-         <div class="stars">
+            <p>The customer service was exceptional. My order arrived promptly, and the quality of the postcards exceeded my expectations. Will definitely order again!</p>         
+            <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-star"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Miss Sahani</h3>
     </div>
     <div class="box">
     <img src="../images/pic-1.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
-         <div class="stars">
+            <p>As a history enthusiast, this platform is a dream come true. The attention to detail and authenticity of the products are truely remarkable. I highly reccomend this.</p>
+            <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Mr.Imansha</h3>
     </div>
     <div class="box">
     <img src="../images/pic-2.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>I found the perfect gift for my friend who loves archaeology. The items are so unique and reasonably priced. I have never had such a great experience!</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -92,31 +91,29 @@ if(!isset($user_id)){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Mrs.Parami</h3>
     </div>
     <div class="box">
     <img src="../images/pic-3.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>The website is easy to navigate, and I loved the detailed descriptions of each product. It’s clear they care about their customers and the history behind their offerings.</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Mr.Nadun</h3>
     </div>
     <div class="box">
     <img src="../images/pic-4.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>Every purchase feels like uncovering a piece of history. The curated collections are thoughtfully assembled, and the packaging shows great care. I highly reccomend this</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Miss Sachini</h3>
     </div>
 </div>
 </section>

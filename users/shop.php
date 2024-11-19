@@ -47,7 +47,7 @@ $offset = ($page - 1) * $limit; // Calculate offset for SQL query
     <?php include './user_header.php'; ?>
 
     <div class="shop_heading">
-        <h3>Our Shop</h3>
+        <h3>Our Product</h3>
         <p><a href="home.php">Home</a> / Shop</p>
     </div>
 
@@ -82,7 +82,7 @@ $offset = ($page - 1) * $limit; // Calculate offset for SQL query
                         while ($fetch_products = mysqli_fetch_assoc($select_products)) {
                     ?>
                             <form action="" method="post" class="box">
-                            <a href="viewmore.php?productId=<?php echo $fetched_products['id'] ?>">
+                            <a href="viewmore.php?productId=<?php echo $fetch_products['id'] ?>">
                                 <img class="image" src="../uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
                         </a>
                                 <div class="name"><?php echo $fetch_products['name']; ?></div>
