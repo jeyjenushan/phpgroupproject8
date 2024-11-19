@@ -10,27 +10,27 @@
         </div>
         <div class="box">
             <h3>Extra Links</h3>
-            <a href="login.php">Login</a>
-            <a href="register.php">Register</a>
+            <a href="../login/login.php">Login</a>
+            <a href="../login/register.php">Register</a>
             <a href="cart.php">CART</a>
             <a href="contact.php">Contact</a>
         </div>
         <div class="box">
             <h3>Contact Info</h3>
-           <P><i class="fas fa-phone"></i>+94-784-452-322</P>
-           <P><i class="fas fa-phone"></i>+111-222-3333</P>
+           <P><i class="fas fa-phone"></i>+94-784-452-223</P>
+           <P><i class="fas fa-phone"></i>+94-772-699-340</P>
            <P><i class="fas fa-envelope"></i>archeologyStore@gmail.com</P>
-           <P><i class="fas fa-map-marker-alt"></i>Colombo,SriLanka-4000</P>
+           <P><i class="fas fa-map-marker-alt"></i>Colombo 12,SriLanka-4000</P>
         </div>
         <div class="box">
             <h3>Follow Us</h3>
-          <a href="#" ><i class="fab fa-facebook-f"></i>facebook</a>
-          <a href="#" ><i class="fab fa-twitter"></i>twitter</a>
-          <a href="#" ><i class="fab fa-instagram"></i>instagram</a>
-          <a href="#" ><i class="fab fa-linkedin"></i>linkdin</a>
+          <a href="https://www.facebook.com/" ><i class="fab fa-facebook-f"></i>facebook</a>
+          <a href="https://www.twitter.com/" ><i class="fab fa-twitter"></i>twitter</a>
+          <a href="https://www.instagram.com/" ><i class="fab fa-instagram"></i>instagram</a>
+          <a href="https://www.linkedin.com/" ><i class="fab fa-linkedin"></i>linkdin</a>
         </div>
     </div>
-    <p class="credit">Created by <span>SE Web Team 8</span>@<?php echo date('Y') ?>| all rights reserved! </p>
+    <p class="credit">Created by <span>SE Web Div Team 8</span>@<?php echo date('Y') ?>| all rights reserved! </p>
 
 
 </section>
