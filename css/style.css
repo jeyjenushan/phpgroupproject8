@@ -302,7 +302,7 @@ background-color: #886a4d;
 }
 
 .header .header-1 .flex .share a:hover{
-   color:var(--purple);
+   color:#886a4d;
 }
 
 .header .header-1 .flex p{
@@ -334,8 +334,7 @@ background-color: #886a4d;
    font-size: 3rem;
    color:var(--light-color);
 }
-.header .header-2 .flex .navbar a{
-   
+.header .header-2 .flex .navbar a{ 
    margin:1rem;
    font-size: 2rem;
    color:var(--light-color);

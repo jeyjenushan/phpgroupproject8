@@ -12,7 +12,7 @@ if (isset($_POST['update_cart'])) {
     $update_id = $_POST['cart_id'];
     $cart_quantity = $_POST['cart_quantity'];
     $update_name=$_POST['product_name'];
-    $row1=mysqli_query($conn,"Select * from `products` where name='$update_name'");
+    $row1=mysqli_query($conn,"Select * from products where name='$update_name'");
     $result=mysqli_fetch_array($row1);
     $quantity=$result['quantity'];
     if($cart_quantity>$quantity){
@@ -20,20 +20,28 @@ if (isset($_POST['update_cart'])) {
     }
     else{
         $quantity-=$cart_quantity;
-        $updateproduct=mysqli_query($conn,"Update `products` set quantity='$quantity'");
-    $result = mysqli_query($conn, "UPDATE `cart` SET quantity='$cart_quantity' WHERE id='$update_id'");
+        $updateproduct=mysqli_query($conn,"Update products set quantity='$quantity'");
+    $result = mysqli_query($conn, "UPDATE cart SET quantity='$cart_quantity' WHERE id='$update_id'");
     $message[] = 'Cart quantity updated!';
 }}
 
 if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
-    $result = mysqli_query($conn, "DELETE FROM `cart` WHERE id='$delete_id'");
+    $product=mysqli_query($conn,"Select * from cart where id='$delete_id'");
+    $result3=mysqli_fetch_assoc($product);
+    $quantity=$result3['quantity'];
+    $name=$result3['name'];
+    $productresult=mysqli_query($conn,"Select * from products where name='$name'");
+    $result4=mysqli_fetch_assoc($productresult);
+    $quantity+=$result4['quantity'];
+    $updateproduct=mysqli_query($conn,"Update products set quantity='$quantity'");
+    $result = mysqli_query($conn, "DELETE FROM cart WHERE id='$delete_id'");
     header("location:cart.php");
     exit;
 }
 
 if (isset($_GET['delete_all'])) {
-    $result = mysqli_query($conn, "DELETE FROM `cart` WHERE user_id='$user_id'");
+    $result = mysqli_query($conn, "DELETE FROM cart WHERE user_id='$user_id'");
     header("location:cart.php");
     exit;
 }
@@ -62,21 +70,24 @@ if (isset($_GET['delete_all'])) {
         <div class="box-container">
         <?php
         $grand_total = 0;
-        $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id='$user_id'") or die("Query failed.");
+        $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id='$user_id'") or die("Query failed.");
 
         if (mysqli_num_rows($select_cart) > 0) {
             while ($row = mysqli_fetch_assoc($select_cart)) {
+                
                 $sub_total = $row['quantity'] * $row['price'];
                 $grand_total += $sub_total;
                 ?>
                 <div class="box">
                     <a href="cart.php?delete=<?php echo $row['id']; ?>" class="fas fa-times" onclick="return confirm('Delete this from cart?');"></a>
+                    
                     <img src="../uploaded_img/<?php echo $row['image']; ?>" alt="">
                     <div class="name"><?php echo $row['name']; ?></div>
                     <div class="price">Rs <?php echo $row['price']; ?>/-</div>
                     <form action="" method="post">
                         <input type="hidden" name="cart_id" value="<?php echo $row['id']; ?>">
-                        <?php echo $row['name']; ?>;
+                        <!-- <?php echo $row['name']; ?>; -->
+                        <label id=Qty_label>Qty : 
                         <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
                         <input type="number" min="1" name="cart_quantity" value="<?php echo $row['quantity']; ?>">
                         <input type="submit" name="update_cart" value="Update" class="option-btn">

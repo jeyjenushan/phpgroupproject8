@@ -12,29 +12,22 @@ if(isset($_POST['add_location'])){
     $product_image1=$_FILES['productimage1']['name'];
     $product_image_size1=$_FILES['productimage1']['size'];
     $product_image_tmp1=$_FILES['productimage1']['tmp_name'];
-    $product_image2=$_FILES['productimage2']['name'];
-    $product_image_size2=$_FILES['productimage2']['size'];
-    $product_image_tmp2=$_FILES['productimage2']['tmp_name'];
-    $product_image3=$_FILES['productimage3']['name'];
-    $product_image_size3=$_FILES['productimage3']['size'];
-    $product_image_tmp3=$_FILES['productimage3']['tmp_name'];
+  
     $image_folder1="../uploaded_img/".$product_image1;
-    $image_folder2="../uploaded_img/".$product_image2;
-    $image_folder3="../uploaded_img/".$product_image3;
+
     $selected_shop_name=mysqli_query($conn,"Select * from `shopdetail` where name='$shopname'") or die("Query failed");
     if(mysqli_num_rows($selected_shop_name)>0){
         $message[]="shop name already exissts";
 }
 else{
-    $add_product_query=mysqli_query($conn,"Insert into `shopdetail` (location,name,shop_image1,shop_image2,shop_image3) values('$locationname','$shopname','$product_image1','$product_image2','$product_image3') ") or die("Query failed");
+    $add_product_query=mysqli_query($conn,"Insert into `shopdetail` (location,name,shop_image1) values('$locationname','$shopname','$product_image1') ") or die("Query failed");
     if($add_product_query){
-        if( $product_image_size1>2000000 || $product_image_size2>2000000 || $product_image_size3>2000000 ){
+        if( $product_image_size1>2000000 ){
             $message[]="Image size is too large";
         }
         else{
         move_uploaded_file($product_image_tmp1,$image_folder1);
-        move_uploaded_file($product_image_tmp2,$image_folder2);
-        move_uploaded_file($product_image_tmp3,$image_folder3);
+       
         $message[]="Shop details added successfully";
         }
     }
@@ -50,8 +43,7 @@ if(isset($_GET['delete'])){
     $deleted_img_query=mysqli_query($conn,"SELECT * FROM `shopdetail` where id=$deleted_id");
     $fetch_delete_image=mysqli_fetch_assoc($deleted_img_query);
     unlink('../uploaded_img/'.$fetch_delete_image['shop_image1']);
-    unlink('../uploaded_img/'.$fetch_delete_image['shop_image2']);
-    unlink('../uploaded_img/'.$fetch_delete_image['shop_image3']);
+
     mysqli_query($conn,"DELETE FROM `shopdetail` where id='$deleted_id'") or die('query failed');
     header("location:admin_location.php");
 }
@@ -71,8 +63,7 @@ if(isset($_POST['updated_product'])){
     // Handle image uploads
     $images = [
         ['input_name' => 'update_img1', 'old_image' => $_POST['update_old_image1']],
-        ['input_name' => 'update_img2', 'old_image' => $_POST['update_old_image2']],
-        ['input_name' => 'update_img3', 'old_image' => $_POST['update_old_image3']]
+        
     ];
 
     $image_updated = false;
@@ -157,8 +148,7 @@ if(isset($_POST['updated_product'])){
         <input type="text" name="location" class="box" placeholder="Enter your location name" required>
         <input type="text" name="sname" class="box" placeholder="Enter your shop name" required>
         <div class="shop_img_add"><label id="lb_add_shop_image">Add Shop Image</label><input type="file" name="productimage1"class="box" placeholder="Enter your shop image" required>
-        <!-- <input type="file" name="productimage2" class="box" placeholder="Enter your shop image2" required>
-        <input type="file" name="productimage3" class="box" placeholder="Enter your shop image3" required> -->
+     
         </div>
         <input type="submit" name="add_location" class=" btn" value="ADD LOCATION" required>
     </form>
@@ -200,8 +190,6 @@ if(mysqli_num_rows($update_query)>0){
 <form action="" method="POST" enctype='multipart/form-data'>
 <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id'] ?>">
 <input type="hidden" name="update_old_image1" value="<?php echo $fetch_update['shop_image1'] ?>">
-<input type="hidden" name="update_old_image2" value="<?php echo $fetch_update['shop_image2'] ?>">
-<input type="hidden" name="update_old_image3" value="<?php echo $fetch_update['shop_image3'] ?>">
 
 
     <img src="../uploaded_img/<?php echo $fetch_update['shop_image1'] ?>">
@@ -209,8 +197,7 @@ if(mysqli_num_rows($update_query)>0){
     <input type="text" name="update_name" class="box" placeholder="Enter shop Name"  value="<?php echo $fetch_update['name']?>">
     <input type="text" name="update_location"  class="box" placeholder="Enter location name"   value="<?php echo $fetch_update['location']?>">
     <input type="file" class="box" name="update_img1" >
-    <input type="file" class="box" name="update_img2" >
-    <input type="file" class="box" name="update_img3" >
+    
    <input type="submit" value="UPDATE" name="updated_product" class="btn">
    <input type="submit" value="CANCEL" id="close-update" name="reset_location" class="option-btn">
 </form>

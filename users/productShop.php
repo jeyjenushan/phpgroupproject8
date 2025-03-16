@@ -22,7 +22,7 @@ $city = $_GET['city'] ?? '';
     <?php include './user_header.php'; ?>
 
     <div class="heading">
-        <h3>Checkout</h3>
+        <h3>Shop Locations</h3>
         <p><a href="home.php">Home</a> / Shop Details</p>
     </div>
 
